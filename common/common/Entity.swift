@@ -8,7 +8,7 @@
 import Foundation
 
 public struct Weather: Decodable {
-    let weatherInfo: [WeatherInfo]
+    let weatherInfo: WeatherInfo
     let tempInfo: TempInfo
     
     enum CodingKeys: String, CodingKey {
@@ -18,8 +18,9 @@ public struct Weather: Decodable {
 
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-
-        self.weatherInfo = try container.decode([WeatherInfo].self, forKey: .weather)
+        
+        let weatherList = try container.decode([WeatherInfo].self, forKey: .weather)
+        self.weatherInfo = weatherList.first!
         self.tempInfo = try container.decode(TempInfo.self, forKey: .main)
         
     }

@@ -24,9 +24,9 @@ open class HomeViewController: UIViewController {
         initUI()
         
         //Test mock
-        let test = HomeViewModel()
-        test.today(lat: 44.34, lon: 10.99)
-        test.forecast(lat: 44.34, lon: 10.99)
+//        let test = HomeViewModel()
+//        test.today(lat: 44.34, lon: 10.99)
+//        test.forecast(lat: 44.34, lon: 10.99)
         
     }
     

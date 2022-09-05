@@ -10,6 +10,7 @@ import Moya
 import common
 
 open class HomeViewModel {
+//    var todayWeatherData: TodayWeatherData
     
     public init() { }
 
@@ -25,6 +26,7 @@ open class HomeViewModel {
                     print(result.statusCode)
                     let today = try JSONDecoder().decode(Weather.self, from: result.data)
                     print("today weather data: \(today)")
+                    
                     
                 }catch(let err){
                     print("💡today parse error: \(err.localizedDescription)")
