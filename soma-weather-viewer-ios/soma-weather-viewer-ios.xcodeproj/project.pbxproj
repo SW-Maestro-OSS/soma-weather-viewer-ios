@@ -10,7 +10,6 @@
 		490CD66528C5FA540029A4B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490CD66428C5FA540029A4B8 /* AppDelegate.swift */; };
 		490CD66728C5FA540029A4B8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490CD66628C5FA540029A4B8 /* SceneDelegate.swift */; };
 		490CD66928C5FA540029A4B8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490CD66828C5FA540029A4B8 /* ViewController.swift */; };
-		490CD66C28C5FA540029A4B8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 490CD66A28C5FA540029A4B8 /* Main.storyboard */; };
 		490CD66E28C5FA540029A4B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 490CD66D28C5FA540029A4B8 /* Assets.xcassets */; };
 		490CD67128C5FA540029A4B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 490CD66F28C5FA540029A4B8 /* LaunchScreen.storyboard */; };
 		490CD6DE28C5FAB00029A4B8 /* home.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 490CD6DD28C5FAB00029A4B8 /* home.framework */; };
@@ -23,6 +22,7 @@
 		490CD6E928C5FABE0029A4B8 /* common_ui.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 490CD6E728C5FABE0029A4B8 /* common_ui.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		490CD6EB28C5FAC10029A4B8 /* soma_foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 490CD6EA28C5FAC10029A4B8 /* soma_foundation.framework */; };
 		490CD6EC28C5FAC10029A4B8 /* soma_foundation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 490CD6EA28C5FAC10029A4B8 /* soma_foundation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		490CD6F528C618D60029A4B8 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 490CD6F428C618D60029A4B8 /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -48,7 +48,6 @@
 		490CD66428C5FA540029A4B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		490CD66628C5FA540029A4B8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		490CD66828C5FA540029A4B8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		490CD66B28C5FA540029A4B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		490CD66D28C5FA540029A4B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		490CD67028C5FA540029A4B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		490CD67228C5FA540029A4B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -67,6 +66,7 @@
 				490CD6DE28C5FAB00029A4B8 /* home.framework in Frameworks */,
 				490CD6E828C5FABE0029A4B8 /* common_ui.framework in Frameworks */,
 				490CD6EB28C5FAC10029A4B8 /* soma_foundation.framework in Frameworks */,
+				490CD6F528C618D60029A4B8 /* SnapKit in Frameworks */,
 				490CD6E528C5FAB70029A4B8 /* common.framework in Frameworks */,
 				490CD6E228C5FAB30029A4B8 /* setting.framework in Frameworks */,
 			);
@@ -95,10 +95,8 @@
 		490CD66328C5FA540029A4B8 /* soma-weather-viewer-ios */ = {
 			isa = PBXGroup;
 			children = (
-				490CD66428C5FA540029A4B8 /* AppDelegate.swift */,
-				490CD66628C5FA540029A4B8 /* SceneDelegate.swift */,
+				490CD6F028C6150B0029A4B8 /* app */,
 				490CD66828C5FA540029A4B8 /* ViewController.swift */,
-				490CD66A28C5FA540029A4B8 /* Main.storyboard */,
 				490CD66D28C5FA540029A4B8 /* Assets.xcassets */,
 				490CD66F28C5FA540029A4B8 /* LaunchScreen.storyboard */,
 				490CD67228C5FA540029A4B8 /* Info.plist */,
@@ -118,6 +116,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		490CD6F028C6150B0029A4B8 /* app */ = {
+			isa = PBXGroup;
+			children = (
+				490CD66428C5FA540029A4B8 /* AppDelegate.swift */,
+				490CD66628C5FA540029A4B8 /* SceneDelegate.swift */,
+			);
+			path = app;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,6 +142,9 @@
 			dependencies = (
 			);
 			name = "soma-weather-viewer-ios";
+			packageProductDependencies = (
+				490CD6F428C618D60029A4B8 /* SnapKit */,
+			);
 			productName = "soma-weather-viewer-ios";
 			productReference = 490CD66128C5FA540029A4B8 /* soma-weather-viewer-ios.app */;
 			productType = "com.apple.product-type.application";
@@ -163,6 +173,9 @@
 				Base,
 			);
 			mainGroup = 490CD65828C5FA540029A4B8;
+			packageReferences = (
+				490CD6F328C618D60029A4B8 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 490CD66228C5FA540029A4B8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -179,7 +192,6 @@
 			files = (
 				490CD67128C5FA540029A4B8 /* LaunchScreen.storyboard in Resources */,
 				490CD66E28C5FA540029A4B8 /* Assets.xcassets in Resources */,
-				490CD66C28C5FA540029A4B8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,14 +211,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		490CD66A28C5FA540029A4B8 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				490CD66B28C5FA540029A4B8 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		490CD66F28C5FA540029A4B8 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -344,7 +348,6 @@
 				INFOPLIST_FILE = "soma-weather-viewer-ios/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -372,7 +375,6 @@
 				INFOPLIST_FILE = "soma-weather-viewer-ios/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -410,6 +412,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		490CD6F328C618D60029A4B8 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		490CD6F428C618D60029A4B8 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 490CD6F328C618D60029A4B8 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 490CD65928C5FA540029A4B8 /* Project object */;
 }

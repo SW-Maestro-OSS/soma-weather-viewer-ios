@@ -8,11 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		490CD6AE28C5FA7D0029A4B8 /* home.h in Headers */ = {isa = PBXBuildFile; fileRef = 490CD6AD28C5FA7D0029A4B8 /* home.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		490CD6F828C619020029A4B8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490CD6F728C619020029A4B8 /* HomeViewController.swift */; };
+		490CD6FA28C619080029A4B8 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490CD6F928C619080029A4B8 /* HomeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		490CD6AA28C5FA7D0029A4B8 /* home.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = home.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		490CD6AD28C5FA7D0029A4B8 /* home.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = home.h; sourceTree = "<group>"; };
+		490CD6F728C619020029A4B8 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		490CD6F928C619080029A4B8 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +50,8 @@
 			isa = PBXGroup;
 			children = (
 				490CD6AD28C5FA7D0029A4B8 /* home.h */,
+				490CD6F728C619020029A4B8 /* HomeViewController.swift */,
+				490CD6F928C619080029A4B8 /* HomeViewModel.swift */,
 			);
 			path = home;
 			sourceTree = "<group>";
@@ -93,6 +99,7 @@
 				TargetAttributes = {
 					490CD6A928C5FA7D0029A4B8 = {
 						CreatedOnToolsVersion = 13.4.1;
+						LastSwiftMigration = 1340;
 					};
 				};
 			};
@@ -129,6 +136,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				490CD6F828C619020029A4B8 /* HomeViewController.swift in Sources */,
+				490CD6FA28C619080029A4B8 /* HomeViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,6 +267,7 @@
 		490CD6B228C5FA7D0029A4B8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -278,6 +288,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -286,6 +297,7 @@
 		490CD6B328C5FA7D0029A4B8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
