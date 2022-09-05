@@ -8,12 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		490CD68628C5FA620029A4B8 /* common.h in Headers */ = {isa = PBXBuildFile; fileRef = 490CD68528C5FA620029A4B8 /* common.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B929CA5A28C622D70075DECE /* WeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B929CA5928C622D70075DECE /* WeatherAPI.swift */; };
+		B929CA5D28C623090075DECE /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = B929CA5C28C623090075DECE /* Moya */; };
 		B9651C2D28C612C800AB7585 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9651C2C28C612C800AB7585 /* Entity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		490CD68228C5FA620029A4B8 /* common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		490CD68528C5FA620029A4B8 /* common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = common.h; sourceTree = "<group>"; };
+		B929CA5928C622D70075DECE /* WeatherAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAPI.swift; sourceTree = "<group>"; };
 		B9651C2C28C612C800AB7585 /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -22,6 +25,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B929CA5D28C623090075DECE /* Moya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -33,6 +37,7 @@
 			children = (
 				490CD68428C5FA620029A4B8 /* common */,
 				490CD68328C5FA620029A4B8 /* Products */,
+				B929CA5B28C623090075DECE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -48,9 +53,17 @@
 			isa = PBXGroup;
 			children = (
 				490CD68528C5FA620029A4B8 /* common.h */,
+				B929CA5928C622D70075DECE /* WeatherAPI.swift */,
 				B9651C2C28C612C800AB7585 /* Entity.swift */,
 			);
 			path = common;
+			sourceTree = "<group>";
+		};
+		B929CA5B28C623090075DECE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -81,6 +94,9 @@
 			dependencies = (
 			);
 			name = common;
+			packageProductDependencies = (
+				B929CA5C28C623090075DECE /* Moya */,
+			);
 			productName = common;
 			productReference = 490CD68228C5FA620029A4B8 /* common.framework */;
 			productType = "com.apple.product-type.framework";
@@ -137,6 +153,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9651C2D28C612C800AB7585 /* Entity.swift in Sources */,
+				B929CA5A28C622D70075DECE /* WeatherAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,6 +372,14 @@
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B929CA5C28C623090075DECE /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B929CA5828C620B30075DECE /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 490CD67928C5FA620029A4B8 /* Project object */;
 }
