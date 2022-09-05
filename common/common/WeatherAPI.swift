@@ -8,17 +8,17 @@
 import Foundation
 import Moya
 
-enum WeatherAPI {
+public enum WeatherAPI {
     case today(lat: Float, lon: Float)
     case forecast(lat: Float, lon: Float)
 }
 
 extension WeatherAPI : TargetType {
-    var baseURL: URL {
+    public var baseURL: URL {
         return URL(string: "https://api.openweathermap.org/data/2.5")!
     }
     
-    var path: String {
+    public var path: String {
         switch self {
         case .today:
             return "/weather"
@@ -27,21 +27,21 @@ extension WeatherAPI : TargetType {
         }
     }
     
-    var method: Moya.Method {
+    public var method: Moya.Method {
         switch self {
         case .today, .forecast:
             return .get
         }
     }
     
-    var task: Task {
+    public var task: Task {
         switch self {
         case .today(let lat, let lon), .forecast(let lat, let lon):
-            return .requestParameters(parameters: ["lat" : lat, "lon": lon, "appid": ""], encoding: URLEncoding.queryString)
+            return .requestParameters(parameters: ["lat" : lat, "lon": lon, "appid": "ebf570c2cd766862f873321c5527f30e"], encoding: URLEncoding.queryString)
         }
     }
     
-    var headers: [String : String]? {
+    public var headers: [String : String]? {
         return .none
     }
     

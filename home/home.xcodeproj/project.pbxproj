@@ -15,6 +15,8 @@
 		490CD70428C61F8D0029A4B8 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 490CD70328C61F8D0029A4B8 /* SnapKit */; };
 		490CD70828C626840029A4B8 /* common_ui.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 490CD70728C626840029A4B8 /* common_ui.framework */; };
 		490CD70928C626840029A4B8 /* common_ui.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 490CD70728C626840029A4B8 /* common_ui.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B929CA5F28C62C910075DECE /* common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B929CA5E28C62C910075DECE /* common.framework */; };
+		B929CA6028C62C910075DECE /* common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B929CA5E28C62C910075DECE /* common.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +27,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				490CD70028C61D930029A4B8 /* setting.framework in Embed Frameworks */,
+				B929CA6028C62C910075DECE /* common.framework in Embed Frameworks */,
 				490CD70928C626840029A4B8 /* common_ui.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -39,6 +42,7 @@
 		490CD6F928C619080029A4B8 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		490CD6FE28C61D930029A4B8 /* setting.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = setting.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		490CD70728C626840029A4B8 /* common_ui.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = common_ui.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B929CA5E28C62C910075DECE /* common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +51,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				490CD6FF28C61D930029A4B8 /* setting.framework in Frameworks */,
+				B929CA5F28C62C910075DECE /* common.framework in Frameworks */,
 				490CD70828C626840029A4B8 /* common_ui.framework in Frameworks */,
 				490CD70428C61F8D0029A4B8 /* SnapKit in Frameworks */,
 			);
@@ -85,6 +90,7 @@
 		490CD6FD28C61D930029A4B8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B929CA5E28C62C910075DECE /* common.framework */,
 				490CD70728C626840029A4B8 /* common_ui.framework */,
 				490CD6FE28C61D930029A4B8 /* setting.framework */,
 			);
