@@ -8,18 +8,35 @@
 
 /* Begin PBXBuildFile section */
 		494C9B2828C641CC0088A183 /* home.h in Headers */ = {isa = PBXBuildFile; fileRef = 494C9B2728C641CC0088A183 /* home.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		494C9B3128C641F70088A183 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494C9B2E28C641F70088A183 /* HomeViewController.swift */; };
-		494C9B3228C641F70088A183 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494C9B2F28C641F70088A183 /* WeatherViewController.swift */; };
-		494C9B3328C641F70088A183 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494C9B3028C641F70088A183 /* HomeViewModel.swift */; };
 		494C9B3928C642220088A183 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 494C9B3828C642220088A183 /* SnapKit */; };
+		B929CA6628C645AF0075DECE /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B929CA6328C645AF0075DECE /* HomeViewModel.swift */; };
+		B929CA6728C645AF0075DECE /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B929CA6428C645AF0075DECE /* WeatherViewController.swift */; };
+		B929CA6828C645AF0075DECE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B929CA6528C645AF0075DECE /* HomeViewController.swift */; };
+		B929CA6B28C645C70075DECE /* common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B929CA6A28C645C70075DECE /* common.framework */; };
+		B929CA6C28C645C70075DECE /* common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B929CA6A28C645C70075DECE /* common.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B929CA6D28C645C70075DECE /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B929CA6C28C645C70075DECE /* common.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		494C9B2428C641CC0088A183 /* home.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = home.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		494C9B2728C641CC0088A183 /* home.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = home.h; sourceTree = "<group>"; };
-		494C9B2E28C641F70088A183 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = ../../../home/home/HomeViewController.swift; sourceTree = "<group>"; };
-		494C9B2F28C641F70088A183 /* WeatherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherViewController.swift; path = ../../../home/home/WeatherViewController.swift; sourceTree = "<group>"; };
-		494C9B3028C641F70088A183 /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewModel.swift; path = ../../../home/home/HomeViewModel.swift; sourceTree = "<group>"; };
+		B929CA6328C645AF0075DECE /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		B929CA6428C645AF0075DECE /* WeatherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
+		B929CA6528C645AF0075DECE /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		B929CA6A28C645C70075DECE /* common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -28,6 +45,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				494C9B3928C642220088A183 /* SnapKit in Frameworks */,
+				B929CA6B28C645C70075DECE /* common.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -39,6 +57,7 @@
 			children = (
 				494C9B2628C641CC0088A183 /* home */,
 				494C9B2528C641CC0088A183 /* Products */,
+				B929CA6928C645C70075DECE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,11 +73,19 @@
 			isa = PBXGroup;
 			children = (
 				494C9B2728C641CC0088A183 /* home.h */,
-				494C9B2E28C641F70088A183 /* HomeViewController.swift */,
-				494C9B3028C641F70088A183 /* HomeViewModel.swift */,
-				494C9B2F28C641F70088A183 /* WeatherViewController.swift */,
+				B929CA6528C645AF0075DECE /* HomeViewController.swift */,
+				B929CA6328C645AF0075DECE /* HomeViewModel.swift */,
+				B929CA6428C645AF0075DECE /* WeatherViewController.swift */,
 			);
 			path = home;
+			sourceTree = "<group>";
+		};
+		B929CA6928C645C70075DECE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B929CA6A28C645C70075DECE /* common.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +110,7 @@
 				494C9B2028C641CC0088A183 /* Sources */,
 				494C9B2128C641CC0088A183 /* Frameworks */,
 				494C9B2228C641CC0088A183 /* Resources */,
+				B929CA6D28C645C70075DECE /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -147,9 +175,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				494C9B3128C641F70088A183 /* HomeViewController.swift in Sources */,
-				494C9B3328C641F70088A183 /* HomeViewModel.swift in Sources */,
-				494C9B3228C641F70088A183 /* WeatherViewController.swift in Sources */,
+				B929CA6628C645AF0075DECE /* HomeViewModel.swift in Sources */,
+				B929CA6728C645AF0075DECE /* WeatherViewController.swift in Sources */,
+				B929CA6828C645AF0075DECE /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
