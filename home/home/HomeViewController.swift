@@ -13,6 +13,7 @@ import common_ui
 open class HomeViewController: UIViewController {
     
     var titleLabel = UILabel()
+    var backButton = CustomBackButton()
     var changeViewButton = UIButton()
     var settingButton = UIButton()
     
@@ -25,7 +26,7 @@ open class HomeViewController: UIViewController {
     
     open override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.setNavigationBarHidden(true, animated: true)
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     func initAttribute() {
@@ -46,7 +47,7 @@ open class HomeViewController: UIViewController {
             button.layer.borderWidth = 1
             button.layer.borderColor = UIColor.black.cgColor
             button.setTitleColor(UIColor.black, for: .normal)
-            button.addTarget(self, action: #selector(tapViewChange), for: .touchDown)
+            button.addTarget(self, action: #selector(tapViewChangeButton), for: .touchDown)
             return button
         }()
         
@@ -57,7 +58,7 @@ open class HomeViewController: UIViewController {
             button.layer.borderWidth = 1
             button.layer.borderColor = UIColor.black.cgColor
             button.setTitleColor(UIColor.black, for: .normal)
-            button.addTarget(self, action: #selector(tapViewChange), for: .touchDown)
+            button.addTarget(self, action: #selector(tapSettingButton), for: .touchDown)
             return button
         }()
         
@@ -80,14 +81,14 @@ open class HomeViewController: UIViewController {
         changeViewButton.snp.makeConstraints {
             $0.centerY.equalTo(titleLabel.snp.centerY)
             $0.left.equalTo(guide.snp.left).offset(16)
-            $0.width.equalTo(60)
+            $0.width.equalTo(80)
             $0.height.equalTo(24)
         }
         
         settingButton.snp.makeConstraints {
             $0.centerY.equalTo(titleLabel.snp.centerY)
             $0.right.equalTo(guide.snp.right).offset(-16)
-            $0.width.equalTo(60)
+            $0.width.equalTo(80)
             $0.height.equalTo(24)
         }
 
@@ -101,7 +102,12 @@ open class HomeViewController: UIViewController {
         
     }
     
-    @objc func tapViewChange() {
+    @objc func tapViewChangeButton() {
+        let nextViewController = WeatherViewController()
+        self.navigationController?.pushViewController(nextViewController, animated: true)
+    }
+    
+    @objc func tapSettingButton() {
         let settingViewController = SettingViewController()
         self.navigationController?.pushViewController(settingViewController, animated: true)
     }

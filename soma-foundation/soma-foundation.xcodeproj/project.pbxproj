@@ -8,11 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		490CD6D628C5FA9B0029A4B8 /* soma_foundation.h in Headers */ = {isa = PBXBuildFile; fileRef = 490CD6D528C5FA9B0029A4B8 /* soma_foundation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		490CD70E28C62BD30029A4B8 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490CD70D28C62BD30029A4B8 /* Observable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		490CD6D228C5FA9B0029A4B8 /* soma_foundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = soma_foundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		490CD6D528C5FA9B0029A4B8 /* soma_foundation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = soma_foundation.h; sourceTree = "<group>"; };
+		490CD70D28C62BD30029A4B8 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +48,7 @@
 			isa = PBXGroup;
 			children = (
 				490CD6D528C5FA9B0029A4B8 /* soma_foundation.h */,
+				490CD70D28C62BD30029A4B8 /* Observable.swift */,
 			);
 			path = "soma-foundation";
 			sourceTree = "<group>";
@@ -93,6 +96,7 @@
 				TargetAttributes = {
 					490CD6D128C5FA9B0029A4B8 = {
 						CreatedOnToolsVersion = 13.4.1;
+						LastSwiftMigration = 1340;
 					};
 				};
 			};
@@ -129,6 +133,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				490CD70E28C62BD30029A4B8 /* Observable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,6 +263,7 @@
 		490CD6DA28C5FA9B0029A4B8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -278,6 +284,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -286,6 +293,7 @@
 		490CD6DB28C5FA9B0029A4B8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;

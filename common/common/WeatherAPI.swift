@@ -37,7 +37,7 @@ extension WeatherAPI : TargetType {
     var task: Task {
         switch self {
         case .today(let lat, let lon), .forecast(let lat, let lon):
-            return .requestParameters(parameters: ["lat" : lat, "lon": lon, "appid": ""], encoding: URLEncoding.queryString)
+            return .requestParameters(parameters: ["lat" : lat, "lon": lon, "appid": "ebf570c2cd766862f873321c5527f30e"], encoding: URLEncoding.queryString)
         }
     }
     

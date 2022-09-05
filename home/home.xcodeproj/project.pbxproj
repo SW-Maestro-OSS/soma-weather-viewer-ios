@@ -15,6 +15,7 @@
 		490CD70428C61F8D0029A4B8 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 490CD70328C61F8D0029A4B8 /* SnapKit */; };
 		490CD70828C626840029A4B8 /* common_ui.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 490CD70728C626840029A4B8 /* common_ui.framework */; };
 		490CD70928C626840029A4B8 /* common_ui.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 490CD70728C626840029A4B8 /* common_ui.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		490CD71428C632E70029A4B8 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490CD71328C632E70029A4B8 /* WeatherViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -39,6 +40,7 @@
 		490CD6F928C619080029A4B8 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		490CD6FE28C61D930029A4B8 /* setting.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = setting.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		490CD70728C626840029A4B8 /* common_ui.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = common_ui.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		490CD71328C632E70029A4B8 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 				490CD6AD28C5FA7D0029A4B8 /* home.h */,
 				490CD6F728C619020029A4B8 /* HomeViewController.swift */,
 				490CD6F928C619080029A4B8 /* HomeViewModel.swift */,
+				490CD71328C632E70029A4B8 /* WeatherViewController.swift */,
 			);
 			path = home;
 			sourceTree = "<group>";
@@ -179,6 +182,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				490CD6F828C619020029A4B8 /* HomeViewController.swift in Sources */,
+				490CD71428C632E70029A4B8 /* WeatherViewController.swift in Sources */,
 				490CD6FA28C619080029A4B8 /* HomeViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
