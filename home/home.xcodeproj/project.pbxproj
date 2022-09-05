@@ -14,6 +14,8 @@
 		B929CA6828C645AF0075DECE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B929CA6528C645AF0075DECE /* HomeViewController.swift */; };
 		B929CA6B28C645C70075DECE /* common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B929CA6A28C645C70075DECE /* common.framework */; };
 		B929CA6C28C645C70075DECE /* common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B929CA6A28C645C70075DECE /* common.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B929CA6F28C64BCF0075DECE /* common_ui.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B929CA6E28C64BCF0075DECE /* common_ui.framework */; };
+		B929CA7028C64BCF0075DECE /* common_ui.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B929CA6E28C64BCF0075DECE /* common_ui.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,6 +26,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				B929CA6C28C645C70075DECE /* common.framework in Embed Frameworks */,
+				B929CA7028C64BCF0075DECE /* common_ui.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -37,6 +40,7 @@
 		B929CA6428C645AF0075DECE /* WeatherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		B929CA6528C645AF0075DECE /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		B929CA6A28C645C70075DECE /* common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B929CA6E28C64BCF0075DECE /* common_ui.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = common_ui.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +49,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				494C9B3928C642220088A183 /* SnapKit in Frameworks */,
+				B929CA6F28C64BCF0075DECE /* common_ui.framework in Frameworks */,
 				B929CA6B28C645C70075DECE /* common.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -83,6 +88,7 @@
 		B929CA6928C645C70075DECE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B929CA6E28C64BCF0075DECE /* common_ui.framework */,
 				B929CA6A28C645C70075DECE /* common.framework */,
 			);
 			name = Frameworks;

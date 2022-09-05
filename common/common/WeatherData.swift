@@ -59,7 +59,7 @@ public struct TodayWeatherData {
     let maxTemp: String
     let humidity: String
     
-    init(weather: Weather){
+    public init(weather: Weather){
         self.status = mappingStatus(status: weather.weatherInfo.status)
         self.avarageTemp = "평균 온도 : \(weather.tempInfo.temp)"
         self.maxTemp = "최고 온도 : \(weather.tempInfo.maxTemp)"
