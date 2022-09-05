@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:home/home.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:soma-weather-viewer-ios/soma-weather-viewer-ios.xcodeproj">
    </FileRef>
    <FileRef
@@ -9,9 +12,6 @@
    </FileRef>
    <FileRef
       location = "group:setting/setting.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:home/home.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:common-ui/common-ui.xcodeproj">
