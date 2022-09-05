@@ -23,6 +23,10 @@
 		490CD6E928C5FABE0029A4B8 /* common_ui.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 490CD6E728C5FABE0029A4B8 /* common_ui.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		490CD6EB28C5FAC10029A4B8 /* soma_foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 490CD6EA28C5FAC10029A4B8 /* soma_foundation.framework */; };
 		490CD6EC28C5FAC10029A4B8 /* soma_foundation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 490CD6EA28C5FAC10029A4B8 /* soma_foundation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CDDDB2BB28C6296800D9BF93 /* AppFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDDB2BA28C6296800D9BF93 /* AppFlowCoordinator.swift */; };
+		CDDDB2BE28C629AE00D9BF93 /* AppDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDDB2BD28C629AE00D9BF93 /* AppDIContainer.swift */; };
+		CDDDB2C028C629FA00D9BF93 /* AppConfigurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDDB2BF28C629FA00D9BF93 /* AppConfigurations.swift */; };
+		CDDDB2CD28C62F8100D9BF93 /* HomeDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDDB2CC28C62F8100D9BF93 /* HomeDIContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -57,6 +61,10 @@
 		490CD6E428C5FAB70029A4B8 /* common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		490CD6E728C5FABE0029A4B8 /* common_ui.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = common_ui.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		490CD6EA28C5FAC10029A4B8 /* soma_foundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = soma_foundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CDDDB2BA28C6296800D9BF93 /* AppFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlowCoordinator.swift; sourceTree = "<group>"; };
+		CDDDB2BD28C629AE00D9BF93 /* AppDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDIContainer.swift; sourceTree = "<group>"; };
+		CDDDB2BF28C629FA00D9BF93 /* AppConfigurations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfigurations.swift; sourceTree = "<group>"; };
+		CDDDB2CC28C62F8100D9BF93 /* HomeDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDIContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +103,7 @@
 		490CD66328C5FA540029A4B8 /* soma-weather-viewer-ios */ = {
 			isa = PBXGroup;
 			children = (
+				CDDDB2BC28C6299000D9BF93 /* DIContainer */,
 				490CD66428C5FA540029A4B8 /* AppDelegate.swift */,
 				490CD66628C5FA540029A4B8 /* SceneDelegate.swift */,
 				490CD66828C5FA540029A4B8 /* ViewController.swift */,
@@ -102,6 +111,8 @@
 				490CD66D28C5FA540029A4B8 /* Assets.xcassets */,
 				490CD66F28C5FA540029A4B8 /* LaunchScreen.storyboard */,
 				490CD67228C5FA540029A4B8 /* Info.plist */,
+				CDDDB2BA28C6296800D9BF93 /* AppFlowCoordinator.swift */,
+				CDDDB2BF28C629FA00D9BF93 /* AppConfigurations.swift */,
 			);
 			path = "soma-weather-viewer-ios";
 			sourceTree = "<group>";
@@ -116,6 +127,15 @@
 				490CD6DD28C5FAB00029A4B8 /* home.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CDDDB2BC28C6299000D9BF93 /* DIContainer */ = {
+			isa = PBXGroup;
+			children = (
+				CDDDB2BD28C629AE00D9BF93 /* AppDIContainer.swift */,
+				CDDDB2CC28C62F8100D9BF93 /* HomeDIContainer.swift */,
+			);
+			path = DIContainer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,8 +210,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDDDB2BB28C6296800D9BF93 /* AppFlowCoordinator.swift in Sources */,
 				490CD66928C5FA540029A4B8 /* ViewController.swift in Sources */,
+				CDDDB2BE28C629AE00D9BF93 /* AppDIContainer.swift in Sources */,
 				490CD66528C5FA540029A4B8 /* AppDelegate.swift in Sources */,
+				CDDDB2CD28C62F8100D9BF93 /* HomeDIContainer.swift in Sources */,
+				CDDDB2C028C629FA00D9BF93 /* AppConfigurations.swift in Sources */,
 				490CD66728C5FA540029A4B8 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
