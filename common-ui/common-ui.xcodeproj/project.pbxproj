@@ -8,11 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		490CD69A28C5FA6C0029A4B8 /* common_ui.h in Headers */ = {isa = PBXBuildFile; fileRef = 490CD69928C5FA6C0029A4B8 /* common_ui.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		490CD70628C623C00029A4B8 /* WeatherDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490CD70528C623C00029A4B8 /* WeatherDetailView.swift */; };
+		490CD70C28C627A00029A4B8 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 490CD70B28C627A00029A4B8 /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		490CD69628C5FA6C0029A4B8 /* common_ui.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = common_ui.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		490CD69928C5FA6C0029A4B8 /* common_ui.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = common_ui.h; sourceTree = "<group>"; };
+		490CD70528C623C00029A4B8 /* WeatherDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -20,6 +23,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				490CD70C28C627A00029A4B8 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +50,7 @@
 			isa = PBXGroup;
 			children = (
 				490CD69928C5FA6C0029A4B8 /* common_ui.h */,
+				490CD70528C623C00029A4B8 /* WeatherDetailView.swift */,
 			);
 			path = "common-ui";
 			sourceTree = "<group>";
@@ -78,6 +83,9 @@
 			dependencies = (
 			);
 			name = "common-ui";
+			packageProductDependencies = (
+				490CD70B28C627A00029A4B8 /* SnapKit */,
+			);
 			productName = "common-ui";
 			productReference = 490CD69628C5FA6C0029A4B8 /* common_ui.framework */;
 			productType = "com.apple.product-type.framework";
@@ -93,6 +101,7 @@
 				TargetAttributes = {
 					490CD69528C5FA6C0029A4B8 = {
 						CreatedOnToolsVersion = 13.4.1;
+						LastSwiftMigration = 1340;
 					};
 				};
 			};
@@ -105,6 +114,9 @@
 				Base,
 			);
 			mainGroup = 490CD68C28C5FA6C0029A4B8;
+			packageReferences = (
+				490CD70A28C627A00029A4B8 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 490CD69728C5FA6C0029A4B8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -129,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				490CD70628C623C00029A4B8 /* WeatherDetailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,6 +271,7 @@
 		490CD69E28C5FA6C0029A4B8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -278,6 +292,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -286,6 +301,7 @@
 		490CD69F28C5FA6C0029A4B8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -333,6 +349,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		490CD70A28C627A00029A4B8 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		490CD70B28C627A00029A4B8 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 490CD70A28C627A00029A4B8 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 490CD68D28C5FA6C0029A4B8 /* Project object */;
 }

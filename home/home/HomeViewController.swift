@@ -8,11 +8,13 @@
 import UIKit
 import setting
 import SnapKit
+import common_ui
 
 open class HomeViewController: UIViewController {
     
     var titleLabel = UILabel()
     var changeViewButton = UIButton()
+    var settingButton = UIButton()
     
     open override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,13 +50,26 @@ open class HomeViewController: UIViewController {
             return button
         }()
         
+        settingButton = {
+            let button = UIButton()
+            button.setTitle("세팅", for: .normal)
+            button.layer.cornerRadius = 4
+            button.layer.borderWidth = 1
+            button.layer.borderColor = UIColor.black.cgColor
+            button.setTitleColor(UIColor.black, for: .normal)
+            button.addTarget(self, action: #selector(tapViewChange), for: .touchDown)
+            return button
+        }()
+        
     }
     
     func initUI() {
         
         let guide = view.layoutMarginsGuide
         
-        [titleLabel, changeViewButton]
+        let detailView = WeatherDetailView()
+        
+        [titleLabel, changeViewButton, settingButton, detailView]
             .forEach { view.addSubview($0) }
         
         titleLabel.snp.makeConstraints {
@@ -68,7 +83,21 @@ open class HomeViewController: UIViewController {
             $0.width.equalTo(60)
             $0.height.equalTo(24)
         }
+        
+        settingButton.snp.makeConstraints {
+            $0.centerY.equalTo(titleLabel.snp.centerY)
+            $0.right.equalTo(guide.snp.right).offset(-16)
+            $0.width.equalTo(60)
+            $0.height.equalTo(24)
+        }
 
+        detailView.snp.makeConstraints {
+            $0.top.equalTo(titleLabel.snp.bottom).offset(40)
+            $0.centerX.equalToSuperview()
+            $0.left.equalToSuperview().offset(32)
+            $0.right.equalToSuperview().offset(-32)
+            //$0.bottom.equalToSuperview().offset(-30)
+        }
         
     }
     
