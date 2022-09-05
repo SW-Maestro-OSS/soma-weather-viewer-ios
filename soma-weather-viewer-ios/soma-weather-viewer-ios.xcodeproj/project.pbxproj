@@ -12,8 +12,6 @@
 		490CD66928C5FA540029A4B8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490CD66828C5FA540029A4B8 /* ViewController.swift */; };
 		490CD66E28C5FA540029A4B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 490CD66D28C5FA540029A4B8 /* Assets.xcassets */; };
 		490CD67128C5FA540029A4B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 490CD66F28C5FA540029A4B8 /* LaunchScreen.storyboard */; };
-		490CD6DE28C5FAB00029A4B8 /* home.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 490CD6DD28C5FAB00029A4B8 /* home.framework */; };
-		490CD6DF28C5FAB00029A4B8 /* home.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 490CD6DD28C5FAB00029A4B8 /* home.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		490CD6E228C5FAB30029A4B8 /* setting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 490CD6E128C5FAB30029A4B8 /* setting.framework */; };
 		490CD6E328C5FAB30029A4B8 /* setting.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 490CD6E128C5FAB30029A4B8 /* setting.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		490CD6E528C5FAB70029A4B8 /* common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 490CD6E428C5FAB70029A4B8 /* common.framework */; };
@@ -23,6 +21,8 @@
 		490CD6EB28C5FAC10029A4B8 /* soma_foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 490CD6EA28C5FAC10029A4B8 /* soma_foundation.framework */; };
 		490CD6EC28C5FAC10029A4B8 /* soma_foundation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 490CD6EA28C5FAC10029A4B8 /* soma_foundation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		490CD6F528C618D60029A4B8 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 490CD6F428C618D60029A4B8 /* SnapKit */; };
+		494C9B3528C641FD0088A183 /* home.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 494C9B3428C641FD0088A183 /* home.framework */; };
+		494C9B3628C641FD0088A183 /* home.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 494C9B3428C641FD0088A183 /* home.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -32,10 +32,10 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				490CD6DF28C5FAB00029A4B8 /* home.framework in Embed Frameworks */,
 				490CD6E928C5FABE0029A4B8 /* common_ui.framework in Embed Frameworks */,
 				490CD6EC28C5FAC10029A4B8 /* soma_foundation.framework in Embed Frameworks */,
 				490CD6E628C5FAB70029A4B8 /* common.framework in Embed Frameworks */,
+				494C9B3628C641FD0088A183 /* home.framework in Embed Frameworks */,
 				490CD6E328C5FAB30029A4B8 /* setting.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -56,6 +56,7 @@
 		490CD6E428C5FAB70029A4B8 /* common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		490CD6E728C5FABE0029A4B8 /* common_ui.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = common_ui.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		490CD6EA28C5FAC10029A4B8 /* soma_foundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = soma_foundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		494C9B3428C641FD0088A183 /* home.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = home.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,8 +64,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				490CD6DE28C5FAB00029A4B8 /* home.framework in Frameworks */,
 				490CD6E828C5FABE0029A4B8 /* common_ui.framework in Frameworks */,
+				494C9B3528C641FD0088A183 /* home.framework in Frameworks */,
 				490CD6EB28C5FAC10029A4B8 /* soma_foundation.framework in Frameworks */,
 				490CD6F528C618D60029A4B8 /* SnapKit in Frameworks */,
 				490CD6E528C5FAB70029A4B8 /* common.framework in Frameworks */,
@@ -107,6 +108,7 @@
 		490CD6DC28C5FAB00029A4B8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				494C9B3428C641FD0088A183 /* home.framework */,
 				490CD6EA28C5FAC10029A4B8 /* soma_foundation.framework */,
 				490CD6E728C5FABE0029A4B8 /* common_ui.framework */,
 				490CD6E428C5FAB70029A4B8 /* common.framework */,

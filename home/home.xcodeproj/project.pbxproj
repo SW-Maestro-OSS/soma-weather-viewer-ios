@@ -7,128 +7,82 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		490CD6AE28C5FA7D0029A4B8 /* home.h in Headers */ = {isa = PBXBuildFile; fileRef = 490CD6AD28C5FA7D0029A4B8 /* home.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		490CD6F828C619020029A4B8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490CD6F728C619020029A4B8 /* HomeViewController.swift */; };
-		490CD6FA28C619080029A4B8 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490CD6F928C619080029A4B8 /* HomeViewModel.swift */; };
-		490CD6FF28C61D930029A4B8 /* setting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 490CD6FE28C61D930029A4B8 /* setting.framework */; };
-		490CD70028C61D930029A4B8 /* setting.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 490CD6FE28C61D930029A4B8 /* setting.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		490CD70428C61F8D0029A4B8 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 490CD70328C61F8D0029A4B8 /* SnapKit */; };
-		490CD70828C626840029A4B8 /* common_ui.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 490CD70728C626840029A4B8 /* common_ui.framework */; };
-		490CD70928C626840029A4B8 /* common_ui.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 490CD70728C626840029A4B8 /* common_ui.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-<<<<<<< HEAD
-		490CD71428C632E70029A4B8 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490CD71328C632E70029A4B8 /* WeatherViewController.swift */; };
-=======
-		B929CA5F28C62C910075DECE /* common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B929CA5E28C62C910075DECE /* common.framework */; };
-		B929CA6028C62C910075DECE /* common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B929CA5E28C62C910075DECE /* common.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
->>>>>>> c59589f1520213674f31d781b7b186dd10ff3a15
+		494C9B2828C641CC0088A183 /* home.h in Headers */ = {isa = PBXBuildFile; fileRef = 494C9B2728C641CC0088A183 /* home.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		494C9B3128C641F70088A183 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494C9B2E28C641F70088A183 /* HomeViewController.swift */; };
+		494C9B3228C641F70088A183 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494C9B2F28C641F70088A183 /* WeatherViewController.swift */; };
+		494C9B3328C641F70088A183 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494C9B3028C641F70088A183 /* HomeViewModel.swift */; };
+		494C9B3928C642220088A183 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 494C9B3828C642220088A183 /* SnapKit */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		490CD70128C61D930029A4B8 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				490CD70028C61D930029A4B8 /* setting.framework in Embed Frameworks */,
-				B929CA6028C62C910075DECE /* common.framework in Embed Frameworks */,
-				490CD70928C626840029A4B8 /* common_ui.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
-		490CD6AA28C5FA7D0029A4B8 /* home.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = home.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		490CD6AD28C5FA7D0029A4B8 /* home.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = home.h; sourceTree = "<group>"; };
-		490CD6F728C619020029A4B8 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		490CD6F928C619080029A4B8 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
-		490CD6FE28C61D930029A4B8 /* setting.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = setting.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		490CD70728C626840029A4B8 /* common_ui.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = common_ui.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-<<<<<<< HEAD
-		490CD71328C632E70029A4B8 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
-=======
-		B929CA5E28C62C910075DECE /* common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
->>>>>>> c59589f1520213674f31d781b7b186dd10ff3a15
+		494C9B2428C641CC0088A183 /* home.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = home.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		494C9B2728C641CC0088A183 /* home.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = home.h; sourceTree = "<group>"; };
+		494C9B2E28C641F70088A183 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = ../../../home/home/HomeViewController.swift; sourceTree = "<group>"; };
+		494C9B2F28C641F70088A183 /* WeatherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherViewController.swift; path = ../../../home/home/WeatherViewController.swift; sourceTree = "<group>"; };
+		494C9B3028C641F70088A183 /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewModel.swift; path = ../../../home/home/HomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		490CD6A728C5FA7D0029A4B8 /* Frameworks */ = {
+		494C9B2128C641CC0088A183 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				490CD6FF28C61D930029A4B8 /* setting.framework in Frameworks */,
-				B929CA5F28C62C910075DECE /* common.framework in Frameworks */,
-				490CD70828C626840029A4B8 /* common_ui.framework in Frameworks */,
-				490CD70428C61F8D0029A4B8 /* SnapKit in Frameworks */,
+				494C9B3928C642220088A183 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		490CD6A028C5FA7D0029A4B8 = {
+		494C9B1A28C641CC0088A183 = {
 			isa = PBXGroup;
 			children = (
-				490CD6AC28C5FA7D0029A4B8 /* home */,
-				490CD6AB28C5FA7D0029A4B8 /* Products */,
-				490CD6FD28C61D930029A4B8 /* Frameworks */,
+				494C9B2628C641CC0088A183 /* home */,
+				494C9B2528C641CC0088A183 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		490CD6AB28C5FA7D0029A4B8 /* Products */ = {
+		494C9B2528C641CC0088A183 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				490CD6AA28C5FA7D0029A4B8 /* home.framework */,
+				494C9B2428C641CC0088A183 /* home.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		490CD6AC28C5FA7D0029A4B8 /* home */ = {
+		494C9B2628C641CC0088A183 /* home */ = {
 			isa = PBXGroup;
 			children = (
-				490CD6AD28C5FA7D0029A4B8 /* home.h */,
-				490CD6F728C619020029A4B8 /* HomeViewController.swift */,
-				490CD6F928C619080029A4B8 /* HomeViewModel.swift */,
-				490CD71328C632E70029A4B8 /* WeatherViewController.swift */,
+				494C9B2728C641CC0088A183 /* home.h */,
+				494C9B2E28C641F70088A183 /* HomeViewController.swift */,
+				494C9B3028C641F70088A183 /* HomeViewModel.swift */,
+				494C9B2F28C641F70088A183 /* WeatherViewController.swift */,
 			);
 			path = home;
-			sourceTree = "<group>";
-		};
-		490CD6FD28C61D930029A4B8 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				B929CA5E28C62C910075DECE /* common.framework */,
-				490CD70728C626840029A4B8 /* common_ui.framework */,
-				490CD6FE28C61D930029A4B8 /* setting.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		490CD6A528C5FA7D0029A4B8 /* Headers */ = {
+		494C9B1F28C641CC0088A183 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				490CD6AE28C5FA7D0029A4B8 /* home.h in Headers */,
+				494C9B2828C641CC0088A183 /* home.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		490CD6A928C5FA7D0029A4B8 /* home */ = {
+		494C9B2328C641CC0088A183 /* home */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 490CD6B128C5FA7D0029A4B8 /* Build configuration list for PBXNativeTarget "home" */;
+			buildConfigurationList = 494C9B2B28C641CC0088A183 /* Build configuration list for PBXNativeTarget "home" */;
 			buildPhases = (
-				490CD6A528C5FA7D0029A4B8 /* Headers */,
-				490CD6A628C5FA7D0029A4B8 /* Sources */,
-				490CD6A728C5FA7D0029A4B8 /* Frameworks */,
-				490CD6A828C5FA7D0029A4B8 /* Resources */,
-				490CD70128C61D930029A4B8 /* Embed Frameworks */,
+				494C9B1F28C641CC0088A183 /* Headers */,
+				494C9B2028C641CC0088A183 /* Sources */,
+				494C9B2128C641CC0088A183 /* Frameworks */,
+				494C9B2228C641CC0088A183 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -136,28 +90,28 @@
 			);
 			name = home;
 			packageProductDependencies = (
-				490CD70328C61F8D0029A4B8 /* SnapKit */,
+				494C9B3828C642220088A183 /* SnapKit */,
 			);
 			productName = home;
-			productReference = 490CD6AA28C5FA7D0029A4B8 /* home.framework */;
+			productReference = 494C9B2428C641CC0088A183 /* home.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		490CD6A128C5FA7D0029A4B8 /* Project object */ = {
+		494C9B1B28C641CC0088A183 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastUpgradeCheck = 1340;
 				TargetAttributes = {
-					490CD6A928C5FA7D0029A4B8 = {
+					494C9B2328C641CC0088A183 = {
 						CreatedOnToolsVersion = 13.4.1;
 						LastSwiftMigration = 1340;
 					};
 				};
 			};
-			buildConfigurationList = 490CD6A428C5FA7D0029A4B8 /* Build configuration list for PBXProject "home" */;
+			buildConfigurationList = 494C9B1E28C641CC0088A183 /* Build configuration list for PBXProject "home" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -165,21 +119,21 @@
 				en,
 				Base,
 			);
-			mainGroup = 490CD6A028C5FA7D0029A4B8;
+			mainGroup = 494C9B1A28C641CC0088A183;
 			packageReferences = (
-				490CD70228C61F8D0029A4B8 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				494C9B3728C642220088A183 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
-			productRefGroup = 490CD6AB28C5FA7D0029A4B8 /* Products */;
+			productRefGroup = 494C9B2528C641CC0088A183 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				490CD6A928C5FA7D0029A4B8 /* home */,
+				494C9B2328C641CC0088A183 /* home */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		490CD6A828C5FA7D0029A4B8 /* Resources */ = {
+		494C9B2228C641CC0088A183 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -189,20 +143,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		490CD6A628C5FA7D0029A4B8 /* Sources */ = {
+		494C9B2028C641CC0088A183 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				490CD6F828C619020029A4B8 /* HomeViewController.swift in Sources */,
-				490CD71428C632E70029A4B8 /* WeatherViewController.swift in Sources */,
-				490CD6FA28C619080029A4B8 /* HomeViewModel.swift in Sources */,
+				494C9B3128C641F70088A183 /* HomeViewController.swift in Sources */,
+				494C9B3328C641F70088A183 /* HomeViewModel.swift in Sources */,
+				494C9B3228C641F70088A183 /* WeatherViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		490CD6AF28C5FA7D0029A4B8 /* Debug */ = {
+		494C9B2928C641CC0088A183 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -265,7 +219,7 @@
 			};
 			name = Debug;
 		};
-		490CD6B028C5FA7D0029A4B8 /* Release */ = {
+		494C9B2A28C641CC0088A183 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -322,7 +276,7 @@
 			};
 			name = Release;
 		};
-		490CD6B228C5FA7D0029A4B8 /* Debug */ = {
+		494C9B2C28C641CC0088A183 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
@@ -352,7 +306,7 @@
 			};
 			name = Debug;
 		};
-		490CD6B328C5FA7D0029A4B8 /* Release */ = {
+		494C9B2D28C641CC0088A183 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
@@ -384,20 +338,20 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		490CD6A428C5FA7D0029A4B8 /* Build configuration list for PBXProject "home" */ = {
+		494C9B1E28C641CC0088A183 /* Build configuration list for PBXProject "home" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				490CD6AF28C5FA7D0029A4B8 /* Debug */,
-				490CD6B028C5FA7D0029A4B8 /* Release */,
+				494C9B2928C641CC0088A183 /* Debug */,
+				494C9B2A28C641CC0088A183 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		490CD6B128C5FA7D0029A4B8 /* Build configuration list for PBXNativeTarget "home" */ = {
+		494C9B2B28C641CC0088A183 /* Build configuration list for PBXNativeTarget "home" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				490CD6B228C5FA7D0029A4B8 /* Debug */,
-				490CD6B328C5FA7D0029A4B8 /* Release */,
+				494C9B2C28C641CC0088A183 /* Debug */,
+				494C9B2D28C641CC0088A183 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -405,7 +359,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		490CD70228C61F8D0029A4B8 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+		494C9B3728C642220088A183 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
 			requirement = {
@@ -416,12 +370,12 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		490CD70328C61F8D0029A4B8 /* SnapKit */ = {
+		494C9B3828C642220088A183 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 490CD70228C61F8D0029A4B8 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			package = 494C9B3728C642220088A183 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
-	rootObject = 490CD6A128C5FA7D0029A4B8 /* Project object */;
+	rootObject = 494C9B1B28C641CC0088A183 /* Project object */;
 }
