@@ -1,13 +1,13 @@
 //
 //  Entity.swift
-//  common
+//  home
 //
-//  Created by 김민령 on 2022/09/05.
+//  Created by 김상우 on 2022/09/17.
 //
 
 import Foundation
 
-public struct Weather: Decodable {
+public struct CurrentWeather: Decodable {
     let weatherInfo: WeatherInfo
     let tempInfo: TempInfo
     
@@ -74,7 +74,7 @@ struct TempInfo: Decodable{
 }
 
 public struct ForecastWeather: Decodable {
-    let weather: [Weather]
+    let weather: [CurrentWeather]
 
     enum CodingKeys: String, CodingKey {
         case list
@@ -83,7 +83,7 @@ public struct ForecastWeather: Decodable {
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
 
-        self.weather = try container.decode([Weather].self, forKey: .list)
+        self.weather = try container.decode([CurrentWeather].self, forKey: .list)
 
 //        weather = try response.decode([Weather].self, forKey: .weather)
 

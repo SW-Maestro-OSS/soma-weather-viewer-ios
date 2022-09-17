@@ -18,9 +18,9 @@
 //    case thunderstorm = "thunderstorm"
 //    case snow = "snow"
 //    case mist = "mist"
-//    
+
 //    static let arr = [clearSky, fewClouds, scatteredClouds, brokenClouds, showerRain, rain, thunderstorm, snow, mist]
-//    
+
 //}
 //
 //enum StatusKorean: String{
@@ -33,19 +33,17 @@
 //    case thunderstorm = "천둥번개"
 //    case snow = "눈 옴"
 //    case mist = "안개 낌"
-//    
 //    static let arr = [clearSky, fewClouds, scatteredClouds, brokenClouds, showerRain, rain, thunderstorm, snow, mist]
 //}
 //
 //func mappingStatus(status: String) -> String{
 //    var returnValue = ""
-//    
+
 //    for idx in 0..<StatusEnglish.arr.count {
 //        if StatusEnglish.arr[idx].rawValue == status{
 //            returnValue = StatusKorean.arr[idx].rawValue
 //        }
 //    }
-//    
 //    return returnValue
 //}
 //
@@ -58,7 +56,7 @@
 //    let minTemp: String
 //    let maxTemp: String
 //    let humidity: String
-//    
+
 //    public init(weather: Weather){
 //        self.status = mappingStatus(status: weather.weatherInfo.status)
 //        self.avarageTemp = "평균 온도 : \(weather.tempInfo.temp)"

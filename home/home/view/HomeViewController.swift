@@ -17,6 +17,7 @@ open class HomeViewController: UIViewController {
     var backButton = CustomBackButton()
     var changeViewButton = UIButton()
     var settingButton = UIButton()
+    let viewModel = HomeViewModel()
     
     open override func viewDidLoad() {
         super.viewDidLoad()

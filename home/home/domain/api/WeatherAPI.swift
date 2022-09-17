@@ -1,8 +1,8 @@
 //
 //  WeatherAPI.swift
-//  common
+//  home
 //
-//  Created by 김민령 on 2022/09/05.
+//  Created by 김상우 on 2022/09/17.
 //
 
 import Foundation
