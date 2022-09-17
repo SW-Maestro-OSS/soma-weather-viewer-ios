@@ -50,7 +50,7 @@ func mappingStatus(status: String) -> String{
 }
 
 
-public struct TodayWeatherData {
+public struct WeatherData {
 //    let icon: UIImage
 //    let date: String
     let status: String
