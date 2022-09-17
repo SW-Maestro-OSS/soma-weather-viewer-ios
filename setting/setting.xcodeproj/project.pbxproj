@@ -52,10 +52,26 @@
 			isa = PBXGroup;
 			children = (
 				490CD6C128C5FA8D0029A4B8 /* setting.h */,
-				490CD6FB28C61D5F0029A4B8 /* SettingViewController.swift */,
-				B950BBCB28D5D45D0038B40E /* SettingViewModel.swift */,
+				B950BBD028D5DA560038B40E /* view */,
+				B950BBD128D5DA630038B40E /* viewmodel */,
 			);
 			path = setting;
+			sourceTree = "<group>";
+		};
+		B950BBD028D5DA560038B40E /* view */ = {
+			isa = PBXGroup;
+			children = (
+				490CD6FB28C61D5F0029A4B8 /* SettingViewController.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		B950BBD128D5DA630038B40E /* viewmodel */ = {
+			isa = PBXGroup;
+			children = (
+				B950BBCB28D5D45D0038B40E /* SettingViewModel.swift */,
+			);
+			path = viewmodel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
