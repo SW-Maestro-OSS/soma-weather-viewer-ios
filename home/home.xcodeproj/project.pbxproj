@@ -7,8 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		49177D1A28D5CD9C0022184B /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 49177D1928D5CD9C0022184B /* RxMoya */; };
 		494C9B2828C641CC0088A183 /* home.h in Headers */ = {isa = PBXBuildFile; fileRef = 494C9B2728C641CC0088A183 /* home.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		494C9B3928C642220088A183 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 494C9B3828C642220088A183 /* SnapKit */; };
+		49DE78E328D5BFC2003B6521 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DE78E228D5BFC2003B6521 /* Entity.swift */; };
+		49DE78E628D5C00E003B6521 /* WeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DE78E528D5C00E003B6521 /* WeatherAPI.swift */; };
+		49DE78E828D5C02A003B6521 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DE78E728D5C02A003B6521 /* WeatherData.swift */; };
+		49DE78EA28D5C041003B6521 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DE78E928D5C041003B6521 /* WeatherService.swift */; };
+		49DE78ED28D5C3A0003B6521 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 49DE78EC28D5C3A0003B6521 /* RxCocoa */; };
+		49DE78F028D5C7F6003B6521 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 49DE78EF28D5C7F6003B6521 /* Moya */; };
 		B929CA6628C645AF0075DECE /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B929CA6328C645AF0075DECE /* HomeViewModel.swift */; };
 		B929CA6728C645AF0075DECE /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B929CA6428C645AF0075DECE /* WeatherViewController.swift */; };
 		B929CA6828C645AF0075DECE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B929CA6528C645AF0075DECE /* HomeViewController.swift */; };
@@ -36,6 +43,10 @@
 /* Begin PBXFileReference section */
 		494C9B2428C641CC0088A183 /* home.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = home.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		494C9B2728C641CC0088A183 /* home.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = home.h; sourceTree = "<group>"; };
+		49DE78E228D5BFC2003B6521 /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
+		49DE78E528D5C00E003B6521 /* WeatherAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAPI.swift; sourceTree = "<group>"; };
+		49DE78E728D5C02A003B6521 /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
+		49DE78E928D5C041003B6521 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		B929CA6328C645AF0075DECE /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		B929CA6428C645AF0075DECE /* WeatherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		B929CA6528C645AF0075DECE /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -48,8 +59,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49177D1A28D5CD9C0022184B /* RxMoya in Frameworks */,
 				494C9B3928C642220088A183 /* SnapKit in Frameworks */,
 				B929CA6F28C64BCF0075DECE /* common_ui.framework in Frameworks */,
+				49DE78ED28D5C3A0003B6521 /* RxCocoa in Frameworks */,
+				49DE78F028D5C7F6003B6521 /* Moya in Frameworks */,
 				B929CA6B28C645C70075DECE /* common.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -77,12 +91,64 @@
 		494C9B2628C641CC0088A183 /* home */ = {
 			isa = PBXGroup;
 			children = (
+				49DE78DE28D5B9F1003B6521 /* view */,
+				49DE78DF28D5B9F4003B6521 /* viewmodel */,
+				49DE78DD28D5B9AB003B6521 /* domain */,
 				494C9B2728C641CC0088A183 /* home.h */,
-				B929CA6528C645AF0075DECE /* HomeViewController.swift */,
-				B929CA6328C645AF0075DECE /* HomeViewModel.swift */,
-				B929CA6428C645AF0075DECE /* WeatherViewController.swift */,
 			);
 			path = home;
+			sourceTree = "<group>";
+		};
+		49DE78DD28D5B9AB003B6521 /* domain */ = {
+			isa = PBXGroup;
+			children = (
+				49DE78E428D5BFFA003B6521 /* api */,
+				49DE78E128D5BAFC003B6521 /* service */,
+				49DE78E028D5BAEF003B6521 /* entity */,
+			);
+			path = domain;
+			sourceTree = "<group>";
+		};
+		49DE78DE28D5B9F1003B6521 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				B929CA6528C645AF0075DECE /* HomeViewController.swift */,
+				B929CA6428C645AF0075DECE /* WeatherViewController.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		49DE78DF28D5B9F4003B6521 /* viewmodel */ = {
+			isa = PBXGroup;
+			children = (
+				B929CA6328C645AF0075DECE /* HomeViewModel.swift */,
+			);
+			path = viewmodel;
+			sourceTree = "<group>";
+		};
+		49DE78E028D5BAEF003B6521 /* entity */ = {
+			isa = PBXGroup;
+			children = (
+				49DE78E228D5BFC2003B6521 /* Entity.swift */,
+				49DE78E728D5C02A003B6521 /* WeatherData.swift */,
+			);
+			path = entity;
+			sourceTree = "<group>";
+		};
+		49DE78E128D5BAFC003B6521 /* service */ = {
+			isa = PBXGroup;
+			children = (
+				49DE78E928D5C041003B6521 /* WeatherService.swift */,
+			);
+			path = service;
+			sourceTree = "<group>";
+		};
+		49DE78E428D5BFFA003B6521 /* api */ = {
+			isa = PBXGroup;
+			children = (
+				49DE78E528D5C00E003B6521 /* WeatherAPI.swift */,
+			);
+			path = api;
 			sourceTree = "<group>";
 		};
 		B929CA6928C645C70075DECE /* Frameworks */ = {
@@ -125,6 +191,9 @@
 			name = home;
 			packageProductDependencies = (
 				494C9B3828C642220088A183 /* SnapKit */,
+				49DE78EC28D5C3A0003B6521 /* RxCocoa */,
+				49DE78EF28D5C7F6003B6521 /* Moya */,
+				49177D1928D5CD9C0022184B /* RxMoya */,
 			);
 			productName = home;
 			productReference = 494C9B2428C641CC0088A183 /* home.framework */;
@@ -156,6 +225,8 @@
 			mainGroup = 494C9B1A28C641CC0088A183;
 			packageReferences = (
 				494C9B3728C642220088A183 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				49DE78EB28D5C3A0003B6521 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				49DE78EE28D5C7F6003B6521 /* XCRemoteSwiftPackageReference "Moya" */,
 			);
 			productRefGroup = 494C9B2528C641CC0088A183 /* Products */;
 			projectDirPath = "";
@@ -181,9 +252,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49DE78E328D5BFC2003B6521 /* Entity.swift in Sources */,
 				B929CA6628C645AF0075DECE /* HomeViewModel.swift in Sources */,
+				49DE78E628D5C00E003B6521 /* WeatherAPI.swift in Sources */,
 				B929CA6728C645AF0075DECE /* WeatherViewController.swift in Sources */,
+				49DE78E828D5C02A003B6521 /* WeatherData.swift in Sources */,
 				B929CA6828C645AF0075DECE /* HomeViewController.swift in Sources */,
+				49DE78EA28D5C041003B6521 /* WeatherService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,6 +268,7 @@
 		494C9B2928C641CC0088A183 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -256,6 +332,7 @@
 		494C9B2A28C641CC0088A183 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -401,13 +478,44 @@
 				kind = branch;
 			};
 		};
+		49DE78EB28D5C3A0003B6521 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		49DE78EE28D5C7F6003B6521 /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		49177D1928D5CD9C0022184B /* RxMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 49DE78EE28D5C7F6003B6521 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = RxMoya;
+		};
 		494C9B3828C642220088A183 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 494C9B3728C642220088A183 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		49DE78EC28D5C3A0003B6521 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 49DE78EB28D5C3A0003B6521 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		49DE78EF28D5C7F6003B6521 /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 49DE78EE28D5C7F6003B6521 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
