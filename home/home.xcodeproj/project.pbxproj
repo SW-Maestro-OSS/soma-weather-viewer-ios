@@ -23,6 +23,7 @@
 		B929CA6C28C645C70075DECE /* common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B929CA6A28C645C70075DECE /* common.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B929CA6F28C64BCF0075DECE /* common_ui.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B929CA6E28C64BCF0075DECE /* common_ui.framework */; };
 		B929CA7028C64BCF0075DECE /* common_ui.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B929CA6E28C64BCF0075DECE /* common_ui.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B950BBD428D5DDC20038B40E /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = B950BBD328D5DDC20038B40E /* Alamofire */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -60,6 +61,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				49177D1A28D5CD9C0022184B /* RxMoya in Frameworks */,
+				B950BBD428D5DDC20038B40E /* Alamofire in Frameworks */,
 				494C9B3928C642220088A183 /* SnapKit in Frameworks */,
 				B929CA6F28C64BCF0075DECE /* common_ui.framework in Frameworks */,
 				49DE78ED28D5C3A0003B6521 /* RxCocoa in Frameworks */,
@@ -194,6 +196,7 @@
 				49DE78EC28D5C3A0003B6521 /* RxCocoa */,
 				49DE78EF28D5C7F6003B6521 /* Moya */,
 				49177D1928D5CD9C0022184B /* RxMoya */,
+				B950BBD328D5DDC20038B40E /* Alamofire */,
 			);
 			productName = home;
 			productReference = 494C9B2428C641CC0088A183 /* home.framework */;
@@ -227,6 +230,7 @@
 				494C9B3728C642220088A183 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				49DE78EB28D5C3A0003B6521 /* XCRemoteSwiftPackageReference "RxSwift" */,
 				49DE78EE28D5C7F6003B6521 /* XCRemoteSwiftPackageReference "Moya" */,
+				B950BBD228D5DDC20038B40E /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 494C9B2528C641CC0088A183 /* Products */;
 			projectDirPath = "";
@@ -494,6 +498,14 @@
 				kind = branch;
 			};
 		};
+		B950BBD228D5DDC20038B40E /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -516,6 +528,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 49DE78EE28D5C7F6003B6521 /* XCRemoteSwiftPackageReference "Moya" */;
 			productName = Moya;
+		};
+		B950BBD328D5DDC20038B40E /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B950BBD228D5DDC20038B40E /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

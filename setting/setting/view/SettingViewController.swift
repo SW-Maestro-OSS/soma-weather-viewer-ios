@@ -10,12 +10,16 @@ import SnapKit
 
 open class SettingViewController: UIViewController {
     
+    let viewModel = SettingViewModel()
+    
+    //MARK: property init
     private var temperatureOptionStackView = UIStackView()
     private var temperatureOptionLabel = UILabel()
     private var celsiusButton = UIButton()
     private var celsiusLabel = UILabel()
     private var fahrenheitButton = UIButton()
     private var fahrenheitLabel = UILabel()
+    private var temperCheck = CustomCheck()
     
     private var homeOptionStackView = UIStackView()
     private var homeOptionLabel = UILabel()
@@ -23,9 +27,11 @@ open class SettingViewController: UIViewController {
     private var todayLabel = UILabel()
     private var fiveDaysButton = UIButton()
     private var fiveDaysLabel = UILabel()
+    private var homeViewCheck = CustomCheck()
     
-    private var check = UIImage(systemName: "checkmark")
     
+    var temperatureMode = UserDefaults.temperature()
+    var homeViewMode = UserDefaults.homeView()
     
     open override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +46,7 @@ open class SettingViewController: UIViewController {
         self.navigationController?.setNavigationBarHidden(false, animated: false)
     }
     
+    //MARK: view attribute
     func initAttribute() {
         view.backgroundColor = .white
         
@@ -56,6 +63,8 @@ open class SettingViewController: UIViewController {
             button.layer.borderWidth = 1
             button.layer.borderColor = UIColor.darkGray.cgColor
 //            button.addSubview(celsiusLabel)
+            button.tag = Temperature.celsius.rawValue
+            button.addTarget(self, action: #selector(temperatureOptionTouched), for: .touchUpInside)
             
             return button
         }()
@@ -74,6 +83,8 @@ open class SettingViewController: UIViewController {
             button.layer.borderWidth = 1
             button.layer.borderColor = UIColor.darkGray.cgColor
 //            button.addSubview(fahrenheitLabel)
+            button.tag = Temperature.fahrenheit.rawValue
+            button.addTarget(self, action: #selector(temperatureOptionTouched), for: .touchUpInside)
             
             return button
         }()
@@ -94,6 +105,7 @@ open class SettingViewController: UIViewController {
             st.axis = .vertical
             st.distribution = .fillEqually
             st.alignment = .fill
+            st.spacing = 1
             
             return st
         }()
@@ -111,6 +123,8 @@ open class SettingViewController: UIViewController {
             button.layer.borderWidth = 1
             button.layer.borderColor = UIColor.darkGray.cgColor
 //            button.addSubview(todayLabel)
+            button.tag = HomeView.today.rawValue
+            button.addTarget(self, action: #selector(homeViewOptionTouched), for: .touchUpInside)
             
             return button
         }()
@@ -128,6 +142,8 @@ open class SettingViewController: UIViewController {
            button.backgroundColor = .gray
            button.layer.borderWidth = 1
            button.layer.borderColor = UIColor.darkGray.cgColor
+           button.tag = HomeView.fiveDays.rawValue
+           button.addTarget(self, action: #selector(homeViewOptionTouched), for: .touchUpInside)
 //           button.addSubview(fiveDaysLabel)
            
            return button
@@ -148,12 +164,14 @@ open class SettingViewController: UIViewController {
             st.axis = .vertical
             st.distribution = .fillEqually
             st.alignment = .fill
+            st.spacing = 1
 
             return st
         }()
         
     }
     
+    //MARK: auto layout
     func initUI(){
         
         [temperatureOptionLabel, celsiusButton, fahrenheitButton].forEach { temperatureOptionStackView.addArrangedSubview($0) }
@@ -178,7 +196,6 @@ open class SettingViewController: UIViewController {
             make.trailing.equalToSuperview()
         }
         
-        
         celsiusLabel.snp.makeConstraints { make in
             make.leading.equalTo(celsiusButton.snp.leading).offset(10)
             make.centerY.equalToSuperview()
@@ -199,7 +216,61 @@ open class SettingViewController: UIViewController {
             make.centerY.equalToSuperview()
         }
         
+        changeTemperatureOption(viewModel.getTemperatureOption())
+        changeHomeViewOption(viewModel.getHomeViewOption())
+        
     }
+    
+    func checkConstraints(_ check: CustomCheck){
+        check.snp.makeConstraints { make in
+            make.trailing.equalToSuperview().offset(-10)
+            make.centerY.equalToSuperview()
+        }
+    }
+    
+    func changeTemperatureOption(_ option: Temperature){
+        switch option {
+        case .celsius:
+            celsiusButton.addSubview(temperCheck)
+        case .fahrenheit:
+            fahrenheitButton.addSubview(temperCheck)
+        }
+        checkConstraints(temperCheck)
+    }
+    
+    func changeHomeViewOption(_ option: HomeView) {
+        
+        switch option {
+        case .today:
+            todayButton.addSubview(homeViewCheck)
+        case .fiveDays:
+            fiveDaysButton.addSubview(homeViewCheck)
+        }
+        
+        checkConstraints(homeViewCheck)
+    }
+    
+    @objc func temperatureOptionTouched(button: UIButton) {
+        let option = viewModel.IntToTemperature(button.tag)
+        viewModel.setTemperatureOption(option)
+        
+        changeTemperatureOption(option)
+        
+        temperatureMode = viewModel.getTemperatureOption()
+        print("🤖 Now temperature mode : \(temperatureMode)")
+    }
+    
+    @objc func homeViewOptionTouched(button: UIButton){
+        let option = viewModel.IntToHomeView(button.tag)
+        viewModel.setHomeViewOption(option)
+        
+        changeHomeViewOption(option)
+        
+        homeViewMode = viewModel.getHomeViewOption()
+        print("🤖 Now homeView mode : \(homeViewMode)")
+        
+    }
+
     
 }
 
