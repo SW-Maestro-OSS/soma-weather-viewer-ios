@@ -30,12 +30,14 @@ open class SettingViewController: UIViewController {
     private var homeViewCheck = CustomCheck()
     
     
-    var temperatureMode = Temperature(rawValue: UserDefaults.tempreatureOption)!
-    var homeViewMode = HomeView(rawValue: UserDefaults.homeViewOption)!
+    var temperatureMode : Temperature?
+    var homeViewMode : HomeView?
     
     open override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        self.temperatureMode = viewModel.IntToTemperature()
+        self.homeViewMode = viewModel.IntToHomeView()
         
         initAttribute()
         initUI()
