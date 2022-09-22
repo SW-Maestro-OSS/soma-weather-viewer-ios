@@ -8,6 +8,9 @@
 import Foundation
 
 class TemperatureConverter {
+    static let shared = TemperatureConverter()
+    
+    private init(){}
     
     func fahrenheitToCelsius(temper: Float) -> Float{
         // 섭씨온도 = (화씨온도 - 32) ÷ 1.8

@@ -12,6 +12,7 @@
 		B929CA5D28C623090075DECE /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = B929CA5C28C623090075DECE /* Moya */; };
 		B929CA6228C634770075DECE /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B929CA6128C634770075DECE /* WeatherData.swift */; };
 		B93B79CD28D7299D004D903C /* TemperatureConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93B79CC28D7299D004D903C /* TemperatureConverter.swift */; };
+		B93B79E828DC2383004D903C /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93B79E728DC2383004D903C /* UserDefaultsManager.swift */; };
 		B950BBCF28D5D9B60038B40E /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = B950BBCE28D5D9B60038B40E /* Alamofire */; };
 		B9651C2D28C612C800AB7585 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9651C2C28C612C800AB7585 /* Entity.swift */; };
 /* End PBXBuildFile section */
@@ -22,6 +23,7 @@
 		B929CA5928C622D70075DECE /* WeatherAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAPI.swift; sourceTree = "<group>"; };
 		B929CA6128C634770075DECE /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
 		B93B79CC28D7299D004D903C /* TemperatureConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureConverter.swift; sourceTree = "<group>"; };
+		B93B79E728DC2383004D903C /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		B9651C2C28C612C800AB7585 /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -63,6 +65,7 @@
 				B9651C2C28C612C800AB7585 /* Entity.swift */,
 				B929CA6128C634770075DECE /* WeatherData.swift */,
 				B93B79CC28D7299D004D903C /* TemperatureConverter.swift */,
+				B93B79E728DC2383004D903C /* UserDefaultsManager.swift */,
 			);
 			path = common;
 			sourceTree = "<group>";
@@ -164,6 +167,7 @@
 			files = (
 				B9651C2D28C612C800AB7585 /* Entity.swift in Sources */,
 				B929CA6228C634770075DECE /* WeatherData.swift in Sources */,
+				B93B79E828DC2383004D903C /* UserDefaultsManager.swift in Sources */,
 				B929CA5A28C622D70075DECE /* WeatherAPI.swift in Sources */,
 				B93B79CD28D7299D004D903C /* TemperatureConverter.swift in Sources */,
 			);
