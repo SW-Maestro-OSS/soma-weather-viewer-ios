@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import common
 
 public enum Temperature : Int {
     case celsius //섭씨
@@ -18,21 +19,10 @@ public enum HomeView: Int {
 }
 
 extension UserDefaults {
-    static func setTemperature(_ option: Temperature){
-        UserDefaults.standard.set(option.rawValue, forKey: "Temperature")
-    }
     
-    static func temperature() -> Temperature {
-        let getItem = UserDefaults.standard.integer(forKey: "Temperature")
-        return Temperature(rawValue: getItem)!
-    }
+    @UserDefaultsManager(key: "Temperature", defaultValue: Temperature.celsius.rawValue)
+    static var tempreatureOption: Int
     
-    static func setHomeView(_ option: HomeView) {
-        UserDefaults.standard.set(option.rawValue, forKey: "HomeView")
-    }
-    
-    static func homeView() -> HomeView {
-        let getItem = UserDefaults.standard.integer(forKey: "HomeView")
-        return HomeView(rawValue: getItem)!
-    }
+    @UserDefaultsManager(key: "HomeView", defaultValue: HomeView.today.rawValue)
+    static var homeViewOption: Int
 }

@@ -30,8 +30,8 @@ open class SettingViewController: UIViewController {
     private var homeViewCheck = CustomCheck()
     
     
-    var temperatureMode = UserDefaults.temperature()
-    var homeViewMode = UserDefaults.homeView()
+    var temperatureMode = Temperature(rawValue: UserDefaults.tempreatureOption)!
+    var homeViewMode = HomeView(rawValue: UserDefaults.homeViewOption)!
     
     open override func viewDidLoad() {
         super.viewDidLoad()
@@ -216,8 +216,8 @@ open class SettingViewController: UIViewController {
             make.centerY.equalToSuperview()
         }
         
-        changeTemperatureOption(viewModel.getTemperatureOption())
-        changeHomeViewOption(viewModel.getHomeViewOption())
+        changeTemperatureOption(viewModel.IntToTemperature())
+        changeHomeViewOption(viewModel.IntToHomeView())
         
     }
     
@@ -251,22 +251,20 @@ open class SettingViewController: UIViewController {
     }
     
     @objc func temperatureOptionTouched(button: UIButton) {
-        let option = viewModel.IntToTemperature(button.tag)
-        viewModel.setTemperatureOption(option)
+        UserDefaults.tempreatureOption = button.tag
         
-        changeTemperatureOption(option)
+        changeTemperatureOption(viewModel.IntToTemperature())
         
-        temperatureMode = viewModel.getTemperatureOption()
+        temperatureMode = viewModel.IntToTemperature()
         print("🤖 Now temperature mode : \(temperatureMode)")
     }
     
     @objc func homeViewOptionTouched(button: UIButton){
-        let option = viewModel.IntToHomeView(button.tag)
-        viewModel.setHomeViewOption(option)
+        UserDefaults.homeViewOption = button.tag
         
-        changeHomeViewOption(option)
+        changeHomeViewOption(viewModel.IntToHomeView())
         
-        homeViewMode = viewModel.getHomeViewOption()
+        homeViewMode = viewModel.IntToHomeView()
         print("🤖 Now homeView mode : \(homeViewMode)")
         
     }

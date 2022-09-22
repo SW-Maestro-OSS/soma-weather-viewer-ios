@@ -11,10 +11,26 @@
 		490CD6FC28C61D5F0029A4B8 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490CD6FB28C61D5F0029A4B8 /* SettingViewController.swift */; };
 		B93B79C728D7083C004D903C /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93B79C628D7083C004D903C /* CoreData.swift */; };
 		B93B79CB28D71730004D903C /* CustomCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93B79CA28D71730004D903C /* CustomCheck.swift */; };
+		B93B79EB28DC279F004D903C /* common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B93B79EA28DC279F004D903C /* common.framework */; };
+		B93B79EC28DC279F004D903C /* common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B93B79EA28DC279F004D903C /* common.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B950BBCA28D5C59D0038B40E /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = B950BBC928D5C59D0038B40E /* SnapKit */; };
 		B950BBCC28D5D45D0038B40E /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B950BBCB28D5D45D0038B40E /* SettingViewModel.swift */; };
 		B950BBD728D5DE590038B40E /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = B950BBD628D5DE590038B40E /* Alamofire */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B93B79ED28DC279F004D903C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B93B79EC28DC279F004D903C /* common.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		490CD6BE28C5FA8D0029A4B8 /* setting.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = setting.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -22,6 +38,7 @@
 		490CD6FB28C61D5F0029A4B8 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		B93B79C628D7083C004D903C /* CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
 		B93B79CA28D71730004D903C /* CustomCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCheck.swift; sourceTree = "<group>"; };
+		B93B79EA28DC279F004D903C /* common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B950BBCB28D5D45D0038B40E /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -31,6 +48,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B950BBCA28D5C59D0038B40E /* SnapKit in Frameworks */,
+				B93B79EB28DC279F004D903C /* common.framework in Frameworks */,
 				B950BBD728D5DE590038B40E /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -43,6 +61,7 @@
 			children = (
 				490CD6C028C5FA8D0029A4B8 /* setting */,
 				490CD6BF28C5FA8D0029A4B8 /* Products */,
+				B93B79E928DC279F004D903C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,6 +90,14 @@
 				B93B79C628D7083C004D903C /* CoreData.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		B93B79E928DC279F004D903C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B93B79EA28DC279F004D903C /* common.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		B950BBD028D5DA560038B40E /* view */ = {
@@ -112,6 +139,7 @@
 				490CD6BA28C5FA8D0029A4B8 /* Sources */,
 				490CD6BB28C5FA8D0029A4B8 /* Frameworks */,
 				490CD6BC28C5FA8D0029A4B8 /* Resources */,
+				B93B79ED28DC279F004D903C /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
