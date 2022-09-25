@@ -12,7 +12,7 @@
     {
       "identity" : "moya",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/Moya/Moya.git",
+      "location" : "https://github.com/Moya/Moya",
       "state" : {
         "branch" : "master",
         "revision" : "77e67c0b25ebd785c6fe56cad544885f67c8c2c4"
@@ -43,6 +43,15 @@
       "state" : {
         "branch" : "develop",
         "revision" : "07c5d1f6044701d97e94dc11157259e8811977be"
+      }
+    },
+    {
+      "identity" : "swinject",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Swinject/Swinject.git",
+      "state" : {
+        "branch" : "master",
+        "revision" : "ff1e34be3fe5da2129d5b05e150233a1d6cf9300"
       }
     }
   ],
