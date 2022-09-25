@@ -23,6 +23,8 @@
 		490CD6F528C618D60029A4B8 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 490CD6F428C618D60029A4B8 /* SnapKit */; };
 		494C9B3528C641FD0088A183 /* home.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 494C9B3428C641FD0088A183 /* home.framework */; };
 		494C9B3628C641FD0088A183 /* home.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 494C9B3428C641FD0088A183 /* home.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B950BBDA28D5DE880038B40E /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = B950BBD928D5DE880038B40E /* Alamofire */; };
+		B950BBDD28D5DEC40038B40E /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = B950BBDC28D5DEC40038B40E /* Moya */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -65,6 +67,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				490CD6E828C5FABE0029A4B8 /* common_ui.framework in Frameworks */,
+				B950BBDA28D5DE880038B40E /* Alamofire in Frameworks */,
+				B950BBDD28D5DEC40038B40E /* Moya in Frameworks */,
 				494C9B3528C641FD0088A183 /* home.framework in Frameworks */,
 				490CD6EB28C5FAC10029A4B8 /* soma_foundation.framework in Frameworks */,
 				490CD6F528C618D60029A4B8 /* SnapKit in Frameworks */,
@@ -146,6 +150,8 @@
 			name = "soma-weather-viewer-ios";
 			packageProductDependencies = (
 				490CD6F428C618D60029A4B8 /* SnapKit */,
+				B950BBD928D5DE880038B40E /* Alamofire */,
+				B950BBDC28D5DEC40038B40E /* Moya */,
 			);
 			productName = "soma-weather-viewer-ios";
 			productReference = 490CD66128C5FA540029A4B8 /* soma-weather-viewer-ios.app */;
@@ -177,6 +183,8 @@
 			mainGroup = 490CD65828C5FA540029A4B8;
 			packageReferences = (
 				490CD6F328C618D60029A4B8 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				B950BBD828D5DE880038B40E /* XCRemoteSwiftPackageReference "Alamofire" */,
+				B950BBDB28D5DEC40038B40E /* XCRemoteSwiftPackageReference "Moya" */,
 			);
 			productRefGroup = 490CD66228C5FA540029A4B8 /* Products */;
 			projectDirPath = "";
@@ -345,7 +353,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = GR2P6HT7LF;
+				DEVELOPMENT_TEAM = PF6QF5WXTK;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "soma-weather-viewer-ios/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -372,7 +380,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = GR2P6HT7LF;
+				DEVELOPMENT_TEAM = PF6QF5WXTK;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "soma-weather-viewer-ios/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -424,6 +432,22 @@
 				kind = branch;
 			};
 		};
+		B950BBD828D5DE880038B40E /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		B950BBDB28D5DEC40038B40E /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -431,6 +455,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 490CD6F328C618D60029A4B8 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		B950BBD928D5DE880038B40E /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B950BBD828D5DE880038B40E /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		B950BBDC28D5DEC40038B40E /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B950BBDB28D5DEC40038B40E /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
