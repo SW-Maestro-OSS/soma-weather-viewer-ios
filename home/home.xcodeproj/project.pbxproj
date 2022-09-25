@@ -10,6 +10,9 @@
 		49177D1A28D5CD9C0022184B /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 49177D1928D5CD9C0022184B /* RxMoya */; };
 		494C9B2828C641CC0088A183 /* home.h in Headers */ = {isa = PBXBuildFile; fileRef = 494C9B2728C641CC0088A183 /* home.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		494C9B3928C642220088A183 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 494C9B3828C642220088A183 /* SnapKit */; };
+		49B87B2F28E0736000A91335 /* setting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49B87B2E28E0736000A91335 /* setting.framework */; };
+		49B87B3028E0736000A91335 /* setting.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 49B87B2E28E0736000A91335 /* setting.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		49B87B3C28E075D400A91335 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 49B87B3B28E075D400A91335 /* RxSwift */; };
 		49DE78E328D5BFC2003B6521 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DE78E228D5BFC2003B6521 /* Entity.swift */; };
 		49DE78E628D5C00E003B6521 /* WeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DE78E528D5C00E003B6521 /* WeatherAPI.swift */; };
 		49DE78E828D5C02A003B6521 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DE78E728D5C02A003B6521 /* WeatherData.swift */; };
@@ -33,6 +36,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				49B87B3028E0736000A91335 /* setting.framework in Embed Frameworks */,
 				B929CA6C28C645C70075DECE /* common.framework in Embed Frameworks */,
 				B929CA7028C64BCF0075DECE /* common_ui.framework in Embed Frameworks */,
 			);
@@ -44,6 +48,7 @@
 /* Begin PBXFileReference section */
 		494C9B2428C641CC0088A183 /* home.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = home.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		494C9B2728C641CC0088A183 /* home.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = home.h; sourceTree = "<group>"; };
+		49B87B2E28E0736000A91335 /* setting.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = setting.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		49DE78E228D5BFC2003B6521 /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
 		49DE78E528D5C00E003B6521 /* WeatherAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAPI.swift; sourceTree = "<group>"; };
 		49DE78E728D5C02A003B6521 /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
@@ -60,9 +65,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49B87B3C28E075D400A91335 /* RxSwift in Frameworks */,
 				49177D1A28D5CD9C0022184B /* RxMoya in Frameworks */,
 				B950BBD428D5DDC20038B40E /* Alamofire in Frameworks */,
 				494C9B3928C642220088A183 /* SnapKit in Frameworks */,
+				49B87B2F28E0736000A91335 /* setting.framework in Frameworks */,
 				B929CA6F28C64BCF0075DECE /* common_ui.framework in Frameworks */,
 				49DE78ED28D5C3A0003B6521 /* RxCocoa in Frameworks */,
 				49DE78F028D5C7F6003B6521 /* Moya in Frameworks */,
@@ -156,6 +163,7 @@
 		B929CA6928C645C70075DECE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				49B87B2E28E0736000A91335 /* setting.framework */,
 				B929CA6E28C64BCF0075DECE /* common_ui.framework */,
 				B929CA6A28C645C70075DECE /* common.framework */,
 			);
@@ -197,6 +205,7 @@
 				49DE78EF28D5C7F6003B6521 /* Moya */,
 				49177D1928D5CD9C0022184B /* RxMoya */,
 				B950BBD328D5DDC20038B40E /* Alamofire */,
+				49B87B3B28E075D400A91335 /* RxSwift */,
 			);
 			productName = home;
 			productReference = 494C9B2428C641CC0088A183 /* home.framework */;
@@ -231,6 +240,7 @@
 				49DE78EB28D5C3A0003B6521 /* XCRemoteSwiftPackageReference "RxSwift" */,
 				49DE78EE28D5C7F6003B6521 /* XCRemoteSwiftPackageReference "Moya" */,
 				B950BBD228D5DDC20038B40E /* XCRemoteSwiftPackageReference "Alamofire" */,
+				49B87B3A28E075D400A91335 /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = 494C9B2528C641CC0088A183 /* Products */;
 			projectDirPath = "";
@@ -398,7 +408,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = PF6QF5WXTK;
+				DEVELOPMENT_TEAM = GR2P6HT7LF;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -428,7 +438,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = PF6QF5WXTK;
+				DEVELOPMENT_TEAM = GR2P6HT7LF;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -482,6 +492,14 @@
 				kind = branch;
 			};
 		};
+		49B87B3A28E075D400A91335 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		49DE78EB28D5C3A0003B6521 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
@@ -518,6 +536,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 494C9B3728C642220088A183 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		49B87B3B28E075D400A91335 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 49DE78EB28D5C3A0003B6521 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
 		};
 		49DE78EC28D5C3A0003B6521 /* RxCocoa */ = {
 			isa = XCSwiftPackageProductDependency;

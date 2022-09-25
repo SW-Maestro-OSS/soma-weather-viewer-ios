@@ -7,22 +7,35 @@
 
 import Foundation
 import Moya
+import common
 import RxSwift
 
-open class HomeViewModel {
+
+protocol HomeViewModelProtocol {
+    func getWeather(lat: Float, lon: Float) -> Void
+}
+
+
+open class HomeViewModel: HomeViewModelProtocol {
     let disposeBag = DisposeBag()
     
     public init() {
-        getWeather(lat: 36, lon: 128)
+        
     }
 
     func getWeather(lat: Float, lon: Float){
-        WeatherService.shared.get5dayWeahter(lat: lat, lon: lon)
+
+        // 이제 이걸 dependencies 로 묶어서 DI 주입해주자 !
+        let usecase = GetForcastWeatherUseCase()
+        usecase.weatherRepository = WeatherRepository()
+        
+        usecase.excute(lat: lat, lon: lon)
             .subscribe(onSuccess: { response in
-                print("뷰모델 결과 = \(response)")
+                print("뷰모델 response = \(response)")
             }, onFailure: { err in
-                print("뷰모델 에러 = \(err)")
+                print("뷰모델 err = \(err)")
             }).disposed(by: disposeBag)
+        
     }
     
 }

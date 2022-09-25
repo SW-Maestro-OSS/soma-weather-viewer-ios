@@ -11,13 +11,23 @@ import SnapKit
 import common_ui
 import common
 
-open class HomeViewController: UIViewController {
+open class HomeViewController: UIViewController, Dependable {
+    
+    public typealias T = Dependencies
+    
+    public struct Dependencies {
+        var viewModel: HomeViewModelProtocol
+        
+        public init(viewModel: HomeViewModel) {
+            self.viewModel = viewModel
+        }
+    }
+    
+    public var dependencies: Dependencies!
     
     var titleLabel = UILabel()
-    var backButton = CustomBackButton()
     var changeViewButton = UIButton()
     var settingButton = UIButton()
-    let viewModel = HomeViewModel()
     
     open override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,10 +35,7 @@ open class HomeViewController: UIViewController {
         initAttribute()
         initUI()
         
-        //Test mock
-//        let test = HomeViewModel()
-//        test.today(lat: 44.34, lon: 10.99)
-//        test.forecast(lat: 44.34, lon: 10.99)
+        dependencies.viewModel.getWeather(lat: 36, lon: 128)
         
     }
     
