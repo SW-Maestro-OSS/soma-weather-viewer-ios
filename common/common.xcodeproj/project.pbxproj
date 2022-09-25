@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		490CD68628C5FA620029A4B8 /* common.h in Headers */ = {isa = PBXBuildFile; fileRef = 490CD68528C5FA620029A4B8 /* common.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		49B87AFC28E066EB00A91335 /* Dependable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B87AFB28E066EB00A91335 /* Dependable.swift */; };
 		B929CA5A28C622D70075DECE /* WeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B929CA5928C622D70075DECE /* WeatherAPI.swift */; };
 		B929CA5D28C623090075DECE /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = B929CA5C28C623090075DECE /* Moya */; };
 		B929CA6228C634770075DECE /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B929CA6128C634770075DECE /* WeatherData.swift */; };
@@ -20,6 +21,7 @@
 /* Begin PBXFileReference section */
 		490CD68228C5FA620029A4B8 /* common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		490CD68528C5FA620029A4B8 /* common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = common.h; sourceTree = "<group>"; };
+		49B87AFB28E066EB00A91335 /* Dependable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependable.swift; sourceTree = "<group>"; };
 		B929CA5928C622D70075DECE /* WeatherAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAPI.swift; sourceTree = "<group>"; };
 		B929CA6128C634770075DECE /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
 		B93B79CC28D7299D004D903C /* TemperatureConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureConverter.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				B929CA6128C634770075DECE /* WeatherData.swift */,
 				B93B79CC28D7299D004D903C /* TemperatureConverter.swift */,
 				B93B79E728DC2383004D903C /* UserDefaultsManager.swift */,
+				49B87AFB28E066EB00A91335 /* Dependable.swift */,
 			);
 			path = common;
 			sourceTree = "<group>";
@@ -168,6 +171,7 @@
 				B9651C2D28C612C800AB7585 /* Entity.swift in Sources */,
 				B929CA6228C634770075DECE /* WeatherData.swift in Sources */,
 				B93B79E828DC2383004D903C /* UserDefaultsManager.swift in Sources */,
+				49B87AFC28E066EB00A91335 /* Dependable.swift in Sources */,
 				B929CA5A28C622D70075DECE /* WeatherAPI.swift in Sources */,
 				B93B79CD28D7299D004D903C /* TemperatureConverter.swift in Sources */,
 			);

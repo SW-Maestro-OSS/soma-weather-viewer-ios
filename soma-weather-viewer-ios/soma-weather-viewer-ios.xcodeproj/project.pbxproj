@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		490CD66528C5FA540029A4B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490CD66428C5FA540029A4B8 /* AppDelegate.swift */; };
-		490CD66728C5FA540029A4B8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490CD66628C5FA540029A4B8 /* SceneDelegate.swift */; };
-		490CD66928C5FA540029A4B8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490CD66828C5FA540029A4B8 /* ViewController.swift */; };
 		490CD66E28C5FA540029A4B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 490CD66D28C5FA540029A4B8 /* Assets.xcassets */; };
 		490CD67128C5FA540029A4B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 490CD66F28C5FA540029A4B8 /* LaunchScreen.storyboard */; };
 		490CD6E228C5FAB30029A4B8 /* setting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 490CD6E128C5FAB30029A4B8 /* setting.framework */; };
@@ -23,6 +20,9 @@
 		490CD6F528C618D60029A4B8 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 490CD6F428C618D60029A4B8 /* SnapKit */; };
 		494C9B3528C641FD0088A183 /* home.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 494C9B3428C641FD0088A183 /* home.framework */; };
 		494C9B3628C641FD0088A183 /* home.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 494C9B3428C641FD0088A183 /* home.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		49B87AF928E066AD00A91335 /* AppFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B87AF728E066AD00A91335 /* AppFlowCoordinator.swift */; };
+		49B87AFA28E066AD00A91335 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B87AF828E066AD00A91335 /* AppDelegate.swift */; };
+		49B87AFF28E0673600A91335 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 49B87AFE28E0673600A91335 /* Swinject */; };
 		B950BBDA28D5DE880038B40E /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = B950BBD928D5DE880038B40E /* Alamofire */; };
 		B950BBDD28D5DEC40038B40E /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = B950BBDC28D5DEC40038B40E /* Moya */; };
 /* End PBXBuildFile section */
@@ -47,9 +47,6 @@
 
 /* Begin PBXFileReference section */
 		490CD66128C5FA540029A4B8 /* soma-weather-viewer-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "soma-weather-viewer-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		490CD66428C5FA540029A4B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		490CD66628C5FA540029A4B8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		490CD66828C5FA540029A4B8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		490CD66D28C5FA540029A4B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		490CD67028C5FA540029A4B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		490CD67228C5FA540029A4B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -59,6 +56,8 @@
 		490CD6E728C5FABE0029A4B8 /* common_ui.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = common_ui.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		490CD6EA28C5FAC10029A4B8 /* soma_foundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = soma_foundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		494C9B3428C641FD0088A183 /* home.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = home.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		49B87AF728E066AD00A91335 /* AppFlowCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppFlowCoordinator.swift; sourceTree = "<group>"; };
+		49B87AF828E066AD00A91335 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +70,7 @@
 				B950BBDD28D5DEC40038B40E /* Moya in Frameworks */,
 				494C9B3528C641FD0088A183 /* home.framework in Frameworks */,
 				490CD6EB28C5FAC10029A4B8 /* soma_foundation.framework in Frameworks */,
+				49B87AFF28E0673600A91335 /* Swinject in Frameworks */,
 				490CD6F528C618D60029A4B8 /* SnapKit in Frameworks */,
 				490CD6E528C5FAB70029A4B8 /* common.framework in Frameworks */,
 				490CD6E228C5FAB30029A4B8 /* setting.framework in Frameworks */,
@@ -100,8 +100,7 @@
 		490CD66328C5FA540029A4B8 /* soma-weather-viewer-ios */ = {
 			isa = PBXGroup;
 			children = (
-				490CD6F028C6150B0029A4B8 /* app */,
-				490CD66828C5FA540029A4B8 /* ViewController.swift */,
+				49B87AF628E066AD00A91335 /* app */,
 				490CD66D28C5FA540029A4B8 /* Assets.xcassets */,
 				490CD66F28C5FA540029A4B8 /* LaunchScreen.storyboard */,
 				490CD67228C5FA540029A4B8 /* Info.plist */,
@@ -122,13 +121,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		490CD6F028C6150B0029A4B8 /* app */ = {
+		49B87AF628E066AD00A91335 /* app */ = {
 			isa = PBXGroup;
 			children = (
-				490CD66428C5FA540029A4B8 /* AppDelegate.swift */,
-				490CD66628C5FA540029A4B8 /* SceneDelegate.swift */,
+				49B87AF728E066AD00A91335 /* AppFlowCoordinator.swift */,
+				49B87AF828E066AD00A91335 /* AppDelegate.swift */,
 			);
-			path = app;
+			name = app;
+			path = "../../../백업용폴더/soma-weather-viewer-ios/app";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,6 +152,7 @@
 				490CD6F428C618D60029A4B8 /* SnapKit */,
 				B950BBD928D5DE880038B40E /* Alamofire */,
 				B950BBDC28D5DEC40038B40E /* Moya */,
+				49B87AFE28E0673600A91335 /* Swinject */,
 			);
 			productName = "soma-weather-viewer-ios";
 			productReference = 490CD66128C5FA540029A4B8 /* soma-weather-viewer-ios.app */;
@@ -185,6 +186,7 @@
 				490CD6F328C618D60029A4B8 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				B950BBD828D5DE880038B40E /* XCRemoteSwiftPackageReference "Alamofire" */,
 				B950BBDB28D5DEC40038B40E /* XCRemoteSwiftPackageReference "Moya" */,
+				49B87AFD28E0673600A91335 /* XCRemoteSwiftPackageReference "Swinject" */,
 			);
 			productRefGroup = 490CD66228C5FA540029A4B8 /* Products */;
 			projectDirPath = "";
@@ -212,9 +214,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				490CD66928C5FA540029A4B8 /* ViewController.swift in Sources */,
-				490CD66528C5FA540029A4B8 /* AppDelegate.swift in Sources */,
-				490CD66728C5FA540029A4B8 /* SceneDelegate.swift in Sources */,
+				49B87AFA28E066AD00A91335 /* AppDelegate.swift in Sources */,
+				49B87AF928E066AD00A91335 /* AppFlowCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,6 +433,14 @@
 				kind = branch;
 			};
 		};
+		49B87AFD28E0673600A91335 /* XCRemoteSwiftPackageReference "Swinject" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Swinject/Swinject.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		B950BBD828D5DE880038B40E /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
@@ -455,6 +464,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 490CD6F328C618D60029A4B8 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		49B87AFE28E0673600A91335 /* Swinject */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 49B87AFD28E0673600A91335 /* XCRemoteSwiftPackageReference "Swinject" */;
+			productName = Swinject;
 		};
 		B950BBD928D5DE880038B40E /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
