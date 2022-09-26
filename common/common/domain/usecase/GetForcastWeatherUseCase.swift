@@ -10,7 +10,7 @@ import RxSwift
 
 open class GetForcastWeatherUseCase: WeatherUseCaseProtocol {
 
-    public var weatherRepository: WeatherRepositoryProtocol
+    private var weatherRepository: WeatherRepositoryProtocol
     
     public init(weatherRepository: WeatherRepositoryProtocol) {
         self.weatherRepository = weatherRepository

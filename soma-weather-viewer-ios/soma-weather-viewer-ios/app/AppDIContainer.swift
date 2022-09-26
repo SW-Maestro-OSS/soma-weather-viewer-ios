@@ -12,20 +12,8 @@ import common
 final class AppDIContainer {
     init() { }
     
-    func makeHomeViewController() -> HomeViewController {
-        return HomeViewController(viewModel: makeHomeViewModel())
-    }
-    
-    func makeHomeViewModel() -> HomeViewModelProtocol {
-        return HomeViewModel(weatherUseCase: makeForcastWeahterUseCase())
-    }
-    
-    func makeForcastWeahterUseCase() -> WeatherUseCaseProtocol {
-        return GetForcastWeatherUseCase(weatherRepository: makeWeatherRepository())
-    }
-    
-    func makeWeatherRepository() -> WeatherRepositoryProtocol {
-        return WeatherRepository()
+    func makeHomeDIContainer() -> HomeDIContainer {
+        return HomeDIContainer()
     }
     
 }

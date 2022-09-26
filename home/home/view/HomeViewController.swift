@@ -11,7 +11,7 @@ import SnapKit
 import common_ui
 import common
 
-open class HomeViewController: UIViewController {
+open class HomeViewController: BaseViewController {
 
     private let viewModel: HomeViewModelProtocol
     
@@ -21,7 +21,7 @@ open class HomeViewController: UIViewController {
     
     public init(viewModel: HomeViewModelProtocol) {
         self.viewModel = viewModel
-        super.init(nibName: nil, bundle: nil)
+        super.init()
     }
     
     open override func viewDidLoad() {
@@ -122,8 +122,8 @@ open class HomeViewController: UIViewController {
     }
     
     
-    required public init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+//    required public init?(coder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
     
 }
