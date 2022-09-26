@@ -9,11 +9,12 @@ import Foundation
 import RxSwift
 
 open class GetForcastWeatherUseCase: WeatherUseCaseProtocol {
-    typealias T = ForecastWeather
+
+    public var weatherRepository: WeatherRepositoryProtocol
     
-    public init() {}
-    
-    public var weatherRepository: WeatherRepositoryProtocol!
+    public init(weatherRepository: WeatherRepositoryProtocol) {
+        self.weatherRepository = weatherRepository
+    }
     
     public func excute(lat: Float, lon: Float) -> Single<ForecastWeather> {
         return weatherRepository.getForecastWeather(lat: lat, lon: lon)

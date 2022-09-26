@@ -11,25 +11,22 @@ import common
 import RxSwift
 
 
-protocol HomeViewModelProtocol {
+public protocol HomeViewModelProtocol {
     func getWeather(lat: Float, lon: Float) -> Void
 }
 
 
 open class HomeViewModel: HomeViewModelProtocol {
-    let disposeBag = DisposeBag()
     
-    public init() {
-        
+    let disposeBag = DisposeBag()
+    private let getForcastWeatherUseCase: WeatherUseCaseProtocol
+    
+    public init(weatherUseCase: WeatherUseCaseProtocol) {
+        self.getForcastWeatherUseCase = weatherUseCase
     }
 
-    func getWeather(lat: Float, lon: Float){
-
-        // 이제 이걸 dependencies 로 묶어서 DI 주입해주자 !
-        let usecase = GetForcastWeatherUseCase()
-        usecase.weatherRepository = WeatherRepository()
-        
-        usecase.excute(lat: lat, lon: lon)
+    public func getWeather(lat: Float, lon: Float){
+        getForcastWeatherUseCase.excute(lat: lat, lon: lon)
             .subscribe(onSuccess: { response in
                 print("뷰모델 response = \(response)")
             }, onFailure: { err in

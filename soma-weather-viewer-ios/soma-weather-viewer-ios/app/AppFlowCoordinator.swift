@@ -7,37 +7,23 @@
 
 import Foundation
 import UIKit
-import Swinject
 import home
+import common
 
 final class AppFlowCoordinator {
     
     var navigationController: UINavigationController
-    private let appDIContainer: Container
+    private let appDIContainer: AppDIContainer
     
     init(navigationController: UINavigationController,
-         appDIContainer: Container) {
+         appDIContainer: AppDIContainer) {
         self.navigationController = navigationController
         self.appDIContainer = appDIContainer
     }
     
-    func regiter() {
-        appDIContainer.register(HomeViewModel.self) { _ in
-            HomeViewModel()
-        }
-        
-        appDIContainer.register(HomeViewController.self) { r in
-            let dependencies = HomeViewController.Dependencies(viewModel: r.resolve(HomeViewModel.self)!)
-            let homeViewController = HomeViewController()
-            homeViewController.dependencies = dependencies
-            return homeViewController
-        }
-    }
-    
     func start() {
-        regiter()
-        
-        navigationController.pushViewController(appDIContainer.resolve(HomeViewController.self)!, animated: false)
+        let homeViewController = appDIContainer.makeHomeViewController()
+        navigationController.pushViewController(homeViewController, animated: false)
     }
     
 }
