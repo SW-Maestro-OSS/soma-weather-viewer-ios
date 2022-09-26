@@ -18,14 +18,12 @@
 		49B87B2928E072B400A91335 /* GetCurrentWeatherUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B87B2828E072B400A91335 /* GetCurrentWeatherUseCase.swift */; };
 		49B87B2B28E072BF00A91335 /* GetForcastWeatherUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B87B2A28E072BF00A91335 /* GetForcastWeatherUseCase.swift */; };
 		49B87B2D28E072EF00A91335 /* Dependable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B87B2C28E072EF00A91335 /* Dependable.swift */; };
-		49B87B3228E0741500A91335 /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 49B87B3128E0741500A91335 /* RxMoya */; };
 		49B87B3528E0747700A91335 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 49B87B3428E0747700A91335 /* RxCocoa */; };
 		49B87B3728E0747700A91335 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 49B87B3628E0747700A91335 /* RxSwift */; };
-		B929CA5D28C623090075DECE /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = B929CA5C28C623090075DECE /* Moya */; };
+		49B87B6528E1490300A91335 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 49B87B6428E1490300A91335 /* Alamofire */; };
+		49B87B6928E1491300A91335 /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 49B87B6828E1491300A91335 /* RxMoya */; };
 		B93B79CD28D7299D004D903C /* TemperatureConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93B79CC28D7299D004D903C /* TemperatureConverter.swift */; };
 		B93B79E828DC2383004D903C /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93B79E728DC2383004D903C /* UserDefaultsManager.swift */; };
-		B950BBCF28D5D9B60038B40E /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = B950BBCE28D5D9B60038B40E /* Alamofire */; };
-		B9651C2D28C612C800AB7585 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9651C2C28C612C800AB7585 /* Entity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,7 +41,6 @@
 		49B87B2C28E072EF00A91335 /* Dependable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependable.swift; sourceTree = "<group>"; };
 		B93B79CC28D7299D004D903C /* TemperatureConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureConverter.swift; sourceTree = "<group>"; };
 		B93B79E728DC2383004D903C /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
-		B9651C2C28C612C800AB7585 /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,11 +48,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49B87B3228E0741500A91335 /* RxMoya in Frameworks */,
-				B929CA5D28C623090075DECE /* Moya in Frameworks */,
+				49B87B6528E1490300A91335 /* Alamofire in Frameworks */,
 				49B87B3728E0747700A91335 /* RxSwift in Frameworks */,
+				49B87B6928E1491300A91335 /* RxMoya in Frameworks */,
 				49B87B3528E0747700A91335 /* RxCocoa in Frameworks */,
-				B950BBCF28D5D9B60038B40E /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,7 +81,6 @@
 				49B87B1A28E0717800A91335 /* domain */,
 				49B87B1328E070E100A91335 /* data */,
 				490CD68528C5FA620029A4B8 /* common.h */,
-				B9651C2C28C612C800AB7585 /* Entity.swift */,
 				B93B79CC28D7299D004D903C /* TemperatureConverter.swift */,
 				B93B79E728DC2383004D903C /* UserDefaultsManager.swift */,
 			);
@@ -121,8 +116,8 @@
 		49B87B1A28E0717800A91335 /* domain */ = {
 			isa = PBXGroup;
 			children = (
-				49B87B2728E072A700A91335 /* usecase */,
 				49B87B2028E0725500A91335 /* entity */,
+				49B87B2728E072A700A91335 /* usecase */,
 				49B87B1B28E0717E00A91335 /* interface */,
 			);
 			path = domain;
@@ -192,11 +187,10 @@
 			);
 			name = common;
 			packageProductDependencies = (
-				B929CA5C28C623090075DECE /* Moya */,
-				B950BBCE28D5D9B60038B40E /* Alamofire */,
-				49B87B3128E0741500A91335 /* RxMoya */,
 				49B87B3428E0747700A91335 /* RxCocoa */,
 				49B87B3628E0747700A91335 /* RxSwift */,
+				49B87B6428E1490300A91335 /* Alamofire */,
+				49B87B6828E1491300A91335 /* RxMoya */,
 			);
 			productName = common;
 			productReference = 490CD68228C5FA620029A4B8 /* common.framework */;
@@ -230,6 +224,11 @@
 				B929CA5828C620B30075DECE /* XCRemoteSwiftPackageReference "Moya" */,
 				B950BBCD28D5D9B60038B40E /* XCRemoteSwiftPackageReference "Alamofire" */,
 				49B87B3328E0747700A91335 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				49B87B4928E1483300A91335 /* XCRemoteSwiftPackageReference "Moya" */,
+				49B87B4E28E1486E00A91335 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				49B87B5128E1488600A91335 /* XCRemoteSwiftPackageReference "Moya" */,
+				49B87B5628E148B200A91335 /* XCRemoteSwiftPackageReference "Moya" */,
+				49B87B5F28E148ED00A91335 /* XCRemoteSwiftPackageReference "Moya" */,
 			);
 			productRefGroup = 490CD68328C5FA620029A4B8 /* Products */;
 			projectDirPath = "";
@@ -260,7 +259,6 @@
 				49B87B2B28E072BF00A91335 /* GetForcastWeatherUseCase.swift in Sources */,
 				49B87B1928E0712800A91335 /* WeatherAPI.swift in Sources */,
 				49B87B2628E072A000A91335 /* ForecastWeather.swift in Sources */,
-				B9651C2D28C612C800AB7585 /* Entity.swift in Sources */,
 				49B87B2D28E072EF00A91335 /* Dependable.swift in Sources */,
 				49B87B1D28E0718C00A91335 /* WeatherRepositoryProtocol.swift in Sources */,
 				B93B79E828DC2383004D903C /* UserDefaultsManager.swift in Sources */,
@@ -485,6 +483,46 @@
 				kind = branch;
 			};
 		};
+		49B87B4928E1483300A91335 /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		49B87B4E28E1486E00A91335 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		49B87B5128E1488600A91335 /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		49B87B5628E148B200A91335 /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		49B87B5F28E148ED00A91335 /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
 		B929CA5828C620B30075DECE /* XCRemoteSwiftPackageReference "Moya" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Moya/Moya.git";
@@ -504,11 +542,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		49B87B3128E0741500A91335 /* RxMoya */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B929CA5828C620B30075DECE /* XCRemoteSwiftPackageReference "Moya" */;
-			productName = RxMoya;
-		};
 		49B87B3428E0747700A91335 /* RxCocoa */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 49B87B3328E0747700A91335 /* XCRemoteSwiftPackageReference "RxSwift" */;
@@ -519,15 +552,15 @@
 			package = 49B87B3328E0747700A91335 /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxSwift;
 		};
-		B929CA5C28C623090075DECE /* Moya */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B929CA5828C620B30075DECE /* XCRemoteSwiftPackageReference "Moya" */;
-			productName = Moya;
-		};
-		B950BBCE28D5D9B60038B40E /* Alamofire */ = {
+		49B87B6428E1490300A91335 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = B950BBCD28D5D9B60038B40E /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		49B87B6828E1491300A91335 /* RxMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B929CA5828C620B30075DECE /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = RxMoya;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

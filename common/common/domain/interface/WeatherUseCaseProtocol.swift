@@ -8,7 +8,6 @@
 import Foundation
 import RxSwift
 
-protocol WeatherUseCaseProtocol {
-    associatedtype T
-    func excute(lat: Float, lon: Float) -> Single<T>
+public protocol WeatherUseCaseProtocol {
+    func excute(lat: Float, lon: Float) -> Single<ForecastWeather>
 }

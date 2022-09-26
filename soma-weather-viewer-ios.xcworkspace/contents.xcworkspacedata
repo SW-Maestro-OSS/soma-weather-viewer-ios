@@ -5,18 +5,18 @@
       location = "group:soma-weather-viewer-ios/soma-weather-viewer-ios.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:soma-foundation/soma-foundation.xcodeproj">
+      location = "group:home/home.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:setting/setting.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:home/home.xcodeproj">
+      location = "group:common/common.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:common-ui/common-ui.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:common/common.xcodeproj">
+      location = "group:soma-foundation/soma-foundation.xcodeproj">
    </FileRef>
 </Workspace>

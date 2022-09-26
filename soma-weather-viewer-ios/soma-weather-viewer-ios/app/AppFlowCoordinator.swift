@@ -7,37 +7,26 @@
 
 import Foundation
 import UIKit
-import Swinject
 import home
+import common
 
 final class AppFlowCoordinator {
     
     var navigationController: UINavigationController
-    private let appDIContainer: Container
+    private let appDIContainer: AppDIContainer
     
     init(navigationController: UINavigationController,
-         appDIContainer: Container) {
+         appDIContainer: AppDIContainer) {
         self.navigationController = navigationController
         self.appDIContainer = appDIContainer
     }
     
-    func regiter() {
-        appDIContainer.register(HomeViewModel.self) { _ in
-            HomeViewModel()
-        }
-        
-        appDIContainer.register(HomeViewController.self) { r in
-            let dependencies = HomeViewController.Dependencies(viewModel: r.resolve(HomeViewModel.self)!)
-            let homeViewController = HomeViewController()
-            homeViewController.dependencies = dependencies
-            return homeViewController
-        }
-    }
-    
     func start() {
-        regiter()
+        // In App Flow we can check if user needs to login, if yes we would run login flow
+        let homeDIContainer = appDIContainer.makeHomeDIContainer()
+        let homeViewController = homeDIContainer.makeHomeViewController()
         
-        navigationController.pushViewController(appDIContainer.resolve(HomeViewController.self)!, animated: false)
+        navigationController.pushViewController(homeViewController, animated: false)
     }
     
 }

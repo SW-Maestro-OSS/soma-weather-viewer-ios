@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		490CD66528C5FA540029A4B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490CD66428C5FA540029A4B8 /* AppDelegate.swift */; };
-		490CD66928C5FA540029A4B8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490CD66828C5FA540029A4B8 /* ViewController.swift */; };
 		490CD66E28C5FA540029A4B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 490CD66D28C5FA540029A4B8 /* Assets.xcassets */; };
 		490CD67128C5FA540029A4B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 490CD66F28C5FA540029A4B8 /* LaunchScreen.storyboard */; };
 		490CD6E228C5FAB30029A4B8 /* setting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 490CD6E128C5FAB30029A4B8 /* setting.framework */; };
@@ -19,16 +18,16 @@
 		490CD6E928C5FABE0029A4B8 /* common_ui.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 490CD6E728C5FABE0029A4B8 /* common_ui.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		490CD6EB28C5FAC10029A4B8 /* soma_foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 490CD6EA28C5FAC10029A4B8 /* soma_foundation.framework */; };
 		490CD6EC28C5FAC10029A4B8 /* soma_foundation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 490CD6EA28C5FAC10029A4B8 /* soma_foundation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		490CD6F528C618D60029A4B8 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 490CD6F428C618D60029A4B8 /* SnapKit */; };
+		493A103D28E1E9CF00FF0DCB /* HomeDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493A103C28E1E9CF00FF0DCB /* HomeDIContainer.swift */; };
 		494C9B3528C641FD0088A183 /* home.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 494C9B3428C641FD0088A183 /* home.framework */; };
 		494C9B3628C641FD0088A183 /* home.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 494C9B3428C641FD0088A183 /* home.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		49B87B3F28E0761D00A91335 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 49B87B3E28E0761D00A91335 /* RxSwift */; };
-		49B87B4128E0763900A91335 /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 49B87B4028E0763900A91335 /* RxMoya */; };
-		49B87B4328E0763E00A91335 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 49B87B4228E0763E00A91335 /* RxCocoa */; };
 		49B87B4528E07C7E00A91335 /* AppFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B87B4428E07C7E00A91335 /* AppFlowCoordinator.swift */; };
 		49B87B4828E07D2400A91335 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 49B87B4728E07D2400A91335 /* Swinject */; };
-		B950BBDA28D5DE880038B40E /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = B950BBD928D5DE880038B40E /* Alamofire */; };
-		B950BBDD28D5DEC40038B40E /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = B950BBDC28D5DEC40038B40E /* Moya */; };
+		49B87B6B28E1496700A91335 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 49B87B6A28E1496700A91335 /* RxSwift */; };
+		49B87B6D28E1497E00A91335 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 49B87B6C28E1497E00A91335 /* SnapKit */; };
+		49B87B6F28E1498800A91335 /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 49B87B6E28E1498800A91335 /* RxMoya */; };
+		49B87B7128E149A300A91335 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 49B87B7028E149A300A91335 /* RxCocoa */; };
+		49B87B7328E157D000A91335 /* AppDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B87B7228E157D000A91335 /* AppDIContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -52,7 +51,6 @@
 /* Begin PBXFileReference section */
 		490CD66128C5FA540029A4B8 /* soma-weather-viewer-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "soma-weather-viewer-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		490CD66428C5FA540029A4B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		490CD66828C5FA540029A4B8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		490CD66D28C5FA540029A4B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		490CD67028C5FA540029A4B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		490CD67228C5FA540029A4B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -61,8 +59,10 @@
 		490CD6E428C5FAB70029A4B8 /* common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		490CD6E728C5FABE0029A4B8 /* common_ui.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = common_ui.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		490CD6EA28C5FAC10029A4B8 /* soma_foundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = soma_foundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		493A103C28E1E9CF00FF0DCB /* HomeDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDIContainer.swift; sourceTree = "<group>"; };
 		494C9B3428C641FD0088A183 /* home.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = home.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		49B87B4428E07C7E00A91335 /* AppFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlowCoordinator.swift; sourceTree = "<group>"; };
+		49B87B7228E157D000A91335 /* AppDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDIContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,18 +70,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49B87B4128E0763900A91335 /* RxMoya in Frameworks */,
-				49B87B3F28E0761D00A91335 /* RxSwift in Frameworks */,
-				49B87B4328E0763E00A91335 /* RxCocoa in Frameworks */,
 				490CD6E828C5FABE0029A4B8 /* common_ui.framework in Frameworks */,
-				B950BBDA28D5DE880038B40E /* Alamofire in Frameworks */,
-				B950BBDD28D5DEC40038B40E /* Moya in Frameworks */,
+				49B87B6D28E1497E00A91335 /* SnapKit in Frameworks */,
+				49B87B7128E149A300A91335 /* RxCocoa in Frameworks */,
 				494C9B3528C641FD0088A183 /* home.framework in Frameworks */,
 				490CD6EB28C5FAC10029A4B8 /* soma_foundation.framework in Frameworks */,
-				490CD6F528C618D60029A4B8 /* SnapKit in Frameworks */,
 				490CD6E528C5FAB70029A4B8 /* common.framework in Frameworks */,
 				490CD6E228C5FAB30029A4B8 /* setting.framework in Frameworks */,
+				49B87B6F28E1498800A91335 /* RxMoya in Frameworks */,
 				49B87B4828E07D2400A91335 /* Swinject in Frameworks */,
+				49B87B6B28E1496700A91335 /* RxSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,7 +107,6 @@
 			isa = PBXGroup;
 			children = (
 				490CD6F028C6150B0029A4B8 /* app */,
-				490CD66828C5FA540029A4B8 /* ViewController.swift */,
 				490CD66D28C5FA540029A4B8 /* Assets.xcassets */,
 				490CD66F28C5FA540029A4B8 /* LaunchScreen.storyboard */,
 				490CD67228C5FA540029A4B8 /* Info.plist */,
@@ -135,6 +132,8 @@
 			children = (
 				490CD66428C5FA540029A4B8 /* AppDelegate.swift */,
 				49B87B4428E07C7E00A91335 /* AppFlowCoordinator.swift */,
+				49B87B7228E157D000A91335 /* AppDIContainer.swift */,
+				493A103C28E1E9CF00FF0DCB /* HomeDIContainer.swift */,
 			);
 			path = app;
 			sourceTree = "<group>";
@@ -157,13 +156,11 @@
 			);
 			name = "soma-weather-viewer-ios";
 			packageProductDependencies = (
-				490CD6F428C618D60029A4B8 /* SnapKit */,
-				B950BBD928D5DE880038B40E /* Alamofire */,
-				B950BBDC28D5DEC40038B40E /* Moya */,
-				49B87B3E28E0761D00A91335 /* RxSwift */,
-				49B87B4028E0763900A91335 /* RxMoya */,
-				49B87B4228E0763E00A91335 /* RxCocoa */,
 				49B87B4728E07D2400A91335 /* Swinject */,
+				49B87B6A28E1496700A91335 /* RxSwift */,
+				49B87B6C28E1497E00A91335 /* SnapKit */,
+				49B87B6E28E1498800A91335 /* RxMoya */,
+				49B87B7028E149A300A91335 /* RxCocoa */,
 			);
 			productName = "soma-weather-viewer-ios";
 			productReference = 490CD66128C5FA540029A4B8 /* soma-weather-viewer-ios.app */;
@@ -227,8 +224,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				49B87B4528E07C7E00A91335 /* AppFlowCoordinator.swift in Sources */,
-				490CD66928C5FA540029A4B8 /* ViewController.swift in Sources */,
+				493A103D28E1E9CF00FF0DCB /* HomeDIContainer.swift in Sources */,
 				490CD66528C5FA540029A4B8 /* AppDelegate.swift in Sources */,
+				49B87B7328E157D000A91335 /* AppDIContainer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -481,40 +479,30 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		490CD6F428C618D60029A4B8 /* SnapKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 490CD6F328C618D60029A4B8 /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = SnapKit;
-		};
-		49B87B3E28E0761D00A91335 /* RxSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 49B87B3D28E0761D00A91335 /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxSwift;
-		};
-		49B87B4028E0763900A91335 /* RxMoya */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B950BBDB28D5DEC40038B40E /* XCRemoteSwiftPackageReference "Moya" */;
-			productName = RxMoya;
-		};
-		49B87B4228E0763E00A91335 /* RxCocoa */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 49B87B3D28E0761D00A91335 /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxCocoa;
-		};
 		49B87B4728E07D2400A91335 /* Swinject */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 49B87B4628E07D2400A91335 /* XCRemoteSwiftPackageReference "Swinject" */;
 			productName = Swinject;
 		};
-		B950BBD928D5DE880038B40E /* Alamofire */ = {
+		49B87B6A28E1496700A91335 /* RxSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = B950BBD828D5DE880038B40E /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
+			package = 49B87B3D28E0761D00A91335 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
 		};
-		B950BBDC28D5DEC40038B40E /* Moya */ = {
+		49B87B6C28E1497E00A91335 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 490CD6F328C618D60029A4B8 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		49B87B6E28E1498800A91335 /* RxMoya */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = B950BBDB28D5DEC40038B40E /* XCRemoteSwiftPackageReference "Moya" */;
-			productName = Moya;
+			productName = RxMoya;
+		};
+		49B87B7028E149A300A91335 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 49B87B3D28E0761D00A91335 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
