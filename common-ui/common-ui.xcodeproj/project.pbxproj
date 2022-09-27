@@ -14,8 +14,25 @@
 		490CD71228C6323C0029A4B8 /* WeatherTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490CD71128C6323C0029A4B8 /* WeatherTableView.swift */; };
 		490CD71628C63AFA0029A4B8 /* CustomBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490CD71528C63AFA0029A4B8 /* CustomBackButton.swift */; };
 		493A103B28E1E43E00FF0DCB /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493A103A28E1E43E00FF0DCB /* BaseViewController.swift */; };
+		493A104C28E2E0BD00FF0DCB /* common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 493A104B28E2E0BD00FF0DCB /* common.framework */; };
+		493A104D28E2E0BD00FF0DCB /* common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 493A104B28E2E0BD00FF0DCB /* common.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		493A105628E2E8F100FF0DCB /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 493A105528E2E8F100FF0DCB /* Kingfisher */; };
 		494C9B3B28C64AEC0088A183 /* WeatherCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494C9B3A28C64AEC0088A183 /* WeatherCollectionCell.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		493A104E28E2E0BD00FF0DCB /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				493A104D28E2E0BD00FF0DCB /* common.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		490CD69628C5FA6C0029A4B8 /* common_ui.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = common_ui.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -25,6 +42,7 @@
 		490CD71128C6323C0029A4B8 /* WeatherTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTableView.swift; sourceTree = "<group>"; };
 		490CD71528C63AFA0029A4B8 /* CustomBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBackButton.swift; sourceTree = "<group>"; };
 		493A103A28E1E43E00FF0DCB /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		493A104B28E2E0BD00FF0DCB /* common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		494C9B3A28C64AEC0088A183 /* WeatherCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCollectionCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -33,7 +51,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				493A105628E2E8F100FF0DCB /* Kingfisher in Frameworks */,
 				490CD70C28C627A00029A4B8 /* SnapKit in Frameworks */,
+				493A104C28E2E0BD00FF0DCB /* common.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -45,6 +65,7 @@
 			children = (
 				490CD69828C5FA6C0029A4B8 /* common-ui */,
 				490CD69728C5FA6C0029A4B8 /* Products */,
+				493A104A28E2E0BD00FF0DCB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -70,6 +91,14 @@
 			path = "common-ui";
 			sourceTree = "<group>";
 		};
+		493A104A28E2E0BD00FF0DCB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				493A104B28E2E0BD00FF0DCB /* common.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -92,6 +121,7 @@
 				490CD69228C5FA6C0029A4B8 /* Sources */,
 				490CD69328C5FA6C0029A4B8 /* Frameworks */,
 				490CD69428C5FA6C0029A4B8 /* Resources */,
+				493A104E28E2E0BD00FF0DCB /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -100,6 +130,7 @@
 			name = "common-ui";
 			packageProductDependencies = (
 				490CD70B28C627A00029A4B8 /* SnapKit */,
+				493A105528E2E8F100FF0DCB /* Kingfisher */,
 			);
 			productName = "common-ui";
 			productReference = 490CD69628C5FA6C0029A4B8 /* common_ui.framework */;
@@ -131,6 +162,7 @@
 			mainGroup = 490CD68C28C5FA6C0029A4B8;
 			packageReferences = (
 				490CD70A28C627A00029A4B8 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				493A105428E2E8F100FF0DCB /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 490CD69728C5FA6C0029A4B8 /* Products */;
 			projectDirPath = "";
@@ -379,6 +411,14 @@
 				kind = branch;
 			};
 		};
+		493A105428E2E8F100FF0DCB /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -386,6 +426,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 490CD70A28C627A00029A4B8 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		493A105528E2E8F100FF0DCB /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 493A105428E2E8F100FF0DCB /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

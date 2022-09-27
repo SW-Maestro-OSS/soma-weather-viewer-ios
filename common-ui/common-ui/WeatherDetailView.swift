@@ -7,6 +7,8 @@
 
 import UIKit
 import SnapKit
+import Kingfisher
+import common
 
 open class WeatherDetailView: UIView {
     var dateLabel = UILabel()
@@ -16,11 +18,25 @@ open class WeatherDetailView: UIView {
     var tempMaxLabel = UILabel()
     var tempMinLabel = UILabel()
     var humidityLabel = UILabel()
+    let viewHeight: CGFloat = 300
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
         initAttribute()
         initUI()
+    }
+    
+    public func bind(forecastWeather: ForecastWeather?) {
+        guard let data = forecastWeather?.list[0] else { return }
+        if let url = URL(string: data.weatherIcon) {
+            weatherImageView.kf.setImage(with: url)
+        }
+        dateLabel.text = data.date
+        descriptionLabel.text = data.weatherStatus
+        tempLabel.text = "현재 온도 : \(TemperatureConverter.shared.kelvinToCelsius(temper: data.temp))°C"
+        tempMaxLabel.text = "최고 온도 : \(data.tempMax)°C"
+        tempMinLabel.text = "최저 온도 : \(data.tempMin)°C"
+        humidityLabel.text = "습도 : \(data.humidity)%"
     }
 
     func initAttribute() {
@@ -31,7 +47,7 @@ open class WeatherDetailView: UIView {
         
         dateLabel = {
             let label = UILabel()
-            label.text = "2022년 9월 5일"
+            label.text = " "
             label.textColor = .black
             label.font = UIFont.boldSystemFont(ofSize: 20)
             return label
@@ -39,55 +55,60 @@ open class WeatherDetailView: UIView {
         
         weatherImageView = {
             let imageview = UIImageView()
-            imageview.backgroundColor = .lightGray
+            imageview.backgroundColor = .white
             imageview.contentMode = .scaleAspectFit
             return imageview
         }()
         
         descriptionLabel = {
             let label = UILabel()
-            label.text = "태풍 오는 중"
+            label.text = ""
             label.textColor = .black
-            label.font = UIFont.boldSystemFont(ofSize: 16)
+            label.font = UIFont.boldSystemFont(ofSize: 20)
             return label
         }()
         
         tempLabel = {
             let label = UILabel()
-            label.text = "평균 온도 29'C"
+            label.text = ""
             label.textColor = .black
-            label.font = UIFont.boldSystemFont(ofSize: 16)
+            label.font = UIFont.systemFont(ofSize: 16)
             return label
         }()
         
         tempMaxLabel = {
             let label = UILabel()
-            label.text = "최고 온도 32'C"
+            label.text = ""
             label.textColor = .black
-            label.font = UIFont.boldSystemFont(ofSize: 16)
+            label.font = UIFont.systemFont(ofSize: 16)
             return label
         }()
         
         tempMinLabel = {
             let label = UILabel()
-            label.text = "최저 온도 28'C"
+            label.text = ""
             label.textColor = .black
-            label.font = UIFont.boldSystemFont(ofSize: 16)
+            label.font = UIFont.systemFont(ofSize: 16)
             return label
         }()
         
         humidityLabel = {
             let label = UILabel()
-            label.text = "습도 69%"
+            label.text = ""
             label.textColor = .black
-            label.font = UIFont.boldSystemFont(ofSize: 16)
+            label.font = UIFont.systemFont(ofSize: 16)
             return label
         }()
     }
     
     
     func initUI() {
-        [dateLabel, weatherImageView, tempLabel, tempMaxLabel, tempMinLabel, humidityLabel]
+        
+        self.snp.makeConstraints {
+            $0.height.equalTo(viewHeight)
+        }
+        
+        [dateLabel, weatherImageView, descriptionLabel, tempLabel, tempMaxLabel, tempMinLabel, humidityLabel]
             .forEach { self.addSubview($0) }
         
         dateLabel.snp.makeConstraints {
@@ -102,25 +123,29 @@ open class WeatherDetailView: UIView {
             $0.centerX.equalToSuperview()
         }
         
-        tempLabel.snp.makeConstraints {
+        descriptionLabel.snp.makeConstraints {
             $0.top.equalTo(weatherImageView.snp.bottom).offset(16)
             $0.centerX.equalToSuperview()
         }
         
+        tempLabel.snp.makeConstraints {
+            $0.top.equalTo(descriptionLabel.snp.bottom).offset(10)
+            $0.centerX.equalToSuperview()
+        }
+        
         tempMaxLabel.snp.makeConstraints {
-            $0.top.equalTo(tempLabel.snp.bottom).offset(16)
+            $0.top.equalTo(tempLabel.snp.bottom).offset(6)
             $0.centerX.equalToSuperview()
         }
         
         tempMinLabel.snp.makeConstraints {
-            $0.top.equalTo(tempMaxLabel.snp.bottom).offset(16)
+            $0.top.equalTo(tempMaxLabel.snp.bottom).offset(6)
             $0.centerX.equalToSuperview()
         }
         
         humidityLabel.snp.makeConstraints {
-            $0.top.equalTo(tempMinLabel.snp.bottom).offset(16)
+            $0.top.equalTo(tempMinLabel.snp.bottom).offset(6)
             $0.centerX.equalToSuperview()
-            $0.bottom.equalToSuperview().offset(-16)
         }
     }
     

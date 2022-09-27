@@ -8,6 +8,7 @@
 import UIKit
 import setting
 import SnapKit
+import RxSwift
 import common_ui
 import common
 
@@ -15,9 +16,11 @@ open class HomeViewController: BaseViewController {
 
     private let viewModel: HomeViewModelProtocol
     
+    let disposeBag = DisposeBag()
     var titleLabel = UILabel()
     var changeViewButton = UIButton()
     var settingButton = UIButton()
+    var detailView = WeatherDetailView()
     
     public init(viewModel: HomeViewModelProtocol) {
         self.viewModel = viewModel
@@ -27,15 +30,23 @@ open class HomeViewController: BaseViewController {
     open override func viewDidLoad() {
         super.viewDidLoad()
         
+        bind()
         initAttribute()
         initUI()
-        
-        viewModel.getWeather(lat: 36, lon: 128)
     }
     
     open override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
+    func bind() {
+        viewModel.getWeather(lat: 36, lon: 128)
+        viewModel.weatherRelay
+            .subscribe(on: MainScheduler.instance)
+            .bind { [weak self] response in
+                self?.detailView.bind(forecastWeather: response)
+            }.disposed(by: disposeBag)
     }
     
     func initAttribute() {
@@ -76,8 +87,6 @@ open class HomeViewController: BaseViewController {
     func initUI() {
         
         let guide = view.layoutMarginsGuide
-        
-        let detailView = WeatherDetailView()
         
         [titleLabel, changeViewButton, settingButton, detailView]
             .forEach { view.addSubview($0) }

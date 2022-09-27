@@ -17,12 +17,13 @@ open class WeatherRepository: WeatherRepositoryProtocol {
     
     public func getCurrentWeather(lat: Float, lon: Float) -> Single<CurrentWeather> {
         return provider.rx.request(.current(lat: lat, lon: lon))
-            .map(CurrentWeather.self)
+            .map(CurrentWeatherDTO.self)
+            .map {$0.toDomain()}
     }
     
     public func getForecastWeather(lat: Float, lon: Float) -> Single<ForecastWeather> {
         return provider.rx.request(.forecast(lat: lat, lon: lon))
-            .map(ForecastWeather.self)
+            .map(ForecastWeatherDTO.self)
+            .map {$0.toDomain()}
     }
 }
-
