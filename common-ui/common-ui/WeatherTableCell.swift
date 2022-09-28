@@ -7,6 +7,8 @@
 
 import Foundation
 import UIKit
+import common
+import Kingfisher
 
 open class WeatherTableCell: UITableViewCell {
     
@@ -23,6 +25,17 @@ open class WeatherTableCell: UITableViewCell {
         
         initAttribute()
         initUI()
+    }
+    
+    public func bind(currentWeather: CurrentWeather) {
+        print("테이블 bind 시작 = \(currentWeather)")
+        if let url = URL(string: currentWeather.weatherIcon) {
+            weatherImageView.kf.setImage(with: url)
+        }
+        dateLabel.text = String(currentWeather.date.suffix(7))
+        descriptionLabel.text = "\(currentWeather.weatherStatus)"
+        tempLabel.text = "\(TemperatureConverter.kelvinToCelsius(temper: currentWeather.temp))°C"
+        humidityLabel.text = "\(Int(currentWeather.humidity))%"
     }
     
     func initAttribute() {
@@ -42,8 +55,10 @@ open class WeatherTableCell: UITableViewCell {
         
         weatherImageView = {
             let imageview = UIImageView()
-            imageview.backgroundColor = .lightGray
+            imageview.backgroundColor = .white
             imageview.contentMode = .scaleAspectFit
+            imageview.layer.cornerRadius = 8
+            imageview.layer.applyShadow(color: .black, alpha: 0.16, x: 0, y: 0, blur: 16)
             return imageview
         }()
         
@@ -52,6 +67,7 @@ open class WeatherTableCell: UITableViewCell {
             label.text = "태풍"
             label.textColor = .black
             label.font = UIFont.boldSystemFont(ofSize: 16)
+            label.textAlignment = .center
             return label
         }()
         
@@ -85,27 +101,30 @@ open class WeatherTableCell: UITableViewCell {
         
         dateLabel.snp.makeConstraints {
             $0.centerY.equalToSuperview()
+            $0.width.equalTo(80)
             $0.left.equalToSuperview().offset(16)
         }
         
         weatherImageView.snp.makeConstraints {
             $0.centerY.equalToSuperview()
+            $0.width.height.equalTo(40)
             $0.left.equalTo(dateLabel.snp.right).offset(16)
         }
         
         descriptionLabel.snp.makeConstraints {
             $0.centerY.equalToSuperview()
-            $0.left.equalTo(weatherImageView.snp.right).offset(16)
+            $0.width.equalTo(70)
+            $0.left.equalTo(weatherImageView.snp.right).offset(8)
         }
         
         tempLabel.snp.makeConstraints {
             $0.centerY.equalToSuperview()
-            $0.left.equalTo(descriptionLabel.snp.right).offset(8)
+            $0.left.equalTo(descriptionLabel.snp.right).offset(16)
         }
         
         humidityLabel.snp.makeConstraints {
             $0.centerY.equalToSuperview()
-            $0.left.equalTo(tempLabel.snp.right).offset(8)
+            $0.left.equalTo(tempLabel.snp.right).offset(16)
         }
         
     }

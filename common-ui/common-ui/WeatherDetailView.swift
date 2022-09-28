@@ -11,6 +11,7 @@ import Kingfisher
 import common
 
 open class WeatherDetailView: UIView {
+    var superView = UIView()
     var dateLabel = UILabel()
     var weatherImageView = UIImageView()
     var descriptionLabel = UILabel()
@@ -18,7 +19,8 @@ open class WeatherDetailView: UIView {
     var tempMaxLabel = UILabel()
     var tempMinLabel = UILabel()
     var humidityLabel = UILabel()
-    let viewHeight: CGFloat = 340
+    let viewHeight: CGFloat = 360
+    let viewWidth: CGFloat = 300
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
@@ -26,30 +28,32 @@ open class WeatherDetailView: UIView {
         initUI()
     }
     
-    public func bind(forecastWeather: ForecastWeather?) {
-        guard let data = forecastWeather?.list?[0] else { return }
+    public func bind(currentWeather: CurrentWeather?) {
+        guard let data = currentWeather else { return }
         if let url = URL(string: data.weatherIcon) {
             weatherImageView.kf.setImage(with: url)
         }
         dateLabel.text = data.date
         descriptionLabel.text = data.weatherStatus
         tempLabel.text = "현재 온도 : \(TemperatureConverter.kelvinToCelsius(temper: data.temp))°C"
-        tempMaxLabel.text = "최고 온도 : \(data.tempMax)°C"
-        tempMinLabel.text = "최저 온도 : \(data.tempMin)°C"
+        tempMaxLabel.text = "최고 온도 : \(TemperatureConverter.kelvinToCelsius(temper: data.tempMax))°C"
+        tempMinLabel.text = "최저 온도 : \(TemperatureConverter.kelvinToCelsius(temper: data.tempMin))°C"
         humidityLabel.text = "습도 : \(data.humidity)%"
     }
 
     func initAttribute() {
         
-        self.layer.borderWidth = 1
-        self.layer.borderColor = UIColor.black.cgColor
-        self.layer.cornerRadius = 8
+        self.backgroundColor = .white
+        superView.backgroundColor = .white
+        superView.layer.cornerRadius = 14
+        superView.layer.masksToBounds = false
+        superView.layer.applyShadow(color: .black, alpha: 0.16, x: 0, y: 0, blur: 30)
         
         dateLabel = {
             let label = UILabel()
             label.text = " "
             label.textColor = .black
-            label.font = UIFont.boldSystemFont(ofSize: 20)
+            label.font = UIFont.boldSystemFont(ofSize: 18)
             return label
         }()
         
@@ -57,6 +61,7 @@ open class WeatherDetailView: UIView {
             let imageview = UIImageView()
             imageview.backgroundColor = .white
             imageview.contentMode = .scaleAspectFit
+            imageview.layer.masksToBounds = false
             return imageview
         }()
         
@@ -64,7 +69,7 @@ open class WeatherDetailView: UIView {
             let label = UILabel()
             label.text = ""
             label.textColor = .black
-            label.font = UIFont.boldSystemFont(ofSize: 20)
+            label.font = UIFont.boldSystemFont(ofSize: 18)
             return label
         }()
         
@@ -72,7 +77,7 @@ open class WeatherDetailView: UIView {
             let label = UILabel()
             label.text = ""
             label.textColor = .black
-            label.font = UIFont.systemFont(ofSize: 16)
+            label.font = UIFont.systemFont(ofSize: 14)
             return label
         }()
         
@@ -80,7 +85,7 @@ open class WeatherDetailView: UIView {
             let label = UILabel()
             label.text = ""
             label.textColor = .black
-            label.font = UIFont.systemFont(ofSize: 16)
+            label.font = UIFont.systemFont(ofSize: 14)
             return label
         }()
         
@@ -88,7 +93,7 @@ open class WeatherDetailView: UIView {
             let label = UILabel()
             label.text = ""
             label.textColor = .black
-            label.font = UIFont.systemFont(ofSize: 16)
+            label.font = UIFont.systemFont(ofSize: 14)
             return label
         }()
         
@@ -96,7 +101,7 @@ open class WeatherDetailView: UIView {
             let label = UILabel()
             label.text = ""
             label.textColor = .black
-            label.font = UIFont.systemFont(ofSize: 16)
+            label.font = UIFont.systemFont(ofSize: 14)
             return label
         }()
     }
@@ -104,22 +109,29 @@ open class WeatherDetailView: UIView {
     
     func initUI() {
         
+        self.addSubview(superView)
+        
         self.snp.makeConstraints {
             $0.height.equalTo(viewHeight)
+            $0.width.equalTo(viewWidth)
+        }
+        
+        superView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
         }
         
         [dateLabel, weatherImageView, descriptionLabel, tempLabel, tempMaxLabel, tempMinLabel, humidityLabel]
-            .forEach { self.addSubview($0) }
+            .forEach { superView.addSubview($0) }
         
         dateLabel.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(16)
+            $0.top.equalToSuperview().offset(20)
             $0.centerX.equalToSuperview()
         }
         
         weatherImageView.snp.makeConstraints {
             $0.top.equalTo(dateLabel.snp.bottom).offset(16)
-            $0.width.equalTo(120)
-            $0.height.equalTo(120)
+            $0.width.equalTo(140)
+            $0.height.equalTo(140)
             $0.centerX.equalToSuperview()
         }
         

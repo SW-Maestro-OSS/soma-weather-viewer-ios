@@ -7,17 +7,22 @@
 
 import UIKit
 import common_ui
+import RxSwift
+import RxCocoa
 
 class WeatherViewController: UIViewController {
     
+    let disposeBag = DisposeBag()
     var viewTypeChangeButton = UIButton()
     var backButton = CustomBackButton()
     var weatherTableView = WeatherTableView()
+    var viewModel: HomeViewModelProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         initAttribute()
         initUI()
+        bind()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -25,9 +30,21 @@ class WeatherViewController: UIViewController {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
+    func bind() {
+        guard let viewModel = viewModel else { return }
+        viewModel.weatherRelay
+            .subscribe(on: MainScheduler.instance)
+            .bind(to: weatherTableView.rx.items(
+                cellIdentifier: WeatherTableCell.cellID,
+                cellType: WeatherTableCell.self)
+            ) { index, data, cell in
+                cell.bind(currentWeather: data)
+            }.disposed(by: disposeBag)
+    }
+    
     func initAttribute() {
         view.backgroundColor = .white
-        weatherTableView.dataSource = self
+        //weatherTableView.dataSource = self
         
         viewTypeChangeButton = {
             let button = UIButton()
@@ -65,26 +82,13 @@ class WeatherViewController: UIViewController {
         
         weatherTableView.snp.makeConstraints {
             $0.top.equalTo(viewTypeChangeButton.snp.bottom).offset(30)
-            $0.left.equalToSuperview().offset(32)
-            $0.right.equalToSuperview().offset(-32)
+            $0.left.equalToSuperview().offset(16)
+            $0.right.equalToSuperview().offset(-16)
             $0.bottom.equalToSuperview().offset(-30)
         }
     }
     
     @objc func tapBackButton() {
         self.navigationController?.popViewController(animated: true)
-    }
-}
-
-extension WeatherViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        5
-    }
-    
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: WeatherTableCell.cellID) as? WeatherTableCell else { return UITableViewCell() }
-        
-        return cell
     }
 }

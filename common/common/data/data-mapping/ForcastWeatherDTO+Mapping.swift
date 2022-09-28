@@ -25,7 +25,7 @@ extension ForecastWeatherDTO {
             if (fiveDaysWeather.count) >= 5 {
                 break
             }
-            if (DateParser.dtoToParsedTime(weather.dataText) == "12:00:00") {
+            if (DateParser.dtoToParsedTime(weather.dateText) == "12:00:00") {
                 guard let mappedCurrentWeather = weather.toDomain() else { return nil }
                 fiveDaysWeather.append(mappedCurrentWeather)
             }
