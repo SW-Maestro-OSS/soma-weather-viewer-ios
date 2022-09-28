@@ -15,13 +15,13 @@ open class WeatherRepository: WeatherRepositoryProtocol {
     
     public init() {}
     
-    public func getCurrentWeather(lat: Float, lon: Float) -> Single<CurrentWeather> {
+    public func getCurrentWeather(lat: Float, lon: Float) -> Single<CurrentWeather?> {
         return provider.rx.request(.current(lat: lat, lon: lon))
             .map(CurrentWeatherDTO.self)
             .map {$0.toDomain()}
     }
     
-    public func getForecastWeather(lat: Float, lon: Float) -> Single<ForecastWeather> {
+    public func getForecastWeather(lat: Float, lon: Float) -> Single<ForecastWeather?> {
         return provider.rx.request(.forecast(lat: lat, lon: lon))
             .map(ForecastWeatherDTO.self)
             .map {$0.toDomain()}

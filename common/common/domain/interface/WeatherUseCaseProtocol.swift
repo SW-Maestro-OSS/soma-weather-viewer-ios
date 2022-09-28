@@ -9,5 +9,5 @@ import Foundation
 import RxSwift
 
 public protocol WeatherUseCaseProtocol {
-    func excute(lat: Float, lon: Float) -> Single<ForecastWeather>
+    func excute(lat: Float, lon: Float) -> Single<ForecastWeather?>
 }

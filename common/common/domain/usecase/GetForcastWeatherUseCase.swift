@@ -16,7 +16,7 @@ open class GetForcastWeatherUseCase: WeatherUseCaseProtocol {
         self.weatherRepository = weatherRepository
     }
     
-    public func excute(lat: Float, lon: Float) -> Single<ForecastWeather> {
+    public func excute(lat: Float, lon: Float) -> Single<ForecastWeather?> {
         return weatherRepository.getForecastWeather(lat: lat, lon: lon)
     }
 }

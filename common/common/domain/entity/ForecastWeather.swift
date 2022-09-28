@@ -8,5 +8,5 @@
 import Foundation
 
 public struct ForecastWeather {
-    public let list: [CurrentWeather]
+    public let list: [CurrentWeather]?
 }

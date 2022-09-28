@@ -18,7 +18,7 @@ open class WeatherDetailView: UIView {
     var tempMaxLabel = UILabel()
     var tempMinLabel = UILabel()
     var humidityLabel = UILabel()
-    let viewHeight: CGFloat = 300
+    let viewHeight: CGFloat = 340
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
@@ -27,13 +27,13 @@ open class WeatherDetailView: UIView {
     }
     
     public func bind(forecastWeather: ForecastWeather?) {
-        guard let data = forecastWeather?.list[0] else { return }
+        guard let data = forecastWeather?.list?[0] else { return }
         if let url = URL(string: data.weatherIcon) {
             weatherImageView.kf.setImage(with: url)
         }
         dateLabel.text = data.date
         descriptionLabel.text = data.weatherStatus
-        tempLabel.text = "현재 온도 : \(TemperatureConverter.shared.kelvinToCelsius(temper: data.temp))°C"
+        tempLabel.text = "현재 온도 : \(TemperatureConverter.kelvinToCelsius(temper: data.temp))°C"
         tempMaxLabel.text = "최고 온도 : \(data.tempMax)°C"
         tempMinLabel.text = "최저 온도 : \(data.tempMin)°C"
         humidityLabel.text = "습도 : \(data.humidity)%"
@@ -118,8 +118,8 @@ open class WeatherDetailView: UIView {
         
         weatherImageView.snp.makeConstraints {
             $0.top.equalTo(dateLabel.snp.bottom).offset(16)
-            $0.width.equalTo(80)
-            $0.height.equalTo(80)
+            $0.width.equalTo(120)
+            $0.height.equalTo(120)
             $0.centerX.equalToSuperview()
         }
         

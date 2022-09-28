@@ -12,11 +12,12 @@ open class WeatherParser {
     
     private init(){}
     
-    func parseWeatherStatus(_ weatherStatus: String) -> String {
+    func parseWeatherStatus(_ weatherStatus: String?) -> String? {
         return mappingStatus(status: weatherStatus)
     }
     
-    func mappingStatus(status: String) -> String{
+    func mappingStatus(status: String?) -> String? {
+        guard let status = status else { return nil }
         var returnValue = ""
         for idx in 0..<StatusEnglish.arr.count {
             if StatusEnglish.arr[idx].rawValue == status{
