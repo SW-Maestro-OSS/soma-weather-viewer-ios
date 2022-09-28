@@ -19,6 +19,7 @@
 		490CD6EB28C5FAC10029A4B8 /* soma_foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 490CD6EA28C5FAC10029A4B8 /* soma_foundation.framework */; };
 		490CD6EC28C5FAC10029A4B8 /* soma_foundation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 490CD6EA28C5FAC10029A4B8 /* soma_foundation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		493A103D28E1E9CF00FF0DCB /* HomeDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493A103C28E1E9CF00FF0DCB /* HomeDIContainer.swift */; };
+		493A105328E2E8DD00FF0DCB /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 493A105228E2E8DD00FF0DCB /* Kingfisher */; };
 		494C9B3528C641FD0088A183 /* home.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 494C9B3428C641FD0088A183 /* home.framework */; };
 		494C9B3628C641FD0088A183 /* home.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 494C9B3428C641FD0088A183 /* home.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		49B87B4528E07C7E00A91335 /* AppFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B87B4428E07C7E00A91335 /* AppFlowCoordinator.swift */; };
@@ -78,6 +79,7 @@
 				490CD6E528C5FAB70029A4B8 /* common.framework in Frameworks */,
 				490CD6E228C5FAB30029A4B8 /* setting.framework in Frameworks */,
 				49B87B6F28E1498800A91335 /* RxMoya in Frameworks */,
+				493A105328E2E8DD00FF0DCB /* Kingfisher in Frameworks */,
 				49B87B4828E07D2400A91335 /* Swinject in Frameworks */,
 				49B87B6B28E1496700A91335 /* RxSwift in Frameworks */,
 			);
@@ -161,6 +163,7 @@
 				49B87B6C28E1497E00A91335 /* SnapKit */,
 				49B87B6E28E1498800A91335 /* RxMoya */,
 				49B87B7028E149A300A91335 /* RxCocoa */,
+				493A105228E2E8DD00FF0DCB /* Kingfisher */,
 			);
 			productName = "soma-weather-viewer-ios";
 			productReference = 490CD66128C5FA540029A4B8 /* soma-weather-viewer-ios.app */;
@@ -196,6 +199,7 @@
 				B950BBDB28D5DEC40038B40E /* XCRemoteSwiftPackageReference "Moya" */,
 				49B87B3D28E0761D00A91335 /* XCRemoteSwiftPackageReference "RxSwift" */,
 				49B87B4628E07D2400A91335 /* XCRemoteSwiftPackageReference "Swinject" */,
+				493A105128E2E8DD00FF0DCB /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 490CD66228C5FA540029A4B8 /* Products */;
 			projectDirPath = "";
@@ -368,6 +372,7 @@
 				DEVELOPMENT_TEAM = GR2P6HT7LF;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "soma-weather-viewer-ios/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "소마웨더뷰어";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -395,6 +400,7 @@
 				DEVELOPMENT_TEAM = GR2P6HT7LF;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "soma-weather-viewer-ios/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "소마웨더뷰어";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -444,6 +450,14 @@
 				kind = branch;
 			};
 		};
+		493A105128E2E8DD00FF0DCB /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		49B87B3D28E0761D00A91335 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
@@ -479,6 +493,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		493A105228E2E8DD00FF0DCB /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 493A105128E2E8DD00FF0DCB /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
 		49B87B4728E07D2400A91335 /* Swinject */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 49B87B4628E07D2400A91335 /* XCRemoteSwiftPackageReference "Swinject" */;
