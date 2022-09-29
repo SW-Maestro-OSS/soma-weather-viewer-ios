@@ -30,15 +30,15 @@
 "DATE_FORMAT" = "yyyy년 MM월 dd일";
 
 // MARK: weather status
-"CLEAR_SKY" = "맑음";
-"FEW_CLOUDS" = "구름 약간";
-"SCATTERED_CLOUDS" = "퍼진 구름";
-"BROKEN_CLOUDS" = "많은 구름";
-"SHOWER_RAIN" = "많은 비옴";
-"RAIN" = "비 옴";
-"THUNDERSTORM" = "천둥번개";
-"SNOW" = "눈 옴";
-"MIST" = "안개 낌";
+"clear sky" = "맑음";
+"few coluds" = "구름 약간";
+"scattered clouds" = "퍼진 구름";
+"broken clouds" = "많은 구름";
+"shower rain" = "많은 비옴";
+"rain" = "비 옴";
+"thunderstorm" = "천둥번개";
+"snoe" = "눈 옴";
+"mist" = "안개 낌";
 
 "CURRENT_TEMPERATURE_%d" = "현재 온도 : %d°C";
 "MAX_TEMPERATURE_%d" = "최고 온도 : %d°C";

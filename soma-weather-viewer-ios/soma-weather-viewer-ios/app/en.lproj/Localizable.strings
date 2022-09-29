@@ -29,15 +29,15 @@
 "DATE_FORMAT" = "MM, dd, yyyy";
 
 // MARK: weather status
-"CLEAR_SKY" = "clear sky";
-"FEW_CLOUDS" = "few coluds";
-"SCATTERED_CLOUDS" = "scattered clouds";
-"BROKEN_CLOUDS" = "broken clouds";
-"SHOWER_RAIN" = "shower rain";
-"RAIN" = "rain";
-"THUNDERSTORM" = "thunderstorm";
-"SNOW" = "snow";
-"MIST" = "mist";
+"clear sky" = "clear sky";
+"few coluds" = "few coluds";
+"scattered clouds" = "scattered clouds";
+"broken clouds" = "broken clouds";
+"shower rain" = "shower rain";
+"rain" = "rain";
+"thunderstorm" = "thunderstorm";
+"snow" = "snow";
+"mist" = "mist";
 
 "CURRENT_TEMPERATURE_%d" = "Current Weather : %d°C";
 "MAX_TEMPERATURE_%d" = "Highest Temperature: %d°C";
