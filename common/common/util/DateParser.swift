@@ -12,7 +12,7 @@ open class DateParser {
     //private let paresedDateFormat: String = "yyyy년 MM월 dd일"
     private static let strToDateFormatter: DateFormatter = {
         let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd"
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         return formatter
     }()
     private static let dateToStrFormatter: DateFormatter = {

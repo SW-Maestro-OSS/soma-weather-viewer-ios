@@ -14,7 +14,7 @@ import RxCocoa
 
 public protocol HomeViewModelProtocol {
     func getWeather(lat: Float, lon: Float) -> Void
-    var weatherRelay: BehaviorRelay<ForecastWeather?> { get }
+    var weatherRelay: BehaviorRelay<[CurrentWeather]> { get }
 }
 
 
@@ -22,7 +22,7 @@ open class HomeViewModel: HomeViewModelProtocol {
     
     let disposeBag = DisposeBag()
     private let getForcastWeatherUseCase: WeatherUseCaseProtocol
-    public let weatherRelay = BehaviorRelay<ForecastWeather?>(value: nil)
+    public let weatherRelay = BehaviorRelay<[CurrentWeather]>(value: [])
     
     public init(weatherUseCase: WeatherUseCaseProtocol) {
         self.getForcastWeatherUseCase = weatherUseCase
@@ -31,7 +31,8 @@ open class HomeViewModel: HomeViewModelProtocol {
     public func getWeather(lat: Float, lon: Float){
         getForcastWeatherUseCase.excute(lat: lat, lon: lon)
             .subscribe(onSuccess: { [weak self] response in
-                self?.weatherRelay.accept(response)
+                guard let list = response?.list else { return }
+                self?.weatherRelay.accept(list)
             }, onFailure: { err in
                 print("HomeViewModel err = \(err)")
             }).disposed(by: disposeBag)
