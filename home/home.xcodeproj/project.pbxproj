@@ -22,6 +22,8 @@
 		B929CA6C28C645C70075DECE /* common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B929CA6A28C645C70075DECE /* common.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B929CA6F28C64BCF0075DECE /* common_ui.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B929CA6E28C64BCF0075DECE /* common_ui.framework */; };
 		B929CA7028C64BCF0075DECE /* common_ui.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B929CA6E28C64BCF0075DECE /* common_ui.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B93736F328E4249900639C0D /* soma_foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B93736F228E4249900639C0D /* soma_foundation.framework */; };
+		B93736F428E4249900639C0D /* soma_foundation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B93736F228E4249900639C0D /* soma_foundation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B950BBD428D5DDC20038B40E /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = B950BBD328D5DDC20038B40E /* Alamofire */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +37,7 @@
 				49B87B3028E0736000A91335 /* setting.framework in Embed Frameworks */,
 				B929CA6C28C645C70075DECE /* common.framework in Embed Frameworks */,
 				B929CA7028C64BCF0075DECE /* common_ui.framework in Embed Frameworks */,
+				B93736F428E4249900639C0D /* soma_foundation.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -50,6 +53,7 @@
 		B929CA6528C645AF0075DECE /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		B929CA6A28C645C70075DECE /* common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B929CA6E28C64BCF0075DECE /* common_ui.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = common_ui.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B93736F228E4249900639C0D /* soma_foundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = soma_foundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +68,7 @@
 				49B87B2F28E0736000A91335 /* setting.framework in Frameworks */,
 				B929CA6F28C64BCF0075DECE /* common_ui.framework in Frameworks */,
 				49DE78ED28D5C3A0003B6521 /* RxCocoa in Frameworks */,
+				B93736F328E4249900639C0D /* soma_foundation.framework in Frameworks */,
 				49DE78F028D5C7F6003B6521 /* Moya in Frameworks */,
 				B929CA6B28C645C70075DECE /* common.framework in Frameworks */,
 			);
@@ -119,6 +124,7 @@
 		B929CA6928C645C70075DECE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B93736F228E4249900639C0D /* soma_foundation.framework */,
 				49B87B2E28E0736000A91335 /* setting.framework */,
 				B929CA6E28C64BCF0075DECE /* common_ui.framework */,
 				B929CA6A28C645C70075DECE /* common.framework */,
@@ -360,7 +366,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = GR2P6HT7LF;
+				DEVELOPMENT_TEAM = PF6QF5WXTK;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -390,7 +396,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = GR2P6HT7LF;
+				DEVELOPMENT_TEAM = PF6QF5WXTK;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";

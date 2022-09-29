@@ -29,6 +29,7 @@
 		49B87B6F28E1498800A91335 /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 49B87B6E28E1498800A91335 /* RxMoya */; };
 		49B87B7128E149A300A91335 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 49B87B7028E149A300A91335 /* RxCocoa */; };
 		49B87B7328E157D000A91335 /* AppDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B87B7228E157D000A91335 /* AppDIContainer.swift */; };
+		B93736E928E41B6900639C0D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B93736EB28E41B6900639C0D /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -64,6 +65,8 @@
 		494C9B3428C641FD0088A183 /* home.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = home.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		49B87B4428E07C7E00A91335 /* AppFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlowCoordinator.swift; sourceTree = "<group>"; };
 		49B87B7228E157D000A91335 /* AppDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDIContainer.swift; sourceTree = "<group>"; };
+		B93736EA28E41B6900639C0D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B93736EF28E41E1000639C0D /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +139,7 @@
 				49B87B4428E07C7E00A91335 /* AppFlowCoordinator.swift */,
 				49B87B7228E157D000A91335 /* AppDIContainer.swift */,
 				493A103C28E1E9CF00FF0DCB /* HomeDIContainer.swift */,
+				B93736EB28E41B6900639C0D /* Localizable.strings */,
 			);
 			path = app;
 			sourceTree = "<group>";
@@ -191,6 +195,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ko,
 			);
 			mainGroup = 490CD65828C5FA540029A4B8;
 			packageReferences = (
@@ -216,6 +221,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				490CD67128C5FA540029A4B8 /* LaunchScreen.storyboard in Resources */,
+				B93736E928E41B6900639C0D /* Localizable.strings in Resources */,
 				490CD66E28C5FA540029A4B8 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -245,6 +251,15 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		B93736EB28E41B6900639C0D /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B93736EA28E41B6900639C0D /* en */,
+				B93736EF28E41E1000639C0D /* ko */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -252,6 +267,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -312,6 +328,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -369,7 +386,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = GR2P6HT7LF;
+				DEVELOPMENT_TEAM = PF6QF5WXTK;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "soma-weather-viewer-ios/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "소마웨더뷰어";
@@ -397,7 +414,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = GR2P6HT7LF;
+				DEVELOPMENT_TEAM = PF6QF5WXTK;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "soma-weather-viewer-ios/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "소마웨더뷰어";

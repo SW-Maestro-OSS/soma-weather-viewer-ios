@@ -1,0 +1,50 @@
+/* 
+  Localizable.strings
+  soma-weather-viewer-ios
+
+  Created by 김민령 on 2022/09/28.
+  
+*/
+
+
+"HOME" = "홈";
+
+"VIEW_CHANGE" = "뷰 전환";
+
+"SETTING" = "세팅";
+
+"TYPE_CHANGE" = "타입 전환";
+
+"TEMPERATURE_OPTION" = "온도 표현 방식";
+
+"CELSIUS" = "섭씨";
+
+"FAHRENHEIT" = "화씨";
+
+"HOME_OPTION" = "홈 화면 콘텐츠";
+
+"CURRENT_WEATHER" = "현재 날씨";
+
+"FIVE_DAYS_WEATHER" = "5일치 날씨";
+
+"DATE_FORMAT" = "yyyy년 MM월 dd일";
+
+// MARK: weather status
+"CLEAR_SKY" = "맑음";
+"FEW_CLOUDS" = "구름 약간";
+"SCATTERED_CLOUDS" = "퍼진 구름";
+"BROKEN_CLOUDS" = "많은 구름";
+"SHOWER_RAIN" = "많은 비옴";
+"RAIN" = "비 옴";
+"THUNDERSTORM" = "천둥번개";
+"SNOW" = "눈 옴";
+"MIST" = "안개 낌";
+
+"CURRENT_TEMPERATURE_%d" = "현재 온도 : %d°C";
+"MAX_TEMPERATURE_%d" = "최고 온도 : %d°C";
+"MIN_TEMPERATURE_%d" = "최저 온도 : %d°C";
+"HUMIDITY_%d" = "습도 : %d%";
+
+"BACK_BUTTON" = "뒤로가기";
+
+

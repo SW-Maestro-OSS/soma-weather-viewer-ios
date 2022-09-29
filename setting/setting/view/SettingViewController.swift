@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import soma_foundation
 
 open class SettingViewController: UIViewController {
     
@@ -54,7 +55,7 @@ open class SettingViewController: UIViewController {
         
         temperatureOptionLabel = {
             let label = UILabel()
-            label.text = "온도 표현 방식"
+            label.text = "TEMPERATURE_OPTION".localized()
             
             return label
         }()
@@ -73,7 +74,7 @@ open class SettingViewController: UIViewController {
         
         celsiusLabel = {
             let label = UILabel()
-            label.text = "섭씨"
+            label.text = "CELSIUS".localized()
             label.textColor = .black
             
             return label
@@ -93,7 +94,7 @@ open class SettingViewController: UIViewController {
         
         fahrenheitLabel = {
             let label = UILabel()
-            label.text = "화씨"
+            label.text = "FAHRENHEIT".localized()
             label.textColor = .black
             
             return label
@@ -114,7 +115,7 @@ open class SettingViewController: UIViewController {
         
         homeOptionLabel = {
             let label = UILabel()
-            label.text = "홈 화면 콘텐츠"
+            label.text = "HOME_OPTION".localized()
             
             return label
         }()
@@ -133,7 +134,7 @@ open class SettingViewController: UIViewController {
         
         todayLabel = {
             let label = UILabel()
-            label.text = "현재날씨"
+            label.text = "CURRENT_WEATHER".localized()
             label.textColor = .black
             
             return label
@@ -153,7 +154,7 @@ open class SettingViewController: UIViewController {
         
         fiveDaysLabel = {
             let label = UILabel()
-            label.text = "5일치 날씨"
+            label.text = "FIVE_DAYS_WEATHER".localized()
             label.textColor = .black
             
             return label

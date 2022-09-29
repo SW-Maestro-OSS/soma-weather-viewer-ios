@@ -34,7 +34,6 @@ open class WeatherTableCell: UITableViewCell {
         
         dateLabel = {
             let label = UILabel()
-            label.text = "9월 5일 (월)"
             label.textColor = .black
             label.font = UIFont.systemFont(ofSize: 16)
             return label
@@ -49,7 +48,6 @@ open class WeatherTableCell: UITableViewCell {
         
         descriptionLabel = {
             let label = UILabel()
-            label.text = "태풍"
             label.textColor = .black
             label.font = UIFont.boldSystemFont(ofSize: 16)
             return label
@@ -57,7 +55,6 @@ open class WeatherTableCell: UITableViewCell {
         
         tempLabel = {
             let label = UILabel()
-            label.text = "29'C"
             label.textColor = .black
             label.font = UIFont.boldSystemFont(ofSize: 16)
             return label
@@ -65,7 +62,6 @@ open class WeatherTableCell: UITableViewCell {
         
         humidityLabel = {
             let label = UILabel()
-            label.text = "습도 : 10%"
             label.textColor = .black
             label.font = UIFont.systemFont(ofSize: 16)
             return label

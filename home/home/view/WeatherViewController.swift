@@ -7,6 +7,7 @@
 
 import UIKit
 import common_ui
+import soma_foundation
 
 class WeatherViewController: UIViewController {
     
@@ -31,7 +32,7 @@ class WeatherViewController: UIViewController {
         
         viewTypeChangeButton = {
             let button = UIButton()
-            button.setTitle("타입 전환", for: .normal)
+            button.setTitle("TYPE_CHANGE".localized(), for: .normal)
             button.layer.cornerRadius = 4
             button.layer.borderWidth = 1
             button.layer.borderColor = UIColor.black.cgColor

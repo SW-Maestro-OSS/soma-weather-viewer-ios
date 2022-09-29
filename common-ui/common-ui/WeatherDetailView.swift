@@ -9,6 +9,7 @@ import UIKit
 import SnapKit
 import Kingfisher
 import common
+import soma_foundation
 
 open class WeatherDetailView: UIView {
     var dateLabel = UILabel()
@@ -33,10 +34,10 @@ open class WeatherDetailView: UIView {
         }
         dateLabel.text = data.date
         descriptionLabel.text = data.weatherStatus
-        tempLabel.text = "현재 온도 : \(TemperatureConverter.kelvinToCelsius(temper: data.temp))°C"
-        tempMaxLabel.text = "최고 온도 : \(data.tempMax)°C"
-        tempMinLabel.text = "최저 온도 : \(data.tempMin)°C"
-        humidityLabel.text = "습도 : \(data.humidity)%"
+        tempLabel.text = "CURRENT_TEMPERATURE_%d".localized(with: TemperatureConverter.kelvinToCelsius(temper: data.temp))
+        tempMaxLabel.text = "MAX_TEMPERATURE_%d".localized(with: data.tempMax)
+        tempMinLabel.text = "MIN_TEMPERATURE_%d".localized(with: data.tempMin)
+        humidityLabel.text = "HUMIDITY_%d".localized(with: data.humidity)
     }
 
     func initAttribute() {

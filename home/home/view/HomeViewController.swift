@@ -11,6 +11,7 @@ import SnapKit
 import RxSwift
 import common_ui
 import common
+import soma_foundation
 
 open class HomeViewController: BaseViewController {
 
@@ -54,7 +55,7 @@ open class HomeViewController: BaseViewController {
         
         titleLabel = {
             let label = UILabel()
-            label.text = "HOME"
+            label.text = "HOME".localized()
             label.textColor = .black
             label.font = UIFont.boldSystemFont(ofSize: 16)
             return label
@@ -62,7 +63,7 @@ open class HomeViewController: BaseViewController {
         
         changeViewButton = {
             let button = UIButton()
-            button.setTitle("뷰 전환", for: .normal)
+            button.setTitle("VIEW_CHANGE".localized(), for: .normal)
             button.layer.cornerRadius = 4
             button.layer.borderWidth = 1
             button.layer.borderColor = UIColor.black.cgColor
@@ -73,7 +74,7 @@ open class HomeViewController: BaseViewController {
         
         settingButton = {
             let button = UIButton()
-            button.setTitle("세팅", for: .normal)
+            button.setTitle("SETTING".localized(), for: .normal)
             button.layer.cornerRadius = 4
             button.layer.borderWidth = 1
             button.layer.borderColor = UIColor.black.cgColor

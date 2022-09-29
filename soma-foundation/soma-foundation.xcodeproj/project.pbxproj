@@ -9,12 +9,14 @@
 /* Begin PBXBuildFile section */
 		490CD6D628C5FA9B0029A4B8 /* soma_foundation.h in Headers */ = {isa = PBXBuildFile; fileRef = 490CD6D528C5FA9B0029A4B8 /* soma_foundation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		490CD70E28C62BD30029A4B8 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490CD70D28C62BD30029A4B8 /* Observable.swift */; };
+		B93736F128E4206100639C0D /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93736F028E4206100639C0D /* StringExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		490CD6D228C5FA9B0029A4B8 /* soma_foundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = soma_foundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		490CD6D528C5FA9B0029A4B8 /* soma_foundation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = soma_foundation.h; sourceTree = "<group>"; };
 		490CD70D28C62BD30029A4B8 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		B93736F028E4206100639C0D /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +51,7 @@
 			children = (
 				490CD6D528C5FA9B0029A4B8 /* soma_foundation.h */,
 				490CD70D28C62BD30029A4B8 /* Observable.swift */,
+				B93736F028E4206100639C0D /* StringExtension.swift */,
 			);
 			path = "soma-foundation";
 			sourceTree = "<group>";
@@ -133,6 +136,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B93736F128E4206100639C0D /* StringExtension.swift in Sources */,
 				490CD70E28C62BD30029A4B8 /* Observable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -267,7 +271,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = GR2P6HT7LF;
+				DEVELOPMENT_TEAM = PF6QF5WXTK;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -297,7 +301,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = GR2P6HT7LF;
+				DEVELOPMENT_TEAM = PF6QF5WXTK;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";

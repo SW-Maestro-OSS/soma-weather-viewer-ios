@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import soma_foundation
 
 open class DateParser {
     //private let strDateFormat: String = "yyyy-MM-dd"
@@ -17,7 +18,7 @@ open class DateParser {
     }()
     private static let dateToStrFormatter: DateFormatter = {
        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy년 MM월 dd일"
+        formatter.dateFormat = "DATE_FORMAT".localized()
         return formatter
     }()
     

@@ -1,0 +1,47 @@
+/* 
+  Localizable.strings
+  soma-weather-viewer-ios
+
+  Created by 김민령 on 2022/09/28.
+  
+*/
+
+"HOME" = "Home";
+
+"VIEW_CHANGE" = "Change View";
+
+"SETTING" = "Setting";
+
+"TYPE_CHANGE" = "Change Type";
+
+"TEMPERATURE_OPTION" = "temperature option";
+
+"CELSIUS" = "celsuis";
+
+"FAHRENHEIT" = "fahrenheit";
+
+"HOME_OPTION" = "home view option";
+
+"CURRENT_WEATHER" = "current weather";
+
+"FIVE_DAYS_WEATHER" = "five days weather";
+
+"DATE_FORMAT" = "MM, dd, yyyy";
+
+// MARK: weather status
+"CLEAR_SKY" = "clear sky";
+"FEW_CLOUDS" = "few coluds";
+"SCATTERED_CLOUDS" = "scattered clouds";
+"BROKEN_CLOUDS" = "broken clouds";
+"SHOWER_RAIN" = "shower rain";
+"RAIN" = "rain";
+"THUNDERSTORM" = "thunderstorm";
+"SNOW" = "snow";
+"MIST" = "mist";
+
+"CURRENT_TEMPERATURE_%d" = "Current Weather : %d°C";
+"MAX_TEMPERATURE_%d" = "Highest Temperature: %d°C";
+"MIN_TEMPERATURE_%d" = "Lowest Temperature : %d°C";
+"HUMIDITY_%d" = "Humidity : %d%";
+
+"BACK_BUTTON" = "Back";

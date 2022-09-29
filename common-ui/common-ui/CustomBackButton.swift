@@ -12,7 +12,7 @@ open class CustomBackButton: UIButton {
     public override init(frame: CGRect) {
         super.init(frame: frame)
         
-        setTitle("뒤로가기", for: .normal)
+        setTitle("BACK_BUTTON".localized(), for: .normal)
         setTitleColor(UIColor.black, for: .normal)
         layer.borderColor = UIColor.black.cgColor
         layer.borderWidth = 1
