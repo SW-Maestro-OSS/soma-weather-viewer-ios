@@ -35,8 +35,9 @@ open class WeatherDetailView: UIView {
         dateLabel.text = data.date
         descriptionLabel.text = data.weatherStatus
         tempLabel.text = "CURRENT_TEMPERATURE_%d".localized(with: TemperatureConverter.kelvinToCelsius(temper: data.temp))
-        tempMaxLabel.text = "MAX_TEMPERATURE_%d".localized(with: data.tempMax)
-        tempMinLabel.text = "MIN_TEMPERATURE_%d".localized(with: data.tempMin)
+        tempMaxLabel.text = "MAX_TEMPERATURE_%d".localized(with: TemperatureConverter.kelvinToCelsius(temper: data.tempMax))
+        tempMinLabel.text = "MIN_TEMPERATURE_%d".localized(with: TemperatureConverter.kelvinToCelsius(temper: data.tempMin
+                                                                                                     ))
         humidityLabel.text = "HUMIDITY_%d".localized(with: data.humidity)
     }
 

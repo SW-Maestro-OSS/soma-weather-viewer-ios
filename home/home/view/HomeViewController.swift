@@ -8,7 +8,7 @@
 import UIKit
 import setting
 import SnapKit
-import RxSwift
+//import RxSwift
 import common_ui
 import common
 import soma_foundation
@@ -17,7 +17,7 @@ open class HomeViewController: BaseViewController {
 
     private let viewModel: HomeViewModelProtocol
     
-    let disposeBag = DisposeBag()
+//    let disposeBag = DisposeBag()
     var titleLabel = UILabel()
     var changeViewButton = UIButton()
     var settingButton = UIButton()
@@ -41,13 +41,18 @@ open class HomeViewController: BaseViewController {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
+    
+    //weatherRelay 관찰 -> 변경되면 detailView에 넣기
     func bind() {
         viewModel.getWeather(lat: 36, lon: 128)
-        viewModel.weatherRelay
-            .subscribe(on: MainScheduler.instance)
-            .bind { [weak self] response in
-                self?.detailView.bind(forecastWeather: response)
-            }.disposed(by: disposeBag)
+        viewModel.weatherRelay.observe(on: self){ [weak self] response in self?.detailView.bind(forecastWeather: response) }
+            
+//            viewModel.weatherRelay
+////            .subscribe(on: MainScheduler.instance)
+//            .bind { [weak self] response in
+//                self?.detailView.bind(forecastWeather: response)
+//            }
+//            .disposed(by: disposeBag)
     }
     
     func initAttribute() {

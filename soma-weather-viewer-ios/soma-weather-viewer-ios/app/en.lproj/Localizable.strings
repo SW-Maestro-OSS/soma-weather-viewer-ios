@@ -42,6 +42,6 @@
 "CURRENT_TEMPERATURE_%d" = "Current Weather : %d°C";
 "MAX_TEMPERATURE_%d" = "Highest Temperature: %d°C";
 "MIN_TEMPERATURE_%d" = "Lowest Temperature : %d°C";
-"HUMIDITY_%d" = "Humidity : %d%";
+"HUMIDITY_%d" = "Humidity : %d%%";
 
 "BACK_BUTTON" = "Back";

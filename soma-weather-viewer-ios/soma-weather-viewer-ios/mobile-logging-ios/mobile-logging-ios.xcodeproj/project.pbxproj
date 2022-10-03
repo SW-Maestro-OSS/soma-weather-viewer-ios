@@ -7,22 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		490CD6D628C5FA9B0029A4B8 /* soma_foundation.h in Headers */ = {isa = PBXBuildFile; fileRef = 490CD6D528C5FA9B0029A4B8 /* soma_foundation.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B93736F128E4206100639C0D /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93736F028E4206100639C0D /* StringExtension.swift */; };
-		B96B0E0428E56D8B008568CF /* Observer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96B0E0328E56D8B008568CF /* Observer.swift */; };
-		B96B0E0628E56DAD008568CF /* Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96B0E0528E56DAD008568CF /* Publisher.swift */; };
+		B96B0E3928E5D6F3008568CF /* mobile_logging_ios.h in Headers */ = {isa = PBXBuildFile; fileRef = B96B0E3828E5D6F3008568CF /* mobile_logging_ios.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B96B0E4028E5D70F008568CF /* MobileLogging.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96B0E3F28E5D70F008568CF /* MobileLogging.swift */; };
+		B96B0E4228E5D775008568CF /* LoggingScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96B0E4128E5D775008568CF /* LoggingScheme.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		490CD6D228C5FA9B0029A4B8 /* soma_foundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = soma_foundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		490CD6D528C5FA9B0029A4B8 /* soma_foundation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = soma_foundation.h; sourceTree = "<group>"; };
-		B93736F028E4206100639C0D /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
-		B96B0E0328E56D8B008568CF /* Observer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observer.swift; sourceTree = "<group>"; };
-		B96B0E0528E56DAD008568CF /* Publisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Publisher.swift; sourceTree = "<group>"; };
+		B96B0E3528E5D6F3008568CF /* mobile_logging_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = mobile_logging_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B96B0E3828E5D6F3008568CF /* mobile_logging_ios.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mobile_logging_ios.h; sourceTree = "<group>"; };
+		B96B0E3F28E5D70F008568CF /* MobileLogging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileLogging.swift; sourceTree = "<group>"; };
+		B96B0E4128E5D775008568CF /* LoggingScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggingScheme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		490CD6CF28C5FA9B0029A4B8 /* Frameworks */ = {
+		B96B0E3228E5D6F3008568CF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -32,81 +30,80 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		490CD6C828C5FA9A0029A4B8 = {
+		B96B0E2B28E5D6F3008568CF = {
 			isa = PBXGroup;
 			children = (
-				B96B0E0328E56D8B008568CF /* Observer.swift */,
-				B96B0E0528E56DAD008568CF /* Publisher.swift */,
-				490CD6D428C5FA9B0029A4B8 /* soma-foundation */,
-				490CD6D328C5FA9B0029A4B8 /* Products */,
+				B96B0E3728E5D6F3008568CF /* mobile-logging-ios */,
+				B96B0E3628E5D6F3008568CF /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		490CD6D328C5FA9B0029A4B8 /* Products */ = {
+		B96B0E3628E5D6F3008568CF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				490CD6D228C5FA9B0029A4B8 /* soma_foundation.framework */,
+				B96B0E3528E5D6F3008568CF /* mobile_logging_ios.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		490CD6D428C5FA9B0029A4B8 /* soma-foundation */ = {
+		B96B0E3728E5D6F3008568CF /* mobile-logging-ios */ = {
 			isa = PBXGroup;
 			children = (
-				490CD6D528C5FA9B0029A4B8 /* soma_foundation.h */,
-				B93736F028E4206100639C0D /* StringExtension.swift */,
+				B96B0E3828E5D6F3008568CF /* mobile_logging_ios.h */,
+				B96B0E3F28E5D70F008568CF /* MobileLogging.swift */,
+				B96B0E4128E5D775008568CF /* LoggingScheme.swift */,
 			);
-			path = "soma-foundation";
+			path = "mobile-logging-ios";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		490CD6CD28C5FA9B0029A4B8 /* Headers */ = {
+		B96B0E3028E5D6F3008568CF /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				490CD6D628C5FA9B0029A4B8 /* soma_foundation.h in Headers */,
+				B96B0E3928E5D6F3008568CF /* mobile_logging_ios.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		490CD6D128C5FA9B0029A4B8 /* soma-foundation */ = {
+		B96B0E3428E5D6F3008568CF /* mobile-logging-ios */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 490CD6D928C5FA9B0029A4B8 /* Build configuration list for PBXNativeTarget "soma-foundation" */;
+			buildConfigurationList = B96B0E3C28E5D6F3008568CF /* Build configuration list for PBXNativeTarget "mobile-logging-ios" */;
 			buildPhases = (
-				490CD6CD28C5FA9B0029A4B8 /* Headers */,
-				490CD6CE28C5FA9B0029A4B8 /* Sources */,
-				490CD6CF28C5FA9B0029A4B8 /* Frameworks */,
-				490CD6D028C5FA9B0029A4B8 /* Resources */,
+				B96B0E3028E5D6F3008568CF /* Headers */,
+				B96B0E3128E5D6F3008568CF /* Sources */,
+				B96B0E3228E5D6F3008568CF /* Frameworks */,
+				B96B0E3328E5D6F3008568CF /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "soma-foundation";
-			productName = "soma-foundation";
-			productReference = 490CD6D228C5FA9B0029A4B8 /* soma_foundation.framework */;
+			name = "mobile-logging-ios";
+			productName = "mobile-logging-ios";
+			productReference = B96B0E3528E5D6F3008568CF /* mobile_logging_ios.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		490CD6C928C5FA9A0029A4B8 /* Project object */ = {
+		B96B0E2C28E5D6F3008568CF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastUpgradeCheck = 1340;
 				TargetAttributes = {
-					490CD6D128C5FA9B0029A4B8 = {
+					B96B0E3428E5D6F3008568CF = {
 						CreatedOnToolsVersion = 13.4.1;
 						LastSwiftMigration = 1340;
 					};
 				};
 			};
-			buildConfigurationList = 490CD6CC28C5FA9A0029A4B8 /* Build configuration list for PBXProject "soma-foundation" */;
+			buildConfigurationList = B96B0E2F28E5D6F3008568CF /* Build configuration list for PBXProject "mobile-logging-ios" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -114,18 +111,18 @@
 				en,
 				Base,
 			);
-			mainGroup = 490CD6C828C5FA9A0029A4B8;
-			productRefGroup = 490CD6D328C5FA9B0029A4B8 /* Products */;
+			mainGroup = B96B0E2B28E5D6F3008568CF;
+			productRefGroup = B96B0E3628E5D6F3008568CF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				490CD6D128C5FA9B0029A4B8 /* soma-foundation */,
+				B96B0E3428E5D6F3008568CF /* mobile-logging-ios */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		490CD6D028C5FA9B0029A4B8 /* Resources */ = {
+		B96B0E3328E5D6F3008568CF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -135,20 +132,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		490CD6CE28C5FA9B0029A4B8 /* Sources */ = {
+		B96B0E3128E5D6F3008568CF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B96B0E0628E56DAD008568CF /* Publisher.swift in Sources */,
-				B93736F128E4206100639C0D /* StringExtension.swift in Sources */,
-				B96B0E0428E56D8B008568CF /* Observer.swift in Sources */,
+				B96B0E4228E5D775008568CF /* LoggingScheme.swift in Sources */,
+				B96B0E4028E5D70F008568CF /* MobileLogging.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		490CD6D728C5FA9B0029A4B8 /* Debug */ = {
+		B96B0E3A28E5D6F3008568CF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -211,7 +207,7 @@
 			};
 			name = Debug;
 		};
-		490CD6D828C5FA9B0029A4B8 /* Release */ = {
+		B96B0E3B28E5D6F3008568CF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -268,7 +264,7 @@
 			};
 			name = Release;
 		};
-		490CD6DA28C5FA9B0029A4B8 /* Debug */ = {
+		B96B0E3D28E5D6F3008568CF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
@@ -288,7 +284,7 @@
 					"@loader_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.heyksw.soma-foundation";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.soma.mobile-logging-ios";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -298,7 +294,7 @@
 			};
 			name = Debug;
 		};
-		490CD6DB28C5FA9B0029A4B8 /* Release */ = {
+		B96B0E3E28E5D6F3008568CF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
@@ -318,7 +314,7 @@
 					"@loader_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.heyksw.soma-foundation";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.soma.mobile-logging-ios";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -330,25 +326,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		490CD6CC28C5FA9A0029A4B8 /* Build configuration list for PBXProject "soma-foundation" */ = {
+		B96B0E2F28E5D6F3008568CF /* Build configuration list for PBXProject "mobile-logging-ios" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				490CD6D728C5FA9B0029A4B8 /* Debug */,
-				490CD6D828C5FA9B0029A4B8 /* Release */,
+				B96B0E3A28E5D6F3008568CF /* Debug */,
+				B96B0E3B28E5D6F3008568CF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		490CD6D928C5FA9B0029A4B8 /* Build configuration list for PBXNativeTarget "soma-foundation" */ = {
+		B96B0E3C28E5D6F3008568CF /* Build configuration list for PBXNativeTarget "mobile-logging-ios" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				490CD6DA28C5FA9B0029A4B8 /* Debug */,
-				490CD6DB28C5FA9B0029A4B8 /* Release */,
+				B96B0E3D28E5D6F3008568CF /* Debug */,
+				B96B0E3E28E5D6F3008568CF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 490CD6C928C5FA9A0029A4B8 /* Project object */;
+	rootObject = B96B0E2C28E5D6F3008568CF /* Project object */;
 }

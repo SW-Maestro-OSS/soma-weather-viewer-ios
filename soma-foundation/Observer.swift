@@ -1,8 +1,8 @@
 //
-//  Observable.swift
+//  Observer.swift
 //  soma-foundation
 //
-//  Created by 김상우 on 2022/09/05.
+//  Created by 김민령 on 2022/09/29.
 //
 
 import Foundation

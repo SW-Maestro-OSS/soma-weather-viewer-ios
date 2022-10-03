@@ -9,6 +9,17 @@ import Foundation
 import RxSwift
 
 open class GetForcastWeatherUseCase: WeatherUseCaseProtocol {
+    public func excute(lat: Float, lon: Float, completaion: @escaping (Result<ForecastWeather, Error>) -> Void) {
+        weatherRepository.getForecastWeather(lat: lat, lon: lon) { result in
+            switch result {
+            case .success(let data):
+                print("유즈 케이스 : \(data)")
+                completaion(.success(data))
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
 
     private var weatherRepository: WeatherRepositoryProtocol
     
@@ -16,7 +27,7 @@ open class GetForcastWeatherUseCase: WeatherUseCaseProtocol {
         self.weatherRepository = weatherRepository
     }
     
-    public func excute(lat: Float, lon: Float) -> Single<ForecastWeather?> {
-        return weatherRepository.getForecastWeather(lat: lat, lon: lon)
-    }
+//    public func excute(lat: Float, lon: Float) -> Single<ForecastWeather?> {
+//        return weatherRepository.getForecastWeather(lat: lat, lon: lon)
+//    }
 }

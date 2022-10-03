@@ -6,8 +6,9 @@
 //
 
 import Foundation
-import RxSwift
+//import RxSwift
+import soma_foundation
 
 public protocol WeatherUseCaseProtocol {
-    func excute(lat: Float, lon: Float) -> Single<ForecastWeather?>
+    func excute(lat: Float, lon: Float, completaion: @escaping (Result<ForecastWeather,Error>) -> Void)
 }
