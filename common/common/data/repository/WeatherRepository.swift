@@ -21,12 +21,9 @@ open class WeatherRepository: WeatherRepositoryProtocol {
             switch result {
             case .success(let response):
                 do {
-                    let data = try JSONDecoder()
-                        .decode(ForecastWeatherDTO.self, from: response.data).toDomain()
-                    completion(.success(data!))
-                }
-                catch(let error){
-                    print(error.localizedDescription)
+                    if let data = try? JSONDecoder().decode(ForecastWeatherDTO.self, from: response.data).toDomain() {
+                        completion(.success(data))
+                    }
                 }
             case .failure(let error):
                 print(error.localizedDescription)
