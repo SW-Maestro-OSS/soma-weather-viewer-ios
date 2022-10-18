@@ -12,12 +12,12 @@ import Foundation
 public struct CurrentWeatherDTO: Decodable {
     let weatherInfo: [WeatherInfoDTO]?
     let mainInfo: MainInfoDTO?
-    let dataText: String?
+    let dateText: String?
     
     enum CodingKeys: String, CodingKey {
         case weatherInfo = "weather"
         case mainInfo = "main"
-        case dataText = "dt_txt"
+        case dateText = "dt_txt"
     }
 }
 
@@ -52,7 +52,8 @@ extension CurrentWeatherDTO {
         guard let icon = weatherInfo?[0].icon else { return nil }
         let iconURL = urlStringPreffix + icon + urlStringSuffix
         
-        guard let _weatherState = WeatherParser.shared.mappingStatus(status: weatherInfo?[0].description),
+        guard let _date = DateParser.dtoToParsedString(dateText),
+              let _weatherState = WeatherParser.shared.mappingStatus(status: weatherInfo?[0].description),
               let _temp = mainInfo?.temp,
               let _tempMax = mainInfo?.tempMax,
               let _tempMin = mainInfo?.tempMin,
@@ -60,7 +61,7 @@ extension CurrentWeatherDTO {
             return nil
         }
         
-        return .init(date: DateParser.getCurrentDate(),
+        return .init(date: _date,
                      weatherStatus: _weatherState,
                      weatherIcon: iconURL,
                      temp: _temp,

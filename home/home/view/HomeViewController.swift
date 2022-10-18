@@ -13,7 +13,7 @@ import common_ui
 import common
 import soma_foundation
 
-open class HomeViewController: BaseViewController {
+open class HomeViewController: BaseViewController, UICollectionViewDelegate {
 
     private let viewModel: HomeViewModelProtocol
     
@@ -23,6 +23,8 @@ open class HomeViewController: BaseViewController {
     var settingButton = UIButton()
     var detailView = WeatherDetailView()
     
+    var weatherCollectionView: UICollectionView?
+    
     public init(viewModel: HomeViewModelProtocol) {
         self.viewModel = viewModel
         super.init()
@@ -31,9 +33,9 @@ open class HomeViewController: BaseViewController {
     open override func viewDidLoad() {
         super.viewDidLoad()
         
-        bind()
         initAttribute()
         initUI()
+        bind()
     }
     
     open override func viewWillAppear(_ animated: Bool) {
@@ -45,14 +47,30 @@ open class HomeViewController: BaseViewController {
     //weatherRelay 관찰 -> 변경되면 detailView에 넣기
     func bind() {
         viewModel.getWeather(lat: 36, lon: 128)
-        viewModel.weatherRelay.observe(on: self){ [weak self] response in self?.detailView.bind(forecastWeather: response) }
-            
-//            viewModel.weatherRelay
-////            .subscribe(on: MainScheduler.instance)
+        
+//        viewModel.weatherRelay.observe(on: self){ [weak self] response in self?.detailView.bind(forecastWeather: response) }
+
+//        viewModel.weatherRelay
+//            .subscribe(on: MainScheduler.instance)
 //            .bind { [weak self] response in
 //                self?.detailView.bind(forecastWeather: response)
-//            }
-//            .disposed(by: disposeBag)
+//            }.disposed(by: disposeBag)
+
+        //TODO: rx없이 수정
+//        weatherCollectionView!.register(WeatherCollectionCell.self, forCellWithReuseIdentifier: WeatherCollectionCell.cellID)
+//        viewModel.weatherRelay.observe(on: self) { [weak self] response in
+//
+//        }
+//
+        //TODO: tableView delegate 에 dequereusableCell여기에 cell.bind(currentWeather: data) 이거 넣어서 구현하기
+//        viewModel.weatherRelay
+//            .subscribe(on: MainScheduler.instance)
+//            .bind(to: weatherCollectionView!.items(
+//                cellIdentifier: WeatherCollectionCell.cellID,
+//                cellType: WeatherCollectionCell.self)
+//            ) { index, data, cell in
+//                cell.bind(currentWeather: data)
+//            }.disposed(by: disposeBag)
     }
     
     func initAttribute() {
@@ -88,13 +106,28 @@ open class HomeViewController: BaseViewController {
             return button
         }()
         
+        weatherCollectionView = {
+            let flowLayout = UICollectionViewFlowLayout()
+            flowLayout.scrollDirection = .horizontal
+            flowLayout.minimumLineSpacing = 10
+            flowLayout.minimumInteritemSpacing = 1
+            let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: flowLayout)
+            collectionView.backgroundColor = .white
+            collectionView.delegate = self 
+            collectionView.layer.masksToBounds = false
+            collectionView.register(WeatherCollectionCell.self, forCellWithReuseIdentifier: WeatherCollectionCell.cellID)
+            collectionView.contentInset = UIEdgeInsets(top: 0, left: 50, bottom: 0, right: 50)
+            collectionView.showsHorizontalScrollIndicator = false
+            collectionView.showsVerticalScrollIndicator = false
+            return collectionView
+        }()
     }
     
     func initUI() {
         
         let guide = view.layoutMarginsGuide
         
-        [titleLabel, changeViewButton, settingButton, detailView]
+        [titleLabel, changeViewButton, settingButton, weatherCollectionView!]
             .forEach { view.addSubview($0) }
         
         titleLabel.snp.makeConstraints {
@@ -116,18 +149,27 @@ open class HomeViewController: BaseViewController {
             $0.height.equalTo(24)
         }
 
-        detailView.snp.makeConstraints {
-            $0.top.equalTo(titleLabel.snp.bottom).offset(40)
+//        detailView.snp.makeConstraints {
+//            $0.top.equalTo(titleLabel.snp.bottom).offset(50)
+//            $0.centerX.equalToSuperview()
+//            $0.left.equalToSuperview().offset(32)
+//            $0.right.equalToSuperview().offset(-32)
+//            //$0.bottom.equalToSuperview().offset(-30)
+//        }
+        
+        weatherCollectionView!.snp.makeConstraints {
+            $0.top.equalTo(titleLabel.snp.bottom).offset(50)
             $0.centerX.equalToSuperview()
-            $0.left.equalToSuperview().offset(32)
-            $0.right.equalToSuperview().offset(-32)
-            //$0.bottom.equalToSuperview().offset(-30)
+            $0.left.equalToSuperview()
+            $0.right.equalToSuperview()
+            $0.height.equalTo(400)
         }
         
     }
     
     @objc func tapViewChangeButton() {
         let nextViewController = WeatherViewController()
+        nextViewController.viewModel = viewModel
         self.navigationController?.pushViewController(nextViewController, animated: true)
     }
     
@@ -136,9 +178,11 @@ open class HomeViewController: BaseViewController {
         self.navigationController?.pushViewController(settingViewController, animated: true)
     }
     
-    
-//    required public init?(coder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
-    
+}
+
+
+extension HomeViewController: UICollectionViewDelegateFlowLayout {
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 300, height: 360)
+    }
 }

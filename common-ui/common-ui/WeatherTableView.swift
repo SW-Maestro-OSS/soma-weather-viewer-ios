@@ -22,7 +22,7 @@ open class WeatherTableView: UITableView {
         
         self.backgroundColor = .white
         self.register(WeatherTableCell.self, forCellReuseIdentifier: WeatherTableCell.cellID)
-        self.rowHeight = 40
+        self.rowHeight = 60
         
     }
     
