@@ -13,6 +13,8 @@
 		493A104728E2C1AC00FF0DCB /* DateParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493A104628E2C1AC00FF0DCB /* DateParser.swift */; };
 		493A104928E2C57D00FF0DCB /* WeatherParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493A104828E2C57D00FF0DCB /* WeatherParser.swift */; };
 		493A105828E3FA8000FF0DCB /* CALayer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493A105728E3FA8000FF0DCB /* CALayer+Extension.swift */; };
+		496D576228FEA1890007968C /* TemperatureType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496D576128FEA1890007968C /* TemperatureType.swift */; };
+		496D576428FEA1B90007968C /* HomeViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496D576328FEA1B90007968C /* HomeViewType.swift */; };
 		49B87B1728E0711100A91335 /* WeatherRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B87B1628E0711100A91335 /* WeatherRepository.swift */; };
 		49B87B1928E0712800A91335 /* WeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B87B1828E0712800A91335 /* WeatherAPI.swift */; };
 		49B87B1D28E0718C00A91335 /* WeatherRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B87B1C28E0718C00A91335 /* WeatherRepositoryProtocol.swift */; };
@@ -38,6 +40,8 @@
 		493A104628E2C1AC00FF0DCB /* DateParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateParser.swift; sourceTree = "<group>"; };
 		493A104828E2C57D00FF0DCB /* WeatherParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherParser.swift; sourceTree = "<group>"; };
 		493A105728E3FA8000FF0DCB /* CALayer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Extension.swift"; sourceTree = "<group>"; };
+		496D576128FEA1890007968C /* TemperatureType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureType.swift; sourceTree = "<group>"; };
+		496D576328FEA1B90007968C /* HomeViewType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewType.swift; sourceTree = "<group>"; };
 		49B87B1628E0711100A91335 /* WeatherRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRepository.swift; sourceTree = "<group>"; };
 		49B87B1828E0712800A91335 /* WeatherAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAPI.swift; sourceTree = "<group>"; };
 		49B87B1C28E0718C00A91335 /* WeatherRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRepositoryProtocol.swift; sourceTree = "<group>"; };
@@ -166,6 +170,8 @@
 				49B87B2128E0728100A91335 /* WeatherData.swift */,
 				49B87B2328E0729100A91335 /* CurrentWeather.swift */,
 				49B87B2528E072A000A91335 /* ForecastWeather.swift */,
+				496D576128FEA1890007968C /* TemperatureType.swift */,
+				496D576328FEA1B90007968C /* HomeViewType.swift */,
 			);
 			path = entity;
 			sourceTree = "<group>";
@@ -284,12 +290,14 @@
 			files = (
 				493A104728E2C1AC00FF0DCB /* DateParser.swift in Sources */,
 				49B87B1728E0711100A91335 /* WeatherRepository.swift in Sources */,
+				496D576228FEA1890007968C /* TemperatureType.swift in Sources */,
 				49B87B2428E0729100A91335 /* CurrentWeather.swift in Sources */,
 				493A104028E2A46E00FF0DCB /* ForcastWeatherDTO+Mapping.swift in Sources */,
 				49B87B2B28E072BF00A91335 /* GetForcastWeatherUseCase.swift in Sources */,
 				49B87B1928E0712800A91335 /* WeatherAPI.swift in Sources */,
 				49B87B2628E072A000A91335 /* ForecastWeather.swift in Sources */,
 				49B87B1D28E0718C00A91335 /* WeatherRepositoryProtocol.swift in Sources */,
+				496D576428FEA1B90007968C /* HomeViewType.swift in Sources */,
 				B93B79E828DC2383004D903C /* UserDefaultsManager.swift in Sources */,
 				49B87B2228E0728100A91335 /* WeatherData.swift in Sources */,
 				493A104928E2C57D00FF0DCB /* WeatherParser.swift in Sources */,
@@ -431,7 +439,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = PF6QF5WXTK;
+				DEVELOPMENT_TEAM = GR2P6HT7LF;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -461,7 +469,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = PF6QF5WXTK;
+				DEVELOPMENT_TEAM = GR2P6HT7LF;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";

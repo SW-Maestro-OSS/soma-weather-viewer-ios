@@ -11,12 +11,12 @@ import Foundation
 public struct UserDefaultsManager<T> {
     private let key: String
     private let defaultValue: T
-    
+
     public init(key: String, defaultValue: T){
         self.key = key
         self.defaultValue = defaultValue
     }
-    
+
     public var wrappedValue: T {
         get {
             return UserDefaults.standard.object(forKey: key) as? T ?? defaultValue
@@ -25,4 +25,13 @@ public struct UserDefaultsManager<T> {
             UserDefaults.standard.set(newValue, forKey: key)
         }
     }
+}
+
+
+extension UserDefaults {
+    @UserDefaultsManager(key: "Temperature", defaultValue: TemperatureType.celsius.rawValue)
+    public static var tempreatureOption: Int
+    
+    @UserDefaultsManager(key: "HomeView", defaultValue: HomeViewType.today.rawValue)
+    public static var homeViewOption: Int
 }
