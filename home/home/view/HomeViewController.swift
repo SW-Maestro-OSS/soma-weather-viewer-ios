@@ -47,30 +47,10 @@ open class HomeViewController: BaseViewController, UICollectionViewDelegate {
     //weatherRelay 관찰 -> 변경되면 detailView에 넣기
     func bind() {
         viewModel.getWeather(lat: 36, lon: 128)
+        weatherCollectionView?.reloadData()
         
-//        viewModel.weatherRelay.observe(on: self){ [weak self] response in self?.detailView.bind(forecastWeather: response) }
-
-//        viewModel.weatherRelay
-//            .subscribe(on: MainScheduler.instance)
-//            .bind { [weak self] response in
-//                self?.detailView.bind(forecastWeather: response)
-//            }.disposed(by: disposeBag)
-
-        //TODO: rx없이 수정
-//        weatherCollectionView!.register(WeatherCollectionCell.self, forCellWithReuseIdentifier: WeatherCollectionCell.cellID)
-//        viewModel.weatherRelay.observe(on: self) { [weak self] response in
-//
-//        }
-//
-        //TODO: tableView delegate 에 dequereusableCell여기에 cell.bind(currentWeather: data) 이거 넣어서 구현하기
-//        viewModel.weatherRelay
-//            .subscribe(on: MainScheduler.instance)
-//            .bind(to: weatherCollectionView!.items(
-//                cellIdentifier: WeatherCollectionCell.cellID,
-//                cellType: WeatherCollectionCell.self)
-//            ) { index, data, cell in
-//                cell.bind(currentWeather: data)
-//            }.disposed(by: disposeBag)
+        viewModel.weatherRelay.observe(on: self) { _ in self.weatherCollectionView?.reloadData() }
+        
     }
     
     func initAttribute() {
@@ -113,7 +93,8 @@ open class HomeViewController: BaseViewController, UICollectionViewDelegate {
             flowLayout.minimumInteritemSpacing = 1
             let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: flowLayout)
             collectionView.backgroundColor = .white
-            collectionView.delegate = self 
+            collectionView.delegate = self
+            collectionView.dataSource = self
             collectionView.layer.masksToBounds = false
             collectionView.register(WeatherCollectionCell.self, forCellWithReuseIdentifier: WeatherCollectionCell.cellID)
             collectionView.contentInset = UIEdgeInsets(top: 0, left: 50, bottom: 0, right: 50)
@@ -181,8 +162,20 @@ open class HomeViewController: BaseViewController, UICollectionViewDelegate {
 }
 
 
-extension HomeViewController: UICollectionViewDelegateFlowLayout {
-    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 300, height: 360)
+extension HomeViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return viewModel.weatherRelay.value?.count ?? 0
     }
+    
+    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = weatherCollectionView?.dequeueReusableCell(withReuseIdentifier: WeatherCollectionCell.cellID, for: indexPath) as? WeatherCollectionCell else {
+            return UICollectionViewCell()
+        }
+        if let data = viewModel.weatherRelay.value {
+            cell.bind(currentWeather: data[indexPath.row])
+        }
+        
+        return cell
+    }
+        
 }
