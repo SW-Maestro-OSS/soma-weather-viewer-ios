@@ -11,11 +11,11 @@ import common
 class SettingViewModel {
 
     func IntToTemperature() -> TemperatureType{
-        return TemperatureType(rawValue: UserDefaults.tempreatureOption)!
+        return UserDefaults.tempreatureOption
     }
     
     func IntToHomeView() -> HomeViewType {
-        return HomeViewType(rawValue: UserDefaults.homeViewOption)!
+        return UserDefaults.homeViewOption
     }
     
 }

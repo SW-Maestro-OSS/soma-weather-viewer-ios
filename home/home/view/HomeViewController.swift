@@ -8,7 +8,6 @@
 import UIKit
 import setting
 import SnapKit
-//import RxSwift
 import common_ui
 import common
 import soma_foundation
@@ -17,7 +16,6 @@ open class HomeViewController: BaseViewController, UICollectionViewDelegate {
 
     private let viewModel: HomeViewModelProtocol
     
-//    let disposeBag = DisposeBag()
     var titleLabel = UILabel()
     var changeViewButton = UIButton()
     var settingButton = UIButton()
@@ -42,37 +40,22 @@ open class HomeViewController: BaseViewController, UICollectionViewDelegate {
     open override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: false)
+        initUIByViewType()
     }
     
-    
-    //weatherRelay 관찰 -> 변경되면 detailView에 넣기
     func bind() {
         viewModel.getWeather(lat: 36, lon: 128)
+        weatherCollectionView?.reloadData()
         
-//        viewModel.weatherRelay.observe(on: self){ [weak self] response in self?.detailView.bind(forecastWeather: response) }
-
-//        viewModel.weatherRelay
-//            .subscribe(on: MainScheduler.instance)
-//            .bind { [weak self] response in
-//                self?.detailView.bind(forecastWeather: response)
-//            }.disposed(by: disposeBag)
-
-        //TODO: rx없이 수정
+        viewModel.weatherRelay.observe(on: self) { [weak self] _ in
+            self?.weatherCollectionView?.reloadData()
+        }
+        
         weatherCollectionView!.register(WeatherCollectionCell.self, forCellWithReuseIdentifier: WeatherCollectionCell.cellID)
+        
         viewModel.weatherRelay.observe(on: self) { [weak self] response in
-            print("홈 리스폰스 = \(response)")
             self?.weatherTableView.reloadData()
         }
-
-        //TODO: tableView delegate 에 dequereusableCell여기에 cell.bind(currentWeather: data) 이거 넣어서 구현하기
-//        viewModel.weatherRelay
-//            .subscribe(on: MainScheduler.instance)
-//            .bind(to: weatherCollectionView!.items(
-//                cellIdentifier: WeatherCollectionCell.cellID,
-//                cellType: WeatherCollectionCell.self)
-//            ) { index, data, cell in
-//                cell.bind(currentWeather: data)
-//            }.disposed(by: disposeBag)
     }
     
     func initAttribute() {
@@ -115,7 +98,8 @@ open class HomeViewController: BaseViewController, UICollectionViewDelegate {
             flowLayout.minimumInteritemSpacing = 1
             let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: flowLayout)
             collectionView.backgroundColor = .white
-            collectionView.delegate = self 
+            collectionView.delegate = self
+            collectionView.dataSource = self
             collectionView.layer.masksToBounds = false
             collectionView.register(WeatherCollectionCell.self, forCellWithReuseIdentifier: WeatherCollectionCell.cellID)
             collectionView.contentInset = UIEdgeInsets(top: 0, left: 50, bottom: 0, right: 50)
@@ -153,27 +137,31 @@ open class HomeViewController: BaseViewController, UICollectionViewDelegate {
             $0.height.equalTo(24)
         }
 
-//        detailView.snp.makeConstraints {
-//            $0.top.equalTo(titleLabel.snp.bottom).offset(50)
-//            $0.centerX.equalToSuperview()
-//            $0.left.equalToSuperview().offset(32)
-//            $0.right.equalToSuperview().offset(-32)
-//            //$0.bottom.equalToSuperview().offset(-30)
-//        }
+        weatherCollectionView!.snp.makeConstraints {
+            $0.top.equalTo(titleLabel.snp.bottom).offset(50)
+            $0.centerX.equalToSuperview()
+            $0.left.equalToSuperview()
+            $0.right.equalToSuperview()
+            $0.height.equalTo(400)
+        }
         
-//        weatherCollectionView!.snp.makeConstraints {
-//            $0.top.equalTo(titleLabel.snp.bottom).offset(50)
-//            $0.centerX.equalToSuperview()
-//            $0.left.equalToSuperview()
-//            $0.right.equalToSuperview()
-//            $0.height.equalTo(400)
-//        }
         weatherTableView.snp.makeConstraints {
             $0.top.equalTo(titleLabel.snp.bottom).offset(50)
             $0.left.right.equalToSuperview()
             $0.bottom.equalToSuperview().offset(-50)
         }
         
+    }
+    
+    func initUIByViewType() {
+        if UserDefaults.homeViewOption == HomeViewType.cardView {
+            weatherCollectionView?.isHidden = false
+            weatherTableView.isHidden = true
+        }
+        else if UserDefaults.homeViewOption == HomeViewType.tableView {
+            weatherCollectionView?.isHidden = true
+            weatherTableView.isHidden = false
+        }
     }
     
     @objc func tapViewChangeButton() {
@@ -190,10 +178,26 @@ open class HomeViewController: BaseViewController, UICollectionViewDelegate {
 }
 
 
-extension HomeViewController: UICollectionViewDelegateFlowLayout {
+extension HomeViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 300, height: 360)
     }
+    
+    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return viewModel.weatherRelay.value?.count ?? 0
+    }
+    
+    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = weatherCollectionView?.dequeueReusableCell(withReuseIdentifier: WeatherCollectionCell.cellID, for: indexPath) as? WeatherCollectionCell else {
+            return UICollectionViewCell()
+        }
+        if let data = viewModel.weatherRelay.value {
+            cell.bind(currentWeather: data[indexPath.row])
+        }
+        
+        return cell
+    }
+        
 }
 
 

@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum TemperatureType : Int {
-    case celsius //섭씨
-    case fahrenheit //화씨
+public enum TemperatureType: Int, Codable {
+    case celsius = 0        //섭씨
+    case fahrenheit = 1     //화씨
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum HomeViewType: Int {
-    case today
-    case fiveDays
+public enum HomeViewType: Int, Codable {
+    case cardView = 0
+    case tableView = 1
 }

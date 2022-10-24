@@ -9,6 +9,7 @@ import UIKit
 import SnapKit
 import soma_foundation
 import common
+import RxCocoa
 
 open class SettingViewController: UIViewController {
     
@@ -127,7 +128,7 @@ open class SettingViewController: UIViewController {
             button.layer.borderWidth = 1
             button.layer.borderColor = UIColor.darkGray.cgColor
 //            button.addSubview(todayLabel)
-            button.tag = HomeViewType.today.rawValue
+            button.tag = HomeViewType.cardView.rawValue
             button.addTarget(self, action: #selector(homeViewOptionTouched), for: .touchUpInside)
             
             return button
@@ -146,7 +147,7 @@ open class SettingViewController: UIViewController {
            button.backgroundColor = .gray
            button.layer.borderWidth = 1
            button.layer.borderColor = UIColor.darkGray.cgColor
-           button.tag = HomeViewType.fiveDays.rawValue
+           button.tag = HomeViewType.tableView.rawValue
            button.addTarget(self, action: #selector(homeViewOptionTouched), for: .touchUpInside)
 //           button.addSubview(fiveDaysLabel)
            
@@ -245,9 +246,9 @@ open class SettingViewController: UIViewController {
     func changeHomeViewOption(_ option: HomeViewType) {
         
         switch option {
-        case .today:
+        case .cardView:
             todayButton.addSubview(homeViewCheck)
-        case .fiveDays:
+        case .tableView:
             fiveDaysButton.addSubview(homeViewCheck)
         }
         
@@ -255,7 +256,9 @@ open class SettingViewController: UIViewController {
     }
     
     @objc func temperatureOptionTouched(button: UIButton) {
-        UserDefaults.tempreatureOption = button.tag
+        guard let type = TemperatureType(rawValue: button.tag) else { return }
+        UserDefaults.tempreatureOption = type
+        UserDefaults.temperatureTypeRelay.accept(type)
         
         changeTemperatureOption(viewModel.IntToTemperature())
         
@@ -264,7 +267,8 @@ open class SettingViewController: UIViewController {
     }
     
     @objc func homeViewOptionTouched(button: UIButton){
-        UserDefaults.homeViewOption = button.tag
+        guard let type = HomeViewType(rawValue: button.tag) else { return }
+        UserDefaults.homeViewOption = type
         
         changeHomeViewOption(viewModel.IntToHomeView())
         

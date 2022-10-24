@@ -7,27 +7,36 @@
 
 import Foundation
 import RxSwift
+import RxCocoa
 
 open class GetForcastWeatherUseCase: WeatherUseCaseProtocol {
-    public func excute(lat: Float, lon: Float, completaion: @escaping (Result<ForecastWeather, Error>) -> Void) {
-        weatherRepository.getForecastWeather(lat: lat, lon: lon) { result in
-            switch result {
-            case .success(let data):
-                print("유즈 케이스 : \(data)")
-                completaion(.success(data))
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
-        }
-    }
-
     private var weatherRepository: WeatherRepositoryProtocol
-    
+    private let disposeBag = DisposeBag()
+
     public init(weatherRepository: WeatherRepositoryProtocol) {
         self.weatherRepository = weatherRepository
     }
     
-//    public func excute(lat: Float, lon: Float) -> Single<ForecastWeather?> {
-//        return weatherRepository.getForecastWeather(lat: lat, lon: lon)
-//    }
+    public func excute(lat: Float, lon: Float, completion: @escaping (Result<ForecastWeather, Error>) -> Void) {
+        
+        UserDefaults.temperatureTypeRelay.bind { [weak self] type in
+            guard let self = self else { return }
+
+            self.weatherRepository.getForecastWeather(lat: lat, lon: lon) { result in
+                switch result {
+                case .success(let data):
+                    switch type {
+                    case .celsius:
+                        completion(.success(data.toCelsius()))
+                        
+                    case .fahrenheit:
+                        completion(.success(data.toFahrenheit()))
+                    }
+
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
+        }.disposed(by: disposeBag)
+    }
 }

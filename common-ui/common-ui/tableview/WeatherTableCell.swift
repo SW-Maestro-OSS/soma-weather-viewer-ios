@@ -28,13 +28,19 @@ open class WeatherTableCell: UITableViewCell {
     }
     
     public func bind(currentWeather: CurrentWeather) {
-        print("테이블 bind 시작 = \(currentWeather)")
         if let url = URL(string: currentWeather.weatherIcon) {
             weatherImageView.kf.setImage(with: url)
         }
+        var tempText = "\(Int(currentWeather.temp))"
+        if UserDefaults.tempreatureOption == TemperatureType.celsius {
+            tempText += "°C"
+        }
+        else if UserDefaults.tempreatureOption == TemperatureType.fahrenheit {
+            tempText += "°F"
+        }
+        tempLabel.text = tempText
         dateLabel.text = String(currentWeather.date.suffix(7))
         descriptionLabel.text = "\(currentWeather.weatherStatus)"
-        tempLabel.text = "\(TemperatureConverter.kelvinToCelsius(temper: currentWeather.temp))°C"
         humidityLabel.text = "\(Int(currentWeather.humidity))%"
     }
     
