@@ -14,19 +14,25 @@ import soma_foundation
 
 open class HomeViewController: BaseViewController {
 
+    // dependencies
     private let viewModel: HomeViewModelProtocol
-    
+    private let weatherViewController: WeatherViewController
+    private var weatherCollectionView: UICollectionView
+    private let weatherTableView: UITableView
+
     var titleLabel = UILabel()
     var changeViewButton = UIButton()
     var settingButton = UIButton()
-    var detailView = WeatherDetailView()
-    
-    var weatherCollectionView = WeatherCollectionView(frame: CGRect.zero,
-                                                      collectionViewLayout: WeatherCollectionViewFlowLayout())
-    var weatherTableView = WeatherTableView()
-    
-    public init(viewModel: HomeViewModelProtocol) {
+
+    // dependency injection
+    public init(viewModel: HomeViewModelProtocol,
+                weatherViewController: WeatherViewController,
+                weatherCollectionView: UICollectionView,
+                weatherTableView: UITableView) {
         self.viewModel = viewModel
+        self.weatherViewController = weatherViewController
+        self.weatherCollectionView = weatherCollectionView
+        self.weatherTableView = weatherTableView
         super.init()
     }
     
@@ -146,9 +152,7 @@ open class HomeViewController: BaseViewController {
     }
     
     @objc func tapViewChangeButton() {
-        let nextViewController = WeatherViewController()
-        nextViewController.viewModel = viewModel
-        self.navigationController?.pushViewController(nextViewController, animated: true)
+        self.navigationController?.pushViewController(weatherViewController, animated: true)
     }
     
     @objc func tapSettingButton() {
