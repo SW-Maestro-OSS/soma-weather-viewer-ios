@@ -80,12 +80,10 @@
 		490CD69828C5FA6C0029A4B8 /* common-ui */ = {
 			isa = PBXGroup;
 			children = (
+				493CCA3A290130E400EBBEC9 /* collectionview */,
+				493CCA39290130D200EBBEC9 /* tableview */,
 				490CD69928C5FA6C0029A4B8 /* common_ui.h */,
-				490CD70528C623C00029A4B8 /* WeatherDetailView.swift */,
-				490CD70F28C62F410029A4B8 /* WeatherTableCell.swift */,
-				490CD71128C6323C0029A4B8 /* WeatherTableView.swift */,
 				490CD71528C63AFA0029A4B8 /* CustomBackButton.swift */,
-				494C9B3A28C64AEC0088A183 /* WeatherCollectionCell.swift */,
 				493A103A28E1E43E00FF0DCB /* BaseViewController.swift */,
 			);
 			path = "common-ui";
@@ -97,6 +95,24 @@
 				493A104B28E2E0BD00FF0DCB /* common.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		493CCA39290130D200EBBEC9 /* tableview */ = {
+			isa = PBXGroup;
+			children = (
+				490CD70F28C62F410029A4B8 /* WeatherTableCell.swift */,
+				490CD71128C6323C0029A4B8 /* WeatherTableView.swift */,
+			);
+			path = tableview;
+			sourceTree = "<group>";
+		};
+		493CCA3A290130E400EBBEC9 /* collectionview */ = {
+			isa = PBXGroup;
+			children = (
+				490CD70528C623C00029A4B8 /* WeatherDetailView.swift */,
+				494C9B3A28C64AEC0088A183 /* WeatherCollectionCell.swift */,
+			);
+			path = collectionview;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -327,7 +343,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = PF6QF5WXTK;
+				DEVELOPMENT_TEAM = GR2P6HT7LF;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -357,7 +373,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = PF6QF5WXTK;
+				DEVELOPMENT_TEAM = GR2P6HT7LF;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";

@@ -6,23 +6,44 @@
 //
 
 import Foundation
+import RxCocoa
 
 @propertyWrapper
-public struct UserDefaultsManager<T> {
+public struct UserDefaultsManager<T: Codable> {
     private let key: String
     private let defaultValue: T
-    
+
     public init(key: String, defaultValue: T){
         self.key = key
         self.defaultValue = defaultValue
     }
-    
+
     public var wrappedValue: T {
         get {
-            return UserDefaults.standard.object(forKey: key) as? T ?? defaultValue
+            if let savedData = UserDefaults.standard.object(forKey: key) as? Data {
+                let decoder = JSONDecoder()
+                if let loadObject = try? decoder.decode(T.self, from: savedData) {
+                    return loadObject
+                }
+            }
+            return defaultValue
         }
         set {
-            UserDefaults.standard.set(newValue, forKey: key)
+            let encoder = JSONEncoder()
+            if let encoded = try? encoder.encode(newValue) {
+                UserDefaults.standard.set(encoded, forKey: key)
+            }
         }
     }
+}
+
+
+extension UserDefaults {
+    @UserDefaultsManager(key: "Temperature", defaultValue: TemperatureType.celsius)
+    public static var tempreatureOption: TemperatureType
+    
+    @UserDefaultsManager(key: "HomeView", defaultValue: HomeViewType.cardView)
+    public static var homeViewOption: HomeViewType
+    
+    public static let temperatureTypeRelay = BehaviorRelay<TemperatureType>(value: UserDefaults.tempreatureOption)
 }

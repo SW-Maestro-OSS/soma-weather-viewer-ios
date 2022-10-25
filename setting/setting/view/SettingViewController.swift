@@ -8,6 +8,8 @@
 import UIKit
 import SnapKit
 import soma_foundation
+import common
+import RxCocoa
 
 open class SettingViewController: UIViewController {
     
@@ -31,8 +33,8 @@ open class SettingViewController: UIViewController {
     private var homeViewCheck = CustomCheck()
     
     
-    var temperatureMode : Temperature?
-    var homeViewMode : HomeView?
+    var temperatureMode : TemperatureType?
+    var homeViewMode : HomeViewType?
     
     open override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,7 +68,7 @@ open class SettingViewController: UIViewController {
             button.layer.borderWidth = 1
             button.layer.borderColor = UIColor.darkGray.cgColor
 //            button.addSubview(celsiusLabel)
-            button.tag = Temperature.celsius.rawValue
+            button.tag = TemperatureType.celsius.rawValue
             button.addTarget(self, action: #selector(temperatureOptionTouched), for: .touchUpInside)
             
             return button
@@ -86,7 +88,7 @@ open class SettingViewController: UIViewController {
             button.layer.borderWidth = 1
             button.layer.borderColor = UIColor.darkGray.cgColor
 //            button.addSubview(fahrenheitLabel)
-            button.tag = Temperature.fahrenheit.rawValue
+            button.tag = TemperatureType.fahrenheit.rawValue
             button.addTarget(self, action: #selector(temperatureOptionTouched), for: .touchUpInside)
             
             return button
@@ -126,7 +128,7 @@ open class SettingViewController: UIViewController {
             button.layer.borderWidth = 1
             button.layer.borderColor = UIColor.darkGray.cgColor
 //            button.addSubview(todayLabel)
-            button.tag = HomeView.today.rawValue
+            button.tag = HomeViewType.cardView.rawValue
             button.addTarget(self, action: #selector(homeViewOptionTouched), for: .touchUpInside)
             
             return button
@@ -145,7 +147,7 @@ open class SettingViewController: UIViewController {
            button.backgroundColor = .gray
            button.layer.borderWidth = 1
            button.layer.borderColor = UIColor.darkGray.cgColor
-           button.tag = HomeView.fiveDays.rawValue
+           button.tag = HomeViewType.tableView.rawValue
            button.addTarget(self, action: #selector(homeViewOptionTouched), for: .touchUpInside)
 //           button.addSubview(fiveDaysLabel)
            
@@ -231,7 +233,7 @@ open class SettingViewController: UIViewController {
         }
     }
     
-    func changeTemperatureOption(_ option: Temperature){
+    func changeTemperatureOption(_ option: TemperatureType){
         switch option {
         case .celsius:
             celsiusButton.addSubview(temperCheck)
@@ -241,12 +243,12 @@ open class SettingViewController: UIViewController {
         checkConstraints(temperCheck)
     }
     
-    func changeHomeViewOption(_ option: HomeView) {
+    func changeHomeViewOption(_ option: HomeViewType) {
         
         switch option {
-        case .today:
+        case .cardView:
             todayButton.addSubview(homeViewCheck)
-        case .fiveDays:
+        case .tableView:
             fiveDaysButton.addSubview(homeViewCheck)
         }
         
@@ -254,7 +256,9 @@ open class SettingViewController: UIViewController {
     }
     
     @objc func temperatureOptionTouched(button: UIButton) {
-        UserDefaults.tempreatureOption = button.tag
+        guard let type = TemperatureType(rawValue: button.tag) else { return }
+        UserDefaults.tempreatureOption = type
+        UserDefaults.temperatureTypeRelay.accept(type)
         
         changeTemperatureOption(viewModel.IntToTemperature())
         
@@ -263,7 +267,8 @@ open class SettingViewController: UIViewController {
     }
     
     @objc func homeViewOptionTouched(button: UIButton){
-        UserDefaults.homeViewOption = button.tag
+        guard let type = HomeViewType(rawValue: button.tag) else { return }
+        UserDefaults.homeViewOption = type
         
         changeHomeViewOption(viewModel.IntToHomeView())
         

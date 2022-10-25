@@ -6,15 +6,16 @@
 //
 
 import Foundation
+import common
 
 class SettingViewModel {
 
-    func IntToTemperature() -> Temperature{
-        return Temperature(rawValue: UserDefaults.tempreatureOption)!
+    func IntToTemperature() -> TemperatureType{
+        return UserDefaults.tempreatureOption
     }
     
-    func IntToHomeView() -> HomeView {
-        return HomeView(rawValue: UserDefaults.homeViewOption)!
+    func IntToHomeView() -> HomeViewType {
+        return UserDefaults.homeViewOption
     }
     
 }
