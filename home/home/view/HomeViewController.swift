@@ -12,7 +12,7 @@ import common_ui
 import common
 import soma_foundation
 
-open class HomeViewController: BaseViewController, UICollectionViewDelegate {
+open class HomeViewController: BaseViewController {
 
     private let viewModel: HomeViewModelProtocol
     
@@ -21,7 +21,8 @@ open class HomeViewController: BaseViewController, UICollectionViewDelegate {
     var settingButton = UIButton()
     var detailView = WeatherDetailView()
     
-    var weatherCollectionView: UICollectionView?
+    var weatherCollectionView = WeatherCollectionView(frame: CGRect.zero,
+                                                      collectionViewLayout: WeatherCollectionViewFlowLayout())
     var weatherTableView = WeatherTableView()
     
     public init(viewModel: HomeViewModelProtocol) {
@@ -45,15 +46,9 @@ open class HomeViewController: BaseViewController, UICollectionViewDelegate {
     
     func bind() {
         viewModel.getWeather(lat: 36, lon: 128)
-        weatherCollectionView?.reloadData()
         
         viewModel.weatherRelay.observe(on: self) { [weak self] _ in
-            self?.weatherCollectionView?.reloadData()
-        }
-        
-        weatherCollectionView!.register(WeatherCollectionCell.self, forCellWithReuseIdentifier: WeatherCollectionCell.cellID)
-        
-        viewModel.weatherRelay.observe(on: self) { [weak self] response in
+            self?.weatherCollectionView.reloadData()
             self?.weatherTableView.reloadData()
         }
     }
@@ -91,22 +86,8 @@ open class HomeViewController: BaseViewController, UICollectionViewDelegate {
             return button
         }()
         
-        weatherCollectionView = {
-            let flowLayout = UICollectionViewFlowLayout()
-            flowLayout.scrollDirection = .horizontal
-            flowLayout.minimumLineSpacing = 10
-            flowLayout.minimumInteritemSpacing = 1
-            let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: flowLayout)
-            collectionView.backgroundColor = .white
-            collectionView.delegate = self
-            collectionView.dataSource = self
-            collectionView.layer.masksToBounds = false
-            collectionView.register(WeatherCollectionCell.self, forCellWithReuseIdentifier: WeatherCollectionCell.cellID)
-            collectionView.contentInset = UIEdgeInsets(top: 0, left: 50, bottom: 0, right: 50)
-            collectionView.showsHorizontalScrollIndicator = false
-            collectionView.showsVerticalScrollIndicator = false
-            return collectionView
-        }()
+        weatherCollectionView.delegate = self
+        weatherCollectionView.dataSource = self
         
         weatherTableView.dataSource = self
     }
@@ -115,7 +96,7 @@ open class HomeViewController: BaseViewController, UICollectionViewDelegate {
         
         let guide = view.layoutMarginsGuide
         
-        [titleLabel, changeViewButton, settingButton, weatherCollectionView!, weatherTableView]
+        [titleLabel, changeViewButton, settingButton, weatherCollectionView, weatherTableView]
             .forEach { view.addSubview($0) }
         
         titleLabel.snp.makeConstraints {
@@ -137,7 +118,7 @@ open class HomeViewController: BaseViewController, UICollectionViewDelegate {
             $0.height.equalTo(24)
         }
 
-        weatherCollectionView!.snp.makeConstraints {
+        weatherCollectionView.snp.makeConstraints {
             $0.top.equalTo(titleLabel.snp.bottom).offset(50)
             $0.centerX.equalToSuperview()
             $0.left.equalToSuperview()
@@ -155,11 +136,11 @@ open class HomeViewController: BaseViewController, UICollectionViewDelegate {
     
     func initUIByViewType() {
         if UserDefaults.homeViewOption == HomeViewType.cardView {
-            weatherCollectionView?.isHidden = false
+            weatherCollectionView.isHidden = false
             weatherTableView.isHidden = true
         }
         else if UserDefaults.homeViewOption == HomeViewType.tableView {
-            weatherCollectionView?.isHidden = true
+            weatherCollectionView.isHidden = true
             weatherTableView.isHidden = false
         }
     }
@@ -188,13 +169,15 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
     }
     
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = weatherCollectionView?.dequeueReusableCell(withReuseIdentifier: WeatherCollectionCell.cellID, for: indexPath) as? WeatherCollectionCell else {
+        guard let cell = weatherCollectionView.dequeueReusableCell(withReuseIdentifier: WeatherCollectionCell.cellID, for: indexPath) as? WeatherCollectionCell else {
             return UICollectionViewCell()
         }
-        if let data = viewModel.weatherRelay.value {
-            cell.bind(currentWeather: data[indexPath.row])
+        
+        guard let data = viewModel.weatherRelay.value else {
+            return UICollectionViewCell()
         }
         
+        cell.bind(currentWeather: data[indexPath.row])
         return cell
     }
         
@@ -203,10 +186,7 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
 
 extension HomeViewController: UITableViewDataSource {
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let count = viewModel.weatherRelay.value?.count else {
-            return 0
-        }
-        return count
+        return viewModel.weatherRelay.value?.count ?? 0
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
