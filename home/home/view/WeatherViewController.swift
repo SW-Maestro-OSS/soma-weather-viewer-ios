@@ -9,30 +9,39 @@ import UIKit
 import common_ui
 import soma_foundation
 
-class WeatherViewController: UIViewController {
+open class WeatherViewController: BaseViewController {
     
+    // dependencies
+    private let viewModel: HomeViewModelProtocol
+    var weatherTableView: UITableView
+    var weatherCollectionView: UICollectionView
+
     var viewTypeChangeButton = UIButton()
     var backButton = CustomBackButton()
-    var weatherTableView = WeatherTableView()
-    var weatherCollectionView = WeatherCollectionView(frame: CGRect.zero,
-                                                      collectionViewLayout: WeatherCollectionViewFlowLayout())
-    var viewModel: HomeViewModelProtocol?
+
+    // dependency injection
+    public init(viewModel: HomeViewModelProtocol,
+                weatherCollectionView: UICollectionView,
+                weatherTableView: UITableView) {
+        self.viewModel = viewModel
+        self.weatherCollectionView = weatherCollectionView
+        self.weatherTableView = weatherTableView
+        super.init()
+    }
     
-    override func viewDidLoad() {
+    open override func viewDidLoad() {
         super.viewDidLoad()
         initAttribute()
         initUI()
         bind()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    open override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     func bind() {
-        guard let viewModel = viewModel else { return }
-        
         viewModel.weatherRelay
             .observe(on: self) { [weak self] _ in 
                 self?.weatherCollectionView.reloadData()
@@ -109,19 +118,19 @@ class WeatherViewController: UIViewController {
 
 
 extension WeatherViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 300, height: 360)
     }
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel?.weatherRelay.value?.count ?? 0
+    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return viewModel.weatherRelay.value?.count ?? 0
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: WeatherCollectionCell.cellID, for: indexPath) as? WeatherCollectionCell else {
             return UICollectionViewCell() }
         
-        guard let data = viewModel?.weatherRelay.value?[indexPath.row] else {
+        guard let data = viewModel.weatherRelay.value?[indexPath.row] else {
             return UICollectionViewCell()
         }
         
@@ -132,16 +141,16 @@ extension WeatherViewController: UICollectionViewDelegateFlowLayout, UICollectio
 
 
 extension WeatherViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel?.weatherRelay.value?.count ?? 0
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel.weatherRelay.value?.count ?? 0
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: WeatherTableCell.cellID, for: indexPath) as? WeatherTableCell else {
             return UITableViewCell()
         }
         
-        guard let data = viewModel?.weatherRelay.value?[indexPath.row] else {
+        guard let data = viewModel.weatherRelay.value?[indexPath.row] else {
             return UITableViewCell()
         }
         
