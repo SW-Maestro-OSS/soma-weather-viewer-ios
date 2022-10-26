@@ -14,9 +14,9 @@ public struct CurrentWeather {
         let currentWeather = CurrentWeather(date: self.date,
                                             weatherStatus: self.weatherStatus,
                                             weatherIcon: self.weatherIcon,
-                                            temp: TemperatureConverter.kelvinToCelsius(temp: self.temp),
-                                            tempMax: TemperatureConverter.kelvinToCelsius(temp: self.tempMax),
-                                            tempMin: TemperatureConverter.kelvinToCelsius(temp: self.tempMin),
+                                            temp: self.temp.kelvinToCelsius(),
+                                            tempMax: self.tempMax.kelvinToCelsius(),
+                                            tempMin: self.tempMin.kelvinToCelsius(),
                                             humidity: self.humidity)
         return currentWeather
     }
@@ -25,9 +25,9 @@ public struct CurrentWeather {
         let currentWeather = CurrentWeather(date: self.date,
                                             weatherStatus: self.weatherStatus,
                                             weatherIcon: self.weatherIcon,
-                                            temp: TemperatureConverter.kelvinToFahrenheit(temp: self.temp),
-                                            tempMax: TemperatureConverter.kelvinToFahrenheit(temp: self.tempMax),
-                                            tempMin: TemperatureConverter.kelvinToFahrenheit(temp: self.tempMin),
+                                            temp: self.temp.kelvinToFahrenheit(),
+                                            tempMax: self.tempMax.kelvinToFahrenheit(),
+                                            tempMin: self.tempMin.kelvinToFahrenheit(),
                                             humidity: self.humidity)
         return currentWeather
     }

@@ -31,9 +31,9 @@ public enum I18NStrings {
     public static let snow = "snow"
     public static let mist = "mist"
 
-    public static let currentTemperature = "CURRENT_TEMPERATURE_%d"
-    public static let maxTemperature = "MAX_TEMPERATURE_%d"
-    public static let minTermperature = "MIN_TEMPERATURE_%d"
-    public static let humidity = "HUMIDITY_%d"
+    public static let currentTemperature = "CURRENT_TEMPERATURE"
+    public static let maxTemperature = "MAX_TEMPERATURE"
+    public static let minTermperature = "MIN_TEMPERATURE"
+    public static let humidity = "HUMIDITY"
     public static let backButton = "BACK_BUTTON"
 }
