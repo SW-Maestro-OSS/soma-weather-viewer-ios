@@ -7,6 +7,7 @@
 
 import Foundation
 import home
+import setting
 import common
 import common_ui
 import UIKit
@@ -17,7 +18,8 @@ final class HomeDIContainer {
         return HomeViewController(viewModel: viewModel,
                                   weatherViewController: makeWeatherViewController(viewModel: viewModel),
                                   weatherCollectionView: makeWeatherCollectionView(),
-                                  weatherTableView: makeWeatherTableView())
+                                  weatherTableView: makeWeatherTableView(),
+                                  settingViewController: makeSettingViewController())
     }
     
     func makeWeatherViewController(viewModel: HomeViewModelProtocol) -> WeatherViewController {
@@ -37,6 +39,10 @@ final class HomeDIContainer {
     
     func makeWeatherTableView() -> UITableView {
         return WeatherTableView()
+    }
+    
+    func makeSettingViewController() -> SettingViewController {
+        return SettingViewController()
     }
     
     func makeHomeViewModel() -> HomeViewModelProtocol {

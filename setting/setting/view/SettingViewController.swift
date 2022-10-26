@@ -9,11 +9,10 @@ import UIKit
 import SnapKit
 import soma_foundation
 import common
+import common_ui
 import RxCocoa
 
-open class SettingViewController: UIViewController {
-    
-    let viewModel = SettingViewModel()
+open class SettingViewController: BaseViewController {
     
     //MARK: property init
     private var temperatureOptionStackView = UIStackView()
@@ -32,15 +31,14 @@ open class SettingViewController: UIViewController {
     private var fiveDaysLabel = UILabel()
     private var homeViewCheck = CustomCheck()
     
-    
     var temperatureMode : TemperatureType?
     var homeViewMode : HomeViewType?
     
     open override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        self.temperatureMode = viewModel.IntToTemperature()
-        self.homeViewMode = viewModel.IntToHomeView()
+        self.temperatureMode = UserDefaults.tempreatureOption
+        self.homeViewMode = UserDefaults.homeViewOption
         
         initAttribute()
         initUI()
@@ -58,19 +56,16 @@ open class SettingViewController: UIViewController {
         temperatureOptionLabel = {
             let label = UILabel()
             label.text = I18NStrings.temperatureOption.localized()
-            
             return label
         }()
         
         celsiusButton = {
             let button = UIButton()
-            button.backgroundColor = .gray
+            button.backgroundColor = .lightGray
             button.layer.borderWidth = 1
             button.layer.borderColor = UIColor.darkGray.cgColor
-//            button.addSubview(celsiusLabel)
             button.tag = TemperatureType.celsius.rawValue
             button.addTarget(self, action: #selector(temperatureOptionTouched), for: .touchUpInside)
-            
             return button
         }()
         
@@ -78,19 +73,16 @@ open class SettingViewController: UIViewController {
             let label = UILabel()
             label.text = I18NStrings.celsius.localized()
             label.textColor = .black
-            
             return label
         }()
         
         fahrenheitButton = {
             let button = UIButton()
-            button.backgroundColor = .gray
+            button.backgroundColor = .lightGray
             button.layer.borderWidth = 1
             button.layer.borderColor = UIColor.darkGray.cgColor
-//            button.addSubview(fahrenheitLabel)
             button.tag = TemperatureType.fahrenheit.rawValue
             button.addTarget(self, action: #selector(temperatureOptionTouched), for: .touchUpInside)
-            
             return button
         }()
         
@@ -98,39 +90,32 @@ open class SettingViewController: UIViewController {
             let label = UILabel()
             label.text = I18NStrings.fahrenheit.localized()
             label.textColor = .black
-            
             return label
         }()
         
-        
-        
         temperatureOptionStackView = {
-            let st = UIStackView(arrangedSubviews: [temperatureOptionLabel ,celsiusButton, fahrenheitButton])
-            st.spacing = 0
-            st.axis = .vertical
-            st.distribution = .fillEqually
-            st.alignment = .fill
-            st.spacing = 1
-            
-            return st
+            let stackView = UIStackView(arrangedSubviews: [temperatureOptionLabel ,celsiusButton, fahrenheitButton])
+            stackView.spacing = 0
+            stackView.axis = .vertical
+            stackView.distribution = .fillEqually
+            stackView.alignment = .fill
+            stackView.spacing = 1
+            return stackView
         }()
         
         homeOptionLabel = {
             let label = UILabel()
             label.text = I18NStrings.homeOption.localized()
-            
             return label
         }()
         
         todayButton = {
             let button = UIButton()
-            button.backgroundColor = .gray
+            button.backgroundColor = .lightGray
             button.layer.borderWidth = 1
             button.layer.borderColor = UIColor.darkGray.cgColor
-//            button.addSubview(todayLabel)
             button.tag = HomeViewType.cardView.rawValue
             button.addTarget(self, action: #selector(homeViewOptionTouched), for: .touchUpInside)
-            
             return button
         }()
         
@@ -138,42 +123,35 @@ open class SettingViewController: UIViewController {
             let label = UILabel()
             label.text = I18NStrings.currentWeather.localized()
             label.textColor = .black
-            
             return label
         }()
         
-       fiveDaysButton = {
-           let button = UIButton()
-           button.backgroundColor = .gray
-           button.layer.borderWidth = 1
-           button.layer.borderColor = UIColor.darkGray.cgColor
-           button.tag = HomeViewType.tableView.rawValue
-           button.addTarget(self, action: #selector(homeViewOptionTouched), for: .touchUpInside)
-//           button.addSubview(fiveDaysLabel)
-           
-           return button
-       }()
+        fiveDaysButton = {
+            let button = UIButton()
+            button.backgroundColor = .lightGray
+            button.layer.borderWidth = 1
+            button.layer.borderColor = UIColor.darkGray.cgColor
+            button.tag = HomeViewType.tableView.rawValue
+            button.addTarget(self, action: #selector(homeViewOptionTouched), for: .touchUpInside)
+            return button
+        }()
         
         fiveDaysLabel = {
             let label = UILabel()
             label.text = I18NStrings.fiveDaysWeather.localized()
             label.textColor = .black
-            
             return label
         }()
         
-        
         homeOptionStackView = {
-            let st = UIStackView(arrangedSubviews: [homeOptionLabel ,todayButton, fiveDaysButton])
-            st.spacing = 0
-            st.axis = .vertical
-            st.distribution = .fillEqually
-            st.alignment = .fill
-            st.spacing = 1
-
-            return st
+            let stackView = UIStackView(arrangedSubviews: [homeOptionLabel ,todayButton, fiveDaysButton])
+            stackView.spacing = 0
+            stackView.axis = .vertical
+            stackView.distribution = .fillEqually
+            stackView.alignment = .fill
+            stackView.spacing = 1
+            return stackView
         }()
-        
     }
     
     //MARK: auto layout
@@ -221,8 +199,8 @@ open class SettingViewController: UIViewController {
             make.centerY.equalToSuperview()
         }
         
-        changeTemperatureOption(viewModel.IntToTemperature())
-        changeHomeViewOption(viewModel.IntToHomeView())
+        changeTemperatureOption(UserDefaults.tempreatureOption)
+        changeHomeViewOption(UserDefaults.homeViewOption)
         
     }
     
@@ -244,14 +222,12 @@ open class SettingViewController: UIViewController {
     }
     
     func changeHomeViewOption(_ option: HomeViewType) {
-        
         switch option {
         case .cardView:
             todayButton.addSubview(homeViewCheck)
         case .tableView:
             fiveDaysButton.addSubview(homeViewCheck)
         }
-        
         checkConstraints(homeViewCheck)
     }
     
@@ -259,21 +235,15 @@ open class SettingViewController: UIViewController {
         guard let type = TemperatureType(rawValue: button.tag) else { return }
         UserDefaults.tempreatureOption = type
         UserDefaults.temperatureTypeRelay.accept(type)
-        
-        changeTemperatureOption(viewModel.IntToTemperature())
-        
-        temperatureMode = viewModel.IntToTemperature()
+        changeTemperatureOption(UserDefaults.tempreatureOption)
+        temperatureMode = UserDefaults.tempreatureOption
     }
     
     @objc func homeViewOptionTouched(button: UIButton){
         guard let type = HomeViewType(rawValue: button.tag) else { return }
         UserDefaults.homeViewOption = type
-        
-        changeHomeViewOption(viewModel.IntToHomeView())
-        
-        homeViewMode = viewModel.IntToHomeView()
+        changeHomeViewOption(UserDefaults.homeViewOption)
+        homeViewMode = UserDefaults.homeViewOption
     }
-
-    
 }
 

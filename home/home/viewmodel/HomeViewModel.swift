@@ -8,20 +8,12 @@
 import Foundation
 import Moya
 import common
-//import RxSwift
-//import RxCocoa
 import soma_foundation
 
-
-//public protocol HomeViewModelProtocol {
-//    func getWeather(lat: Float, lon: Float) -> Void
-//    var weatherRelay: BehaviorRelay<ForecastWeather?> { get }
-//}
 
 public protocol HomeViewModelProtocol {
     func getWeather(lat: Float, lon: Float) -> Void
     var weatherRelay: Observable<[CurrentWeather]?> { get }
-
 }
 
 

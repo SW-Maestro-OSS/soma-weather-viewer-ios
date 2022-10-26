@@ -7,18 +7,18 @@
 
 import UIKit
 
-class CustomCheck: UIImageView {
+open class CustomCheck: UIImageView {
     
-    override init(image: UIImage? = UIImage(systemName: "checkmark")) {
+    public override init(image: UIImage? = UIImage(systemName: "checkmark")) {
         super.init(image: image)
         tintColor = .black
     }
 
-    override init(frame: CGRect) {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
     }
 
-    required init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
 

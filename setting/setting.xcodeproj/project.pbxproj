@@ -11,12 +11,11 @@
 		490CD6FC28C61D5F0029A4B8 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490CD6FB28C61D5F0029A4B8 /* SettingViewController.swift */; };
 		498ADDA6290683300099379B /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 498ADDA5290683300099379B /* RxCocoa */; };
 		498ADDA8290683300099379B /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 498ADDA7290683300099379B /* RxSwift */; };
-		B93B79C728D7083C004D903C /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93B79C628D7083C004D903C /* CoreData.swift */; };
-		B93B79CB28D71730004D903C /* CustomCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93B79CA28D71730004D903C /* CustomCheck.swift */; };
+		498ADDDF2908F40F0099379B /* common_ui.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 498ADDDE2908F40F0099379B /* common_ui.framework */; };
+		498ADDE02908F40F0099379B /* common_ui.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 498ADDDE2908F40F0099379B /* common_ui.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B93B79EB28DC279F004D903C /* common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B93B79EA28DC279F004D903C /* common.framework */; };
 		B93B79EC28DC279F004D903C /* common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B93B79EA28DC279F004D903C /* common.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B950BBCA28D5C59D0038B40E /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = B950BBC928D5C59D0038B40E /* SnapKit */; };
-		B950BBCC28D5D45D0038B40E /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B950BBCB28D5D45D0038B40E /* SettingViewModel.swift */; };
 		B950BBD728D5DE590038B40E /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = B950BBD628D5DE590038B40E /* Alamofire */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +27,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				B93B79EC28DC279F004D903C /* common.framework in Embed Frameworks */,
+				498ADDE02908F40F0099379B /* common_ui.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -38,10 +38,8 @@
 		490CD6BE28C5FA8D0029A4B8 /* setting.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = setting.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		490CD6C128C5FA8D0029A4B8 /* setting.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = setting.h; sourceTree = "<group>"; };
 		490CD6FB28C61D5F0029A4B8 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
-		B93B79C628D7083C004D903C /* CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
-		B93B79CA28D71730004D903C /* CustomCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCheck.swift; sourceTree = "<group>"; };
+		498ADDDE2908F40F0099379B /* common_ui.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = common_ui.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B93B79EA28DC279F004D903C /* common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B950BBCB28D5D45D0038B40E /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +48,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B950BBCA28D5C59D0038B40E /* SnapKit in Frameworks */,
+				498ADDDF2908F40F0099379B /* common_ui.framework in Frameworks */,
 				B93B79EB28DC279F004D903C /* common.framework in Frameworks */,
 				498ADDA8290683300099379B /* RxSwift in Frameworks */,
 				498ADDA6290683300099379B /* RxCocoa in Frameworks */,
@@ -82,23 +81,14 @@
 			children = (
 				490CD6C128C5FA8D0029A4B8 /* setting.h */,
 				B950BBD028D5DA560038B40E /* view */,
-				B950BBD128D5DA630038B40E /* viewmodel */,
-				B93B79C528D7081E004D903C /* Model */,
 			);
 			path = setting;
-			sourceTree = "<group>";
-		};
-		B93B79C528D7081E004D903C /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				B93B79C628D7083C004D903C /* CoreData.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		B93B79E928DC279F004D903C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				498ADDDE2908F40F0099379B /* common_ui.framework */,
 				B93B79EA28DC279F004D903C /* common.framework */,
 			);
 			name = Frameworks;
@@ -108,17 +98,8 @@
 			isa = PBXGroup;
 			children = (
 				490CD6FB28C61D5F0029A4B8 /* SettingViewController.swift */,
-				B93B79CA28D71730004D903C /* CustomCheck.swift */,
 			);
 			path = view;
-			sourceTree = "<group>";
-		};
-		B950BBD128D5DA630038B40E /* viewmodel */ = {
-			isa = PBXGroup;
-			children = (
-				B950BBCB28D5D45D0038B40E /* SettingViewModel.swift */,
-			);
-			path = viewmodel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,9 +195,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				490CD6FC28C61D5F0029A4B8 /* SettingViewController.swift in Sources */,
-				B93B79CB28D71730004D903C /* CustomCheck.swift in Sources */,
-				B950BBCC28D5D45D0038B40E /* SettingViewModel.swift in Sources */,
-				B93B79C728D7083C004D903C /* CoreData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

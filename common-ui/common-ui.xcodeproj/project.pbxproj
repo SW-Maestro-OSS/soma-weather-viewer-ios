@@ -20,6 +20,7 @@
 		494C9B3B28C64AEC0088A183 /* WeatherCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494C9B3A28C64AEC0088A183 /* WeatherCollectionCell.swift */; };
 		498ADDAA2907AD9C0099379B /* WeatherCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498ADDA92907AD9C0099379B /* WeatherCollectionView.swift */; };
 		498ADDAC2907B08A0099379B /* WeatherCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498ADDAB2907B08A0099379B /* WeatherCollectionViewFlowLayout.swift */; };
+		498ADDDD2908F39F0099379B /* CustomCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498ADDDC2908F39F0099379B /* CustomCheck.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -48,6 +49,7 @@
 		494C9B3A28C64AEC0088A183 /* WeatherCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCollectionCell.swift; sourceTree = "<group>"; };
 		498ADDA92907AD9C0099379B /* WeatherCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCollectionView.swift; sourceTree = "<group>"; };
 		498ADDAB2907B08A0099379B /* WeatherCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		498ADDDC2908F39F0099379B /* CustomCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCheck.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 				493CCA39290130D200EBBEC9 /* tableview */,
 				490CD69928C5FA6C0029A4B8 /* common_ui.h */,
 				490CD71528C63AFA0029A4B8 /* CustomBackButton.swift */,
+				498ADDDC2908F39F0099379B /* CustomCheck.swift */,
 				493A103A28E1E43E00FF0DCB /* BaseViewController.swift */,
 			);
 			path = "common-ui";
@@ -104,7 +107,6 @@
 		493CCA39290130D200EBBEC9 /* tableview */ = {
 			isa = PBXGroup;
 			children = (
-				494C9B3A28C64AEC0088A183 /* WeatherCollectionCell.swift */,
 				490CD70F28C62F410029A4B8 /* WeatherTableCell.swift */,
 				490CD71128C6323C0029A4B8 /* WeatherTableView.swift */,
 			);
@@ -115,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				490CD70528C623C00029A4B8 /* WeatherDetailView.swift */,
+				494C9B3A28C64AEC0088A183 /* WeatherCollectionCell.swift */,
 				498ADDA92907AD9C0099379B /* WeatherCollectionView.swift */,
 				498ADDAB2907B08A0099379B /* WeatherCollectionViewFlowLayout.swift */,
 			);
@@ -217,6 +220,7 @@
 				490CD71228C6323C0029A4B8 /* WeatherTableView.swift in Sources */,
 				498ADDAC2907B08A0099379B /* WeatherCollectionViewFlowLayout.swift in Sources */,
 				498ADDAA2907AD9C0099379B /* WeatherCollectionView.swift in Sources */,
+				498ADDDD2908F39F0099379B /* CustomCheck.swift in Sources */,
 				493A103B28E1E43E00FF0DCB /* BaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

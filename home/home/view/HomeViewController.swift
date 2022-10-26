@@ -19,6 +19,7 @@ open class HomeViewController: BaseViewController {
     private let weatherViewController: WeatherViewController
     private var weatherCollectionView: UICollectionView
     private let weatherTableView: UITableView
+    private let settingViewController: SettingViewController
 
     var titleLabel = UILabel()
     var changeViewButton = UIButton()
@@ -28,11 +29,13 @@ open class HomeViewController: BaseViewController {
     public init(viewModel: HomeViewModelProtocol,
                 weatherViewController: WeatherViewController,
                 weatherCollectionView: UICollectionView,
-                weatherTableView: UITableView) {
+                weatherTableView: UITableView,
+                settingViewController: SettingViewController) {
         self.viewModel = viewModel
         self.weatherViewController = weatherViewController
         self.weatherCollectionView = weatherCollectionView
         self.weatherTableView = weatherTableView
+        self.settingViewController = settingViewController
         super.init()
     }
     
@@ -156,7 +159,6 @@ open class HomeViewController: BaseViewController {
     }
     
     @objc func tapSettingButton() {
-        let settingViewController = SettingViewController()
         self.navigationController?.pushViewController(settingViewController, animated: true)
     }
     
