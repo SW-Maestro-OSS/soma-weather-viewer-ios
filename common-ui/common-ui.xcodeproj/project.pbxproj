@@ -104,6 +104,7 @@
 		493CCA39290130D200EBBEC9 /* tableview */ = {
 			isa = PBXGroup;
 			children = (
+				494C9B3A28C64AEC0088A183 /* WeatherCollectionCell.swift */,
 				490CD70F28C62F410029A4B8 /* WeatherTableCell.swift */,
 				490CD71128C6323C0029A4B8 /* WeatherTableView.swift */,
 			);
@@ -114,7 +115,6 @@
 			isa = PBXGroup;
 			children = (
 				490CD70528C623C00029A4B8 /* WeatherDetailView.swift */,
-				494C9B3A28C64AEC0088A183 /* WeatherCollectionCell.swift */,
 				498ADDA92907AD9C0099379B /* WeatherCollectionView.swift */,
 				498ADDAB2907B08A0099379B /* WeatherCollectionViewFlowLayout.swift */,
 			);

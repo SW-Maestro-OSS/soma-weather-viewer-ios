@@ -40,10 +40,10 @@
 "snoe" = "눈 옴";
 "mist" = "안개 낌";
 
-"CURRENT_TEMPERATURE_%d" = "현재 온도 : %d°C";
-"MAX_TEMPERATURE_%d" = "최고 온도 : %d°C";
-"MIN_TEMPERATURE_%d" = "최저 온도 : %d°C";
-"HUMIDITY_%d" = "습도 : %d%%";
+"CURRENT_TEMPERATURE" = "현재 온도 : ";
+"MAX_TEMPERATURE" = "최고 온도 : ";
+"MIN_TEMPERATURE" = "최저 온도 : ";
+"HUMIDITY" = "습도 : ";
 
 "BACK_BUTTON" = "뒤로가기";
 

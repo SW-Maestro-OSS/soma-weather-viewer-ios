@@ -36,11 +36,23 @@ open class WeatherDetailView: UIView {
         }
         dateLabel.text = data.date
         descriptionLabel.text = data.weatherStatus
-        tempLabel.text = "CURRENT_TEMPERATURE_%d".localized(with: TemperatureConverter.kelvinToCelsius(temp: data.temp))
-        tempMaxLabel.text = "MAX_TEMPERATURE_%d".localized(with: TemperatureConverter.kelvinToCelsius(temp: data.tempMax))
-        tempMinLabel.text = "MIN_TEMPERATURE_%d".localized(with: TemperatureConverter.kelvinToCelsius(temp: data.tempMin))
-        humidityLabel.text = "HUMIDITY_%d".localized(with: data.humidity)
-
+        var tempText = "\(Int(data.temp))"
+        var tempMaxText = "\(Int(data.tempMax))"
+        var tempMinText = "\(Int(data.tempMin))"
+        if UserDefaults.tempreatureOption == .celsius {
+            tempText += "°C"
+            tempMaxText += "°C"
+            tempMinText += "°C"
+        }
+        else {
+            tempText += "°F"
+            tempMaxText += "°F"
+            tempMinText += "°F"
+        }
+        tempLabel.text = I18NStrings.currentTemperature.localized() + tempText
+        tempMaxLabel.text = I18NStrings.maxTemperature.localized() + tempMaxText
+        tempMinLabel.text = I18NStrings.minTermperature.localized() + tempMinText
+        humidityLabel.text = I18NStrings.humidity.localized() + "\(data.humidity)%"
     }
 
     func initAttribute() {

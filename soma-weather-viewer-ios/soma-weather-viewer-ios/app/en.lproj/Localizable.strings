@@ -39,9 +39,9 @@
 "snow" = "snow";
 "mist" = "mist";
 
-"CURRENT_TEMPERATURE_%d" = "Current Weather : %d°C";
-"MAX_TEMPERATURE_%d" = "Highest Temperature: %d°C";
-"MIN_TEMPERATURE_%d" = "Lowest Temperature : %d°C";
-"HUMIDITY_%d" = "Humidity : %d%%";
+"CURRENT_TEMPERATURE" = "Current Weather : ";
+"MAX_TEMPERATURE" = "Highest Temperature: ";
+"MIN_TEMPERATURE" = "Lowest Temperature : ";
+"HUMIDITY" = "Humidity : ";
 
 "BACK_BUTTON" = "Back";
