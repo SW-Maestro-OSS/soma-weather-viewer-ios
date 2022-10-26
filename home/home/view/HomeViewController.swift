@@ -64,7 +64,7 @@ open class HomeViewController: BaseViewController {
         
         titleLabel = {
             let label = UILabel()
-            label.text = "HOME".localized()
+            label.text = I18NStrings.home.localized()
             label.textColor = .black
             label.font = UIFont.boldSystemFont(ofSize: 16)
             return label
@@ -72,7 +72,7 @@ open class HomeViewController: BaseViewController {
         
         changeViewButton = {
             let button = UIButton()
-            button.setTitle("VIEW_CHANGE".localized(), for: .normal)
+            button.setTitle(I18NStrings.viewChange.localized(), for: .normal)
             button.layer.cornerRadius = 4
             button.layer.borderWidth = 1
             button.layer.borderColor = UIColor.black.cgColor
@@ -83,7 +83,7 @@ open class HomeViewController: BaseViewController {
         
         settingButton = {
             let button = UIButton()
-            button.setTitle("SETTING".localized(), for: .normal)
+            button.setTitle(I18NStrings.setting.localized(), for: .normal)
             button.layer.cornerRadius = 4
             button.layer.borderWidth = 1
             button.layer.borderColor = UIColor.black.cgColor

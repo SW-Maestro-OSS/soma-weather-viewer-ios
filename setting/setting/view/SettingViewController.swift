@@ -57,7 +57,7 @@ open class SettingViewController: UIViewController {
         
         temperatureOptionLabel = {
             let label = UILabel()
-            label.text = "TEMPERATURE_OPTION".localized()
+            label.text = I18NStrings.temperatureOption.localized()
             
             return label
         }()
@@ -76,7 +76,7 @@ open class SettingViewController: UIViewController {
         
         celsiusLabel = {
             let label = UILabel()
-            label.text = "CELSIUS".localized()
+            label.text = I18NStrings.celsius.localized()
             label.textColor = .black
             
             return label
@@ -96,7 +96,7 @@ open class SettingViewController: UIViewController {
         
         fahrenheitLabel = {
             let label = UILabel()
-            label.text = "FAHRENHEIT".localized()
+            label.text = I18NStrings.fahrenheit.localized()
             label.textColor = .black
             
             return label
@@ -117,7 +117,7 @@ open class SettingViewController: UIViewController {
         
         homeOptionLabel = {
             let label = UILabel()
-            label.text = "HOME_OPTION".localized()
+            label.text = I18NStrings.homeOption.localized()
             
             return label
         }()
@@ -136,7 +136,7 @@ open class SettingViewController: UIViewController {
         
         todayLabel = {
             let label = UILabel()
-            label.text = "CURRENT_WEATHER".localized()
+            label.text = I18NStrings.currentWeather.localized()
             label.textColor = .black
             
             return label
@@ -156,7 +156,7 @@ open class SettingViewController: UIViewController {
         
         fiveDaysLabel = {
             let label = UILabel()
-            label.text = "FIVE_DAYS_WEATHER".localized()
+            label.text = I18NStrings.fiveDaysWeather.localized()
             label.textColor = .black
             
             return label
@@ -263,7 +263,6 @@ open class SettingViewController: UIViewController {
         changeTemperatureOption(viewModel.IntToTemperature())
         
         temperatureMode = viewModel.IntToTemperature()
-        print("🤖 Now temperature mode : \(temperatureMode)")
     }
     
     @objc func homeViewOptionTouched(button: UIButton){
@@ -273,8 +272,6 @@ open class SettingViewController: UIViewController {
         changeHomeViewOption(viewModel.IntToHomeView())
         
         homeViewMode = viewModel.IntToHomeView()
-        print("🤖 Now homeView mode : \(homeViewMode)")
-        
     }
 
     
