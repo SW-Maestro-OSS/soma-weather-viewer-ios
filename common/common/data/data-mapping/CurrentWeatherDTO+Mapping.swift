@@ -53,7 +53,7 @@ extension CurrentWeatherDTO {
         let iconURL = urlStringPreffix + icon + urlStringSuffix
         
         guard let _date = DateParser.dtoToParsedString(dateText),
-              let _weatherState = WeatherParser.shared.mappingStatus(status: weatherInfo?[0].description),
+              let _weatherState = weatherInfo?[0].description?.localized(),
               let _temp = mainInfo?.temp,
               let _tempMax = mainInfo?.tempMax,
               let _tempMin = mainInfo?.tempMin,

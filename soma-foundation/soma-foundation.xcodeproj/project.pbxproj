@@ -8,17 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		490CD6D628C5FA9B0029A4B8 /* soma_foundation.h in Headers */ = {isa = PBXBuildFile; fileRef = 490CD6D528C5FA9B0029A4B8 /* soma_foundation.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B93736F128E4206100639C0D /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93736F028E4206100639C0D /* StringExtension.swift */; };
-		B96B0E0428E56D8B008568CF /* Observer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96B0E0328E56D8B008568CF /* Observer.swift */; };
-		B96B0E0628E56DAD008568CF /* Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96B0E0528E56DAD008568CF /* Publisher.swift */; };
+		B96B0E0428E56D8B008568CF /* Observerable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96B0E0328E56D8B008568CF /* Observerable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		490CD6D228C5FA9B0029A4B8 /* soma_foundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = soma_foundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		490CD6D528C5FA9B0029A4B8 /* soma_foundation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = soma_foundation.h; sourceTree = "<group>"; };
-		B93736F028E4206100639C0D /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
-		B96B0E0328E56D8B008568CF /* Observer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observer.swift; sourceTree = "<group>"; };
-		B96B0E0528E56DAD008568CF /* Publisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Publisher.swift; sourceTree = "<group>"; };
+		B96B0E0328E56D8B008568CF /* Observerable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observerable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,8 +31,6 @@
 		490CD6C828C5FA9A0029A4B8 = {
 			isa = PBXGroup;
 			children = (
-				B96B0E0328E56D8B008568CF /* Observer.swift */,
-				B96B0E0528E56DAD008568CF /* Publisher.swift */,
 				490CD6D428C5FA9B0029A4B8 /* soma-foundation */,
 				490CD6D328C5FA9B0029A4B8 /* Products */,
 			);
@@ -53,8 +47,8 @@
 		490CD6D428C5FA9B0029A4B8 /* soma-foundation */ = {
 			isa = PBXGroup;
 			children = (
+				B96B0E0328E56D8B008568CF /* Observerable.swift */,
 				490CD6D528C5FA9B0029A4B8 /* soma_foundation.h */,
-				B93736F028E4206100639C0D /* StringExtension.swift */,
 			);
 			path = "soma-foundation";
 			sourceTree = "<group>";
@@ -139,9 +133,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B96B0E0628E56DAD008568CF /* Publisher.swift in Sources */,
-				B93736F128E4206100639C0D /* StringExtension.swift in Sources */,
-				B96B0E0428E56D8B008568CF /* Observer.swift in Sources */,
+				B96B0E0428E56D8B008568CF /* Observerable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
